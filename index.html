@@ -223,7 +223,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       dice_high:"ALTO (11-18)", dice_low:"BASSO (3-10)", dice_even:"PARI", dice_odd:"DISPARI",
       dice_roll:"Tiri i dadi", dice_win:"Vinci! +#d dobloni.", dice_lose:"Perdi #d dobloni.", dice_again_q:"Giochi ancora?",
       journal_title:"DIARIO", journal_main:"Principali:", journal_side:"Missioni Secondarie:", chapter:"Capitolo", chapter_done:"CAPITOLO COMPLETATO!",
-      log_title:"REGISTRO DEL CAPITANO", log_tab_missions:"MISSIONI", log_tab_economy:"ECONOMIA", log_tab_prices:"PREZZI", log_hint_nav:"<>: scheda  su/giu: scegli  A: apri  B: esci",
+      log_title:"REGISTRO DEL CAPITANO", log_tab_missions:"MISSIONI", log_tab_economy:"ECONOMIA", log_tab_prices:"PREZZI", log_hint_nav:"<> scheda  A apri  B esci",
       log_season:"Stagione", log_contract:"Contratto", log_route:"Rotta", log_invest:"Investimenti", log_gold:"Oro", log_fame:"Fama", log_none:"nessuno", log_days_short:"gg",
       q_intro_t:"L'arrivo a Crudo", q_intro_s0:"Chiedi in giro di chi ti ha convocato", q_intro_s1:"Presentati alla committente",
       intro_start:["Capitano Crudo.","Sei tornato dal mare.","Prima di cominciare,","lascia che ti ricordi","una cosa."],
@@ -477,7 +477,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       dice_high:"HIGH (11-18)", dice_low:"LOW (3-10)", dice_even:"EVEN", dice_odd:"ODD",
       dice_roll:"You roll", dice_win:"You win! +#d doubloons.", dice_lose:"You lose #d doubloons.", dice_again_q:"Play again?",
       journal_title:"JOURNAL", journal_main:"Main:", journal_side:"Side Quests:", chapter:"Chapter", chapter_done:"CHAPTER COMPLETE!",
-      log_title:"CAPTAIN'S LOG", log_tab_missions:"MISSIONS", log_tab_economy:"ECONOMY", log_tab_prices:"PRICES", log_hint_nav:"<>: tab  up/down: pick  A: open  B: exit",
+      log_title:"CAPTAIN'S LOG", log_tab_missions:"MISSIONS", log_tab_economy:"ECONOMY", log_tab_prices:"PRICES", log_hint_nav:"<> tab  A open  B exit",
       log_season:"Season", log_contract:"Contract", log_route:"Route", log_invest:"Investments", log_gold:"Gold", log_fame:"Fame", log_none:"none", log_days_short:"d",
       q_intro_t:"Arrival in Crudo", q_intro_s0:"Ask around for who summoned you", q_intro_s1:"Introduce yourself to the client",
       intro_start:["Captain Crudo.","You're back from the sea.","Before you begin,","let me remind you","of one thing."],
@@ -7152,7 +7152,12 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     // 1) TUTORIAL
     if(typeof tutActive==="function" && tutActive()){
       const tg=(typeof tutTargetNpc==="function")?tutTargetNpc():null;
-      if(tg){ const w=npcWorldById(tg); if(w) return w; }
+      if(tg){
+        const w=npcWorldById(tg); if(w) return w;
+        // fallback: posizione da STORY_POS (l'NPC potrebbe non essere in currentNpcs)
+        const P=window.STORY_POS && window.STORY_POS.npc && window.STORY_POS.npc[tg];
+        if(P){ if(P[0]===areaKey) return {px:P[1]*TILE, py:P[2]*TILE}; return areaEdgePoint(P[0]); }
+      }
       const s=(typeof tutCur==="function")?tutCur():null;
       if(s==="sail") return { px:(cur.w/2)*TILE, py:(cur.h-2)*TILE };   // salpa: verso sud
       // durante i passi-edificio, punta all'insegna corrispondente
@@ -7172,7 +7177,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       if(ready){ // consegna: vai dal completeNpc
         const w=npcWorldById(q.completeNpc); if(w) return w;
         const P=window.STORY_POS && window.STORY_POS.npc && window.STORY_POS.npc[q.completeNpc];
-        if(P && P[0]!==areaKey) return areaEdgePoint(P[0]);
+        if(P){ if(P[0]===areaKey) return {px:P[1]*TILE, py:P[2]*TILE}; return areaEdgePoint(P[0]); }
       }
     }
     return null;
