@@ -6557,25 +6557,23 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       if(x < -TILE || x > W+TILE || y < -TILE || y > H+TILE) continue;
       drawQuestMark(x, y, qk||"casual");
     }
-    // Crudo Merchant: FRECCIA-GUIDA verso il bersaglio della MISSIONE/TUTORIAL attiva.
+    // Crudo Merchant: FRECCIA-GUIDA sopra la testa di Crudo, che punta verso il bersaglio della missione.
     const tp = (typeof questTargetPoint==="function") ? questTargetPoint() : null;
     if(tp){
-      const tx=Math.round(tp.px-cam.x), ty=Math.round(tp.py-cam.y);
-      // "coperto/fuori": oltre i bordi, OPPURE dietro i box HUD in alto (y<46).
-      const off = (tx< 8 || tx> W-8 || ty< 46 || ty> H-8);
-      if(off){
-        const cxs=W/2, cys=H/2+10; let dx=tx-cxs, dy=ty-cys; const d=Math.hypot(dx,dy)||1; dx/=d; dy/=d;
-        const mgn=16; const ex=Math.max(mgn,Math.min(W-mgn, cxs+dx*(W/2-mgn))), ey=Math.max(48,Math.min(H-mgn, cys+dy*(H/2-mgn)));
+      const tgx=tp.px, tgy=tp.py;                              // posizione mondo del bersaglio
+      const pgx=player.px, pgy=player.py;                      // posizione mondo del player
+      const dist=Math.hypot(tgx-pgx, tgy-pgy);
+      if(dist>8){                                              // mostra solo se non sei gia' sul posto
+        let dx=tgx-pgx, dy=tgy-pgy; const d=Math.hypot(dx,dy)||1; dx/=d; dy/=d;
+        // centro freccia: appena sopra la testa del player sullo schermo
+        const sx=Math.round(player.px-cam.x)+8, sy=Math.round(player.py-cam.y)-6;
         const bob=Math.floor(performance.now()/220)%2;
-        // disco scuro + freccia gialla grande e con bordo, ben visibile
-        ctx.fillStyle="rgba(0,0,0,0.55)"; ctx.beginPath(); ctx.arc(ex,ey,9,0,Math.PI*2); ctx.fill();
-        const px=-dy, py=dx; const tipx=ex+dx*(8+bob), tipy=ey+dy*(8+bob);
-        ctx.fillStyle="#141018"; ctx.beginPath(); ctx.moveTo(tipx+dx, tipy+dy); ctx.lineTo(ex+px*5-dx*3, ey+py*5-dy*3); ctx.lineTo(ex-px*5-dx*3, ey-py*5-dy*3); ctx.closePath(); ctx.fill();
-        ctx.fillStyle="#ffd020"; ctx.beginPath(); ctx.moveTo(tipx, tipy); ctx.lineTo(ex+px*4-dx*3, ey+py*4-dy*3); ctx.lineTo(ex-px*4-dx*3, ey-py*4-dy*3); ctx.closePath(); ctx.fill();
-      } else {
-        // bersaglio a schermo: anello pulsante intorno per farlo notare
-        const r=8+Math.floor(performance.now()/200)%3;
-        ctx.strokeStyle="#ffd020"; ctx.lineWidth=1; ctx.beginPath(); ctx.arc(tx+8,ty+8,r,0,Math.PI*2); ctx.stroke();
+        const cx2=sx, cy2=sy-bob;
+        // disco scuro di sfondo + freccia gialla con bordo (ben visibile a ogni ora)
+        ctx.fillStyle="rgba(0,0,0,0.55)"; ctx.beginPath(); ctx.arc(cx2,cy2,7,0,Math.PI*2); ctx.fill();
+        const px=-dy, py=dx; const tipx=cx2+dx*7, tipy=cy2+dy*7;
+        ctx.fillStyle="#141018"; ctx.beginPath(); ctx.moveTo(tipx+dx, tipy+dy); ctx.lineTo(cx2+px*5-dx*3, cy2+py*5-dy*3); ctx.lineTo(cx2-px*5-dx*3, cy2-py*5-dy*3); ctx.closePath(); ctx.fill();
+        ctx.fillStyle="#ffd020"; ctx.beginPath(); ctx.moveTo(tipx, tipy); ctx.lineTo(cx2+px*4-dx*3, cy2+py*4-dy*3); ctx.lineTo(cx2-px*4-dx*3, cy2-py*4-dy*3); ctx.closePath(); ctx.fill();
       }
     }
   }
