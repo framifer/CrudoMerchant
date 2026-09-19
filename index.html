@@ -296,11 +296,11 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       tut_move:"ORDINE 2/9 - Muoviti col D-pad ed esplora Porto Franco, il tuo porto base.",
       tut_merchant:"ORDINE 3/9 - Il commercio è tutto. Va' dal Mercante (!) e parlaci con A.",
       tut_buy:"ORDINE 4/9 - Fa' il tuo primo affare: compra una merce (A) al banco.",
-      tut_shipyard:"ORDINE 5/9 - Ti serve una nave vera. Entra nel CANTIERE (edificio col simbolo nave).",
-      tut_sail:"ORDINE 6/9 - Alza le vele! Sali in barca e salpa verso il MARE APERTO (bordo sud in barca).",
-      tut_log:"ORDINE 7/9 - Premi START e apri il REGISTRO: missioni, economia e prezzi.",
-      tut_tavern:"ORDINE 8/9 - Va' alla Locanda: recluta la CIURMA o gioca ai dadi.",
-      tut_story:"ORDINE 9/9 - Parla con Hawkins (!): comincia la tua vendetta contro il Re.",
+      tut_shipyard:"ORDINE 5/9 - Ti serve una nave vera. Entra nel CANTIERE (al molo).",
+      tut_log:"ORDINE 6/9 - Premi START e apri il REGISTRO: missioni, economia e prezzi.",
+      tut_tavern:"ORDINE 7/9 - Va' alla Locanda: recluta la CIURMA o gioca ai dadi.",
+      tut_story:"ORDINE 8/9 - Parla con Hawkins (!): comincia la tua vendetta contro il Re.",
+      tut_sail:"ORDINE 9/9 - Alza le vele! Sali in barca e salpa verso il MARE APERTO (bordo sud).",
       tut_done:"Ordini eseguiti, capitano. Ora il mare è tuo!",
       tg_fish:"Pesce", tg_rum:"Rum", tg_timber:"Legname", tg_spice:"Spezie", tg_iron:"Ferro", tg_pearl:"Perle",
       tr_title:"MERCATO", tr_hold:"Stiva", tr_good:"Merce", tr_price:"Prezzo", tr_have:"Hai",
@@ -547,11 +547,11 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       tut_move:"ORDER 2/9 - Move with the D-pad and explore Free Port, your home harbour.",
       tut_merchant:"ORDER 3/9 - Trade is everything. Go to the Merchant (!) and talk with A.",
       tut_buy:"ORDER 4/9 - Make your first deal: buy a good (A) at the counter.",
-      tut_shipyard:"ORDER 5/9 - You need a real ship. Enter the SHIPYARD (building with the ship sign).",
-      tut_sail:"ORDER 6/9 - Set sail! Board your boat and head to the OPEN SEA (south edge by boat).",
-      tut_log:"ORDER 7/9 - Press START and open the LOG: missions, economy and prices.",
-      tut_tavern:"ORDER 8/9 - Go to the Tavern: recruit CREW or play dice.",
-      tut_story:"ORDER 9/9 - Talk to Hawkins (!): begin your vengeance against the King.",
+      tut_shipyard:"ORDER 5/9 - You need a real ship. Enter the SHIPYARD (at the pier).",
+      tut_log:"ORDER 6/9 - Press START and open the LOG: missions, economy and prices.",
+      tut_tavern:"ORDER 7/9 - Go to the Tavern: recruit CREW or play dice.",
+      tut_story:"ORDER 8/9 - Talk to Hawkins (!): begin your vengeance against the King.",
+      tut_sail:"ORDER 9/9 - Set sail! Board your boat and head to the OPEN SEA (south edge).",
       tut_done:"Orders carried out, captain. Now the sea is yours!",
       tg_fish:"Fish", tg_rum:"Rum", tg_timber:"Timber", tg_spice:"Spice", tg_iron:"Iron", tg_pearl:"Pearls",
       tr_title:"MARKET", tr_hold:"Hold", tr_good:"Good", tr_price:"Price", tr_have:"Have",
@@ -4128,13 +4128,13 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     scooterUnlocked=!!d.scooterUnlocked; discovered.clear(); discovered.add("town"); (d.discovered||[]).forEach(a=>discovered.add(a)); discovered.add(areaKey); resetWeather(); return true;}catch(e){return false;} }
   function resetProgress(){ areaKey="town"; useMap(TOWN);
     // Crudo Merchant: si comincia IN BARCA accanto al molo di Porto Franco -> il tutorial fa sbarcare.
-    player.tx=23; player.ty=33; player.px=23*TILE; player.py=33*TILE; player.dir="left"; player.moving=false;
+    player.tx=23; player.ty=33; player.px=23*TILE; player.py=33*TILE; player.dir="up"; player.moving=false;
     season="spring"; seasonAutoTimer=0; dayCount=0; scooterUnlocked=false; if(typeof contract!=="undefined"){ contract=null; contractOffer={}; } discovered.clear(); discovered.add("town"); player.scooter=false; player.boat=false; player.boatType="rowboat"; player.gold=50; player.weapons=["knife"]; player.ship={cannons:0,prow:0,hull:0}; player.armor=0; boatsOwned={rowboat:true,sloop:false,caravel:false,frigate:false,galleon:false}; crew=0; fame=0; bounty.active=null; bounty.tier=0; bounty.treasure=null; if(typeof seaDone!=="undefined"){ for(const k in seaDone) delete seaDone[k]; } questState=0; cat.found=false; shellQuest=0; shell.found=false; bike.taken=false; ball.taken=false; keyring.taken=false; photos.forEach(p=>p.taken=false); insideKey=null; if(window.CASE_REF){ window.CASE_REF.closedUntil={}; window.CASE_REF.deduced={}; window.CASE_REF.reconstructed={}; window.CASE_REF.morals={}; window.CASE_REF.fought={}; window.CASE_REF.chaseCaught={}; window.CASE_REF.naval={}; } if(window.SQ_REF){ SQ.done={}; SQ.log=[]; SQ_KINDS.forEach(k=>SQ.queueIdx[k]=0); } resetQuests(); resetWeather(); sqInit(); player.boat=true; if(typeof tutStart==="function") tutStart(); saveGame(); }
 
   // ================= TUTORIAL GUIDATO =================
   // Sequenza di passi con marcatori gialli e pannello-guida. Insegna i pilastri partendo dallo sbarco.
   // tut.step avanza quando il giocatore compie l'azione chiave del passo. tut.done = tutorial concluso.
-  const TUT_STEPS = ["intro","move","merchant","buy","shipyard","sail","log","tavern","story"];
+  const TUT_STEPS = ["intro","move","merchant","buy","shipyard","log","tavern","story","sail"];
   const tut = { step:0, done:false, moved:0, hintT:0 };
   function tutStart(){ tut.step=0; tut.done=false; tut.moved=0; tut.hintT=4.0; }
   function tutActive(){ return !tut.done && tut.step < TUT_STEPS.length; }
@@ -4166,7 +4166,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   // pannello-guida in alto: testo del passo corrente
   function drawTutorial(){
     if(!tutActive()) return;
-    if(insideKey && tutCur()!=="tavern" && tutCur()!=="merchant") { /* mostra comunque un promemoria breve dentro */ }
     const s=tutCur(); const msg=t("tut_"+s);
     if(!msg || msg==="tut_"+s) return;
     // pannello in alto, sotto l'HUD
@@ -4448,6 +4447,16 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     if(consumePress("select")){ return; }   // SELECT disabled (no scooters in the age of pirates)
 
     if(consumePress("a")){
+      // Crudo Merchant: primo ORDINE del tutorial — garantisci lo sbarco iniziale dalla barca.
+      if(typeof tutCur==="function" && tutCur()==="intro" && player.boat && !insideKey){
+        let dst=null, bd=99;
+        for(let dy=-2;dy<=2 && !dst;dy++) for(let dx=-2;dx<=2;dx++){ const tx=player.tx+dx, ty=player.ty+dy;
+          const c=tileAt(tx,ty); if(c===undefined) continue;
+          const landOk = (c==="w") ? !(typeof isMooredBlock==="function" && isMooredBlock(tx,ty)) : (c!=="~" && c!=="q" && !isSolid(tx,ty));
+          if(landOk){ const d=Math.abs(dx)+Math.abs(dy); if(d<bd){ bd=d; dst={tx,ty}; } } }
+        if(dst){ player.boat=false; player.swimming=false; player.tx=dst.tx; player.ty=dst.ty; player.px=dst.tx*TILE; player.py=dst.ty*TILE; player.dir="up";
+          SFX.door&&SFX.door(); banner(t("island_land")); if(typeof tutOnLand==="function") tutOnLand(); saveGame(); return; }
+      }
       const {fx,fy}=facingTile();
       const n=npcAt(fx,fy);
       if(n){ if(n.dir!==undefined) n.dir=opposite(player.dir);
