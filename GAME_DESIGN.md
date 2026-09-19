@@ -216,7 +216,7 @@ Investi nel porto / **Contratti** / Esci.
 Una NUOVA PARTITA (`resetProgress`) inizia **in barca accanto al molo di Porto Franco** (tx23,ty33,
 boat=true), con **50 dobloni** di capitale iniziale, e avvia una sequenza di **9 "Ordini"** (a schermo NON
 si chiama "tutorial": è vestita da prime missioni, testi "ORDINE n/9"):
-`TUT_STEPS = intro, move, merchant, buy, shipyard, sail, log, tavern, story`.
+`TUT_STEPS = intro, move, merchant, buy, shipyard, log, tavern, story, sail` (sail per ultimo: attivita a terra prima, poi si salpa; sbarco iniziale garantito da un fallback nel primo ordine).
 - **intro** → sbarca (A) — `tutOnLand` (3 punti di sbarco).
 - **move** → cammina (6 passi) — `tutOnMove`.
 - **merchant** → parla col Mercante [! su `trader_town`] — `tutOnMerchant`.
