@@ -218,8 +218,12 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       taverner_n:"Locandiera", taverner_l:["Benvenuto alla Locanda","dell'Ancora! Cerchi","marinai per la ciurma?","Ne ho di validi."],
       tav_greet:"Ciurma attuale: #/$ marinai.", tav_offer:"Un marinaio in gamba costa # dobloni.", tav_q:"Arruoli un marinaio (# dobloni)?",
       tav_hired:"Arruolato! Ciurma: #/$.", tav_full:"La nave e' al completo! Ti serve uno scafo piu' grande.", tav_nogold:"Non hai # dobloni.",
+      tav_menu_q:"Cosa vuoi fare alla Locanda?", tav_recruit:"Recluta ciurma", tav_dice:"Gioca ai dadi",
+      dice_nogold:"Non hai abbastanza dobloni per giocare.", dice_stake_q:"Quanto punti?", dice_bet_q:"Su cosa scommetti?",
+      dice_high:"ALTO (11-18)", dice_low:"BASSO (3-10)", dice_even:"PARI", dice_odd:"DISPARI",
+      dice_roll:"Tiri i dadi", dice_win:"Vinci! +#d dobloni.", dice_lose:"Perdi #d dobloni.", dice_again_q:"Giochi ancora?",
       journal_title:"DIARIO", journal_main:"Principali:", journal_side:"Missioni Secondarie:", chapter:"Capitolo", chapter_done:"CAPITOLO COMPLETATO!",
-      log_title:"REGISTRO DEL CAPITANO", log_tab_missions:"MISSIONI", log_tab_economy:"ECONOMIA", log_hint_nav:"<>: scheda  su/giu: scegli  A: apri  B: esci",
+      log_title:"REGISTRO DEL CAPITANO", log_tab_missions:"MISSIONI", log_tab_economy:"ECONOMIA", log_tab_prices:"PREZZI", log_hint_nav:"<>: scheda  su/giu: scegli  A: apri  B: esci",
       log_season:"Stagione", log_contract:"Contratto", log_route:"Rotta", log_invest:"Investimenti", log_gold:"Oro", log_fame:"Fama", log_none:"nessuno", log_days_short:"gg",
       q_intro_t:"L'arrivo a Crudo", q_intro_s0:"Chiedi in giro di chi ti ha convocato", q_intro_s1:"Presentati alla committente",
       intro_start:["Capitano Crudo.","Sei tornato dal mare.","Prima di cominciare,","lascia che ti ricordi","una cosa."],
@@ -288,13 +292,23 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       ship_menu_q:"Alla nave - cosa fai?", ship_free:"Naviga il mare aperto", ship_cancel:"Resta a terra", seaq_done:"Incarico di mare completato!", seaq_fail:"Fallito. Riprova dalla nave.",
       dock_menu_q:"C'e' una nave ormeggiata. Cosa fai?", dock_setsail:"Salpa verso il mare aperto", dock_board:"Imbarcati", dock_disembark:"Sbarca sul molo", dock_stay:"Resta dove sei", hint_ship:"A: sali sulla nave",
       ship_island:"Vai all'isola del tesoro", area_island:"ISOLA DEL TESORO", island_entered:"Acque isola. Molo:A  Nord:torna", island_left:"Torni al molo delle Officine.", island_land:"Attracchi al molo. Scendi a terra.", island_board:"Risali in barca.", raft_locked:"Una zattera. Non sai ancora dove porti.", hint_dock:"A: sbarca sul molo", hint_board:"A: risali in barca", hint_land:"A: attracca a riva", hint_setsail:"A: prendi il largo",
+      tut_intro:"ORDINE 1/9 - Sei il Capitano Crudo. Il Re bruciò la tua nave: ora, vendetta. Premi A per sbarcare.",
+      tut_move:"ORDINE 2/9 - Muoviti col D-pad ed esplora Porto Franco, il tuo porto base.",
+      tut_merchant:"ORDINE 3/9 - Il commercio è tutto. Va' dal Mercante (!) e parlaci con A.",
+      tut_buy:"ORDINE 4/9 - Fa' il tuo primo affare: compra una merce (A) al banco.",
+      tut_shipyard:"ORDINE 5/9 - Ti serve una nave vera. Entra nel CANTIERE (edificio col simbolo nave).",
+      tut_sail:"ORDINE 6/9 - Alza le vele! Sali in barca e salpa verso il MARE APERTO (bordo sud in barca).",
+      tut_log:"ORDINE 7/9 - Premi START e apri il REGISTRO: missioni, economia e prezzi.",
+      tut_tavern:"ORDINE 8/9 - Va' alla Locanda: recluta la CIURMA o gioca ai dadi.",
+      tut_story:"ORDINE 9/9 - Parla con Hawkins (!): comincia la tua vendetta contro il Re.",
+      tut_done:"Ordini eseguiti, capitano. Ora il mare è tuo!",
       tg_fish:"Pesce", tg_rum:"Rum", tg_timber:"Legname", tg_spice:"Spezie", tg_iron:"Ferro", tg_pearl:"Perle",
       tr_title:"MERCATO", tr_hold:"Stiva", tr_good:"Merce", tr_price:"Prezzo", tr_have:"Hai",
       tr_bought:"Comprato per #d.", tr_sold:"Venduto per #d.", tr_full:"Stiva piena!", tr_nogold:"Oro insufficiente.", tr_none:"Non ne hai da vendere.",
       tr_hint:"A: compra   <-: vendi   B: esci", hint_trade:"A: contratta col mercante",
       eco_shortage:"CARESTIA di #g a #p! I prezzi salgono.", eco_boom:"ABBONDANZA di #g a #p! Prezzi giu'.",
       inv_title:"INVESTIMENTI DEL PORTO", inv_hint:"su/giu: scegli  A: investi  B: esci", inv_lvl:"Liv.", inv_cost:"Costo:", inv_prod:"produzione", inv_done:"Investito! Produzione di #g a #p aumentata.", inv_nogold:"Oro insufficiente.", mm_invest:"Investi nel porto",
-      mm_contract:"Contratti di fornitura", ct_offer:"Contratto: consegna #n #g a #p", ct_accept:"Accetta il contratto", ct_taken:"Contratto preso: #n #g a #p.", ct_active:"Attivo: consegna #n #g a #p.", ct_reward:"Ricompensa: #d doblon", ct_due:"Scadenza: tra #n giorni", ct_deliver_q:"Consegni #n #g ora?", ct_deliver:"Consegna", ct_need:"Servono #n #g nella stiva.", ct_have:"Ne hai #n.", ct_done:"Contratto onorato: +#d!", ct_failed:"Contratto scaduto! Fornitura fallita.", trader:"Mercante", trader_l:["Merci fresche, capitano!","Compra dove costa poco,","rivendi dove scarseggia."], mm_q:"Cosa fai, capitano?", mm_counter:"Contratta al banco", mm_route:"Organizza una rotta", rt_pickdest:"Rotta verso quale polo?", rt_pickgood:"Che merce carichi?", rt_pickqty:"Quanta? (stiva #, tratta %s)", rt_started:"Rotta salpata: # casse verso %.", rt_done:"Rotta conclusa: +#d!", rt_raided:"assalto! perse %", rt_shipcost:"trasporto -#", rt_busy:"La tua nave e' gia' in rotta.", rt_ship:"Nave", rt_outbound:"-> %", rt_return:"<- ritorno", hint_raft:"A: prendi la zattera per l'isola", hint_shipyard:"A: entra nel Cantiere Navale", hint_sea_east:"Vai a EST -> Isola del Culto", hint_sea_island:"Continua a EST per l'isola ->", hint_sea_pier:"A NORD torni al molo", hint_sea_deep:"A SUD -> Mare Profondo (pericolo!)",
+      mm_contract:"Contratti di fornitura", ct_offer:"Contratto: consegna #n #g a #p", ct_accept:"Accetta il contratto", ct_taken:"Contratto preso: #n #g a #p.", ct_active:"Attivo: consegna #n #g a #p.", ct_reward:"Ricompensa: #d doblon", ct_due:"Scadenza: tra #n giorni", ct_deliver_q:"Consegni #n #g ora?", ct_deliver:"Consegna", ct_need:"Servono #n #g nella stiva.", ct_have:"Ne hai #n.", ct_done:"Contratto onorato: +#d!", ct_failed:"Contratto scaduto! Fornitura fallita.", trader:"Mercante", trader_l:["Merci fresche, capitano!","Compra dove costa poco,","rivendi dove scarseggia."], mm_q:"Cosa fai, capitano?", mm_counter:"Contratta al banco", mm_route:"Organizza una rotta", rt_pickdest:"Rotta verso quale polo?", rt_pickgood:"Che merce carichi?", rt_pickqty:"Quanta? (stiva #, tratta %s)", rt_started:"Rotta salpata: # casse verso %.", rt_done:"Rotta conclusa: +#d!", rt_raided:"assalto! perse %", rt_shipcost:"trasporto -#", rt_busy:"La tua nave e' gia' in rotta.", rt_ship:"Nave", rt_outbound:"-> %", rt_return:"<- ritorno", hint_raft:"A: prendi la zattera per l'isola", hint_shipyard:"A: entra nel Cantiere Navale", hint_sea_east:"Vai a EST -> Isola del Tesoro", hint_sea_island:"Continua a EST per l'isola ->", hint_sea_pier:"A NORD torni al molo", hint_sea_deep:"A SUD -> acque aperte (attento alle navi del Re!)",
       sign_island:["Insegna corrosa dal sale:","'IL MARE PRENDE.","IL CERVO DECIDE.","ESTRANEI, TORNATE INDIETRO.'"],
       sign_cape:["Cartello sbiadito dal vento:","'PUNTA DEL FARO","Fine della terra, inizio del mare.","Il faro veglia. Tieni la rotta.'"],
       hint_island_north:"A NORD: torni alle Officine",
@@ -343,6 +357,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       yes:"SI'", no:"NO",
       fishing_msg:"Stai pescando dal molo...",
       fishing_done:"Che pace, pescare in riva al mare!",
+      fishing_caught:"Hai pescato #n pesci! (in stiva)", fishing_sold:"Stiva piena: vendi il pescato per #d doblon.",
       house_nonna:"CASA DI NONNA ROSA", store:"EMPORIO", townhall:"MUNICIPIO"
     },
     en: {
@@ -453,8 +468,12 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       taverner_n:"Innkeeper", taverner_l:["Welcome to the Anchor","Tavern! Looking for","sailors for your crew?","I've got good ones."],
       tav_greet:"Current crew: #/$ sailors.", tav_offer:"A fine sailor costs # doubloons.", tav_q:"Hire a sailor (# doubloons)?",
       tav_hired:"Hired! Crew: #/$.", tav_full:"The ship is full! You need a bigger hull.", tav_nogold:"You don't have # doubloons.",
+      tav_menu_q:"What will you do at the Tavern?", tav_recruit:"Recruit crew", tav_dice:"Play dice",
+      dice_nogold:"Not enough doubloons to play.", dice_stake_q:"How much do you stake?", dice_bet_q:"What do you bet on?",
+      dice_high:"HIGH (11-18)", dice_low:"LOW (3-10)", dice_even:"EVEN", dice_odd:"ODD",
+      dice_roll:"You roll", dice_win:"You win! +#d doubloons.", dice_lose:"You lose #d doubloons.", dice_again_q:"Play again?",
       journal_title:"JOURNAL", journal_main:"Main:", journal_side:"Side Quests:", chapter:"Chapter", chapter_done:"CHAPTER COMPLETE!",
-      log_title:"CAPTAIN'S LOG", log_tab_missions:"MISSIONS", log_tab_economy:"ECONOMY", log_hint_nav:"<>: tab  up/down: pick  A: open  B: exit",
+      log_title:"CAPTAIN'S LOG", log_tab_missions:"MISSIONS", log_tab_economy:"ECONOMY", log_tab_prices:"PRICES", log_hint_nav:"<>: tab  up/down: pick  A: open  B: exit",
       log_season:"Season", log_contract:"Contract", log_route:"Route", log_invest:"Investments", log_gold:"Gold", log_fame:"Fame", log_none:"none", log_days_short:"d",
       q_intro_t:"Arrival in Crudo", q_intro_s0:"Ask around for who summoned you", q_intro_s1:"Introduce yourself to the client",
       intro_start:["Captain Crudo.","You're back from the sea.","Before you begin,","let me remind you","of one thing."],
@@ -523,13 +542,24 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       ship_menu_q:"At the ship - what do you do?", ship_free:"Sail the open sea", ship_cancel:"Stay ashore", seaq_done:"Sea task complete!", seaq_fail:"Failed. Try again from the ship.",
       dock_menu_q:"A ship is moored here. What do you do?", dock_setsail:"Set sail for the open sea", dock_board:"Board the boat", dock_disembark:"Step onto the dock", dock_stay:"Stay where you are", hint_ship:"A: board the ship",
       ship_island:"Sail to the treasure island", area_island:"TREASURE ISLAND", island_entered:"Island waters. Dock:A  North:back", island_left:"Back at the works' pier.", island_land:"You dock and step ashore.", island_board:"You climb back into the boat.", raft_locked:"A raft. You don't know where it leads yet.", hint_dock:"A: land on the dock", hint_board:"A: board the boat", hint_land:"A: land ashore", hint_setsail:"A: set sail",
+      tut_intro:"You are Captain Crudo. The King burned your ship: time for vengeance. Press A to step onto the pier.",
+      tut_intro:"ORDER 1/9 - You are Captain Crudo. The King burned your ship: now, vengeance. Press A to land.",
+      tut_move:"ORDER 2/9 - Move with the D-pad and explore Free Port, your home harbour.",
+      tut_merchant:"ORDER 3/9 - Trade is everything. Go to the Merchant (!) and talk with A.",
+      tut_buy:"ORDER 4/9 - Make your first deal: buy a good (A) at the counter.",
+      tut_shipyard:"ORDER 5/9 - You need a real ship. Enter the SHIPYARD (building with the ship sign).",
+      tut_sail:"ORDER 6/9 - Set sail! Board your boat and head to the OPEN SEA (south edge by boat).",
+      tut_log:"ORDER 7/9 - Press START and open the LOG: missions, economy and prices.",
+      tut_tavern:"ORDER 8/9 - Go to the Tavern: recruit CREW or play dice.",
+      tut_story:"ORDER 9/9 - Talk to Hawkins (!): begin your vengeance against the King.",
+      tut_done:"Orders carried out, captain. Now the sea is yours!",
       tg_fish:"Fish", tg_rum:"Rum", tg_timber:"Timber", tg_spice:"Spice", tg_iron:"Iron", tg_pearl:"Pearls",
       tr_title:"MARKET", tr_hold:"Hold", tr_good:"Good", tr_price:"Price", tr_have:"Have",
       tr_bought:"Bought for #d.", tr_sold:"Sold for #d.", tr_full:"Hold is full!", tr_nogold:"Not enough gold.", tr_none:"None to sell.",
       tr_hint:"A: buy   <-: sell   B: exit", hint_trade:"A: trade with the merchant",
       eco_shortage:"SHORTAGE of #g at #p! Prices rise.", eco_boom:"GLUT of #g at #p! Prices drop.",
       inv_title:"PORT INVESTMENTS", inv_hint:"up/down: pick  A: invest  B: exit", inv_lvl:"Lv.", inv_cost:"Cost:", inv_prod:"production", inv_done:"Invested! #g production at #p raised.", inv_nogold:"Not enough gold.", mm_invest:"Invest in the port",
-      mm_contract:"Supply contracts", ct_offer:"Contract: deliver #n #g to #p", ct_accept:"Accept the contract", ct_taken:"Contract taken: #n #g to #p.", ct_active:"Active: deliver #n #g to #p.", ct_reward:"Reward: #d doubloons", ct_due:"Due: in #n days", ct_deliver_q:"Deliver #n #g now?", ct_deliver:"Deliver", ct_need:"You need #n #g in the hold.", ct_have:"You have #n.", ct_done:"Contract fulfilled: +#d!", ct_failed:"Contract expired! Supply failed.", trader:"Merchant", trader_l:["Fresh wares, captain!","Buy where cheap,","sell where scarce."], mm_q:"What will you do, captain?", mm_counter:"Trade at the counter", mm_route:"Set up a trade route", rt_pickdest:"Sail a route to which hub?", rt_pickgood:"Load which good?", rt_pickqty:"How much? (hold #, leg %s)", rt_started:"Route away: # crates to %.", rt_done:"Route done: +#d!", rt_raided:"raid! lost %", rt_shipcost:"transport -#", rt_busy:"Your ship is already on a route.", rt_ship:"Ship", rt_outbound:"-> %", rt_return:"<- home", hint_raft:"A: take the raft to the island", hint_shipyard:"A: enter the Shipyard", hint_sea_east:"Head EAST -> Cult Island", hint_sea_island:"Keep EAST for the island ->", hint_sea_pier:"NORTH goes back to the pier", hint_sea_deep:"SOUTH -> Deep Sea (danger!)",
+      mm_contract:"Supply contracts", ct_offer:"Contract: deliver #n #g to #p", ct_accept:"Accept the contract", ct_taken:"Contract taken: #n #g to #p.", ct_active:"Active: deliver #n #g to #p.", ct_reward:"Reward: #d doubloons", ct_due:"Due: in #n days", ct_deliver_q:"Deliver #n #g now?", ct_deliver:"Deliver", ct_need:"You need #n #g in the hold.", ct_have:"You have #n.", ct_done:"Contract fulfilled: +#d!", ct_failed:"Contract expired! Supply failed.", trader:"Merchant", trader_l:["Fresh wares, captain!","Buy where cheap,","sell where scarce."], mm_q:"What will you do, captain?", mm_counter:"Trade at the counter", mm_route:"Set up a trade route", rt_pickdest:"Sail a route to which hub?", rt_pickgood:"Load which good?", rt_pickqty:"How much? (hold #, leg %s)", rt_started:"Route away: # crates to %.", rt_done:"Route done: +#d!", rt_raided:"raid! lost %", rt_shipcost:"transport -#", rt_busy:"Your ship is already on a route.", rt_ship:"Ship", rt_outbound:"-> %", rt_return:"<- home", hint_raft:"A: take the raft to the island", hint_shipyard:"A: enter the Shipyard", hint_sea_east:"Head EAST -> Treasure Island", hint_sea_island:"Keep EAST for the island ->", hint_sea_pier:"NORTH goes back to the pier", hint_sea_deep:"SOUTH -> open waters (beware the King's ships!)",
       sign_island:["A salt-worn sign:","'THE SEA TAKES.","THE STAG DECIDES.","OUTSIDERS, TURN BACK.'"],
       sign_cape:["A wind-faded sign:","'LIGHTHOUSE POINT","Land's end, the sea's beginning.","The lamp keeps watch. Hold your course.'"],
       hint_island_north:"NORTH: back to the Works",
@@ -578,6 +608,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       yes:"YES", no:"NO",
       fishing_msg:"You're fishing off the pier...",
       fishing_done:"So peaceful, fishing by the sea!",
+      fishing_caught:"You caught #n fish! (in the hold)", fishing_sold:"Hold full: you sell the catch for #d doubloons.",
       house_nonna:"GRANNY ROSA'S HOUSE", store:"GENERAL STORE", townhall:"TOWN HALL"
     }
   };
@@ -785,7 +816,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     player.swimming=false; player.boat=true;
     areaKey="opensea"; useMap(AREAS.opensea);
     player.tx=22; player.ty=3; player.px=22*TILE; player.py=3*TILE; player.dir="down"; player.moving=false;
-    banner(t("sea_entered")); SFX.door&&SFX.door(); saveGame();
+    banner(t("sea_entered")); if(typeof tutOnSail==="function") tutOnSail(); SFX.door&&SFX.door(); saveGame();
   }
   function leaveOpenSea(){
     // Crudo Merchant: sail back into Free Port's southern waters IN THE BOAT (dock with A at the pier).
@@ -1074,7 +1105,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
         // step from the boat onto the dock tile
         player.boat=false;
         player.tx=ctx.landTx; player.ty=ctx.landTy; player.px=player.tx*TILE; player.py=player.ty*TILE; player.dir=ctx.landDir||"up";
-        SFX.door&&SFX.door(); banner(t("island_land")); saveGame(); return;
+        SFX.door&&SFX.door(); banner(t("island_land")); if(typeof tutOnLand==="function")tutOnLand(); saveGame(); return;
       }
     });
   }
@@ -1933,25 +1964,9 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   // Does talking to this NPC currently start or complete a quest? (drives the "!" marker)
   function npcHasQuest(n){
     if(!n||!n.id) return false;
-    const av=(id)=>QUESTS[id]&&QUESTS[id].status==="available";
-    const act=(id)=>QUESTS[id]&&QUESTS[id].status==="active";
-    // ---- MICRO-QUEST ROTATION + GLOBAL LOCK: a micro-quest is "offered" (start marker) only if it's
-    // the current rotation slot AND available AND nothing else yellow is running (canStartMicro).
-    // This keeps npcHasQuest, npcQuestKind and canStartMicro perfectly in sync.
-    const startOffered=(id)=> av(id) && currentMicroSlot()===id && (typeof canStartMicro!=="function" || canStartMicro(null,id));
-    switch(n.id){
-      case "nonna":   return (startOffered("cat")&&questState===0) || (act("cat")&&questState===2); // cat: give / hand back
-      case "pino":    return (startOffered("shell")&&shellQuest===0) || (act("shell")&&shellQuest===2); // shell
-      case "mamma":   return startOffered("photos");                   // mamma gives the photos quest
-      case "capo":    return false;                                    // capo: dialoghi gestiti dalla storia (case-loader)
-      case "teo":     return false;                                    // teo: dialoghi gestiti dalla storia (case-loader)
-      case "fornaio": return startOffered("parcel");                   // gives the parcel
-      case "marinaio":return act("parcel")&&hasFlag("hasParcel");      // receives it
-      case "nico":    return startOffered("oldfriend")||(act("oldfriend")&&hasFlag("keyring"));
-      case "boy":     return startOffered("kids");                     // starts the quarrel quest
-      case "girl":    return act("kids")&&QUESTS.kids.step>=2;         // make up (after ball)
-      default: return false;
-    }
+    // Crudo Merchant: le micro-quest scritte a mano (cat/shell/parcel/kids/oldfriend/photos) sono state
+    // RIMOSSE. Nessun NPC le offre piu' -> nessun marcatore "!" ne' punto giallo per esse.
+    return false;
   }
   // Micro-quest rotation order: only the FIRST not-yet-done micro-quest is offered at a time.
   const MICRO_ORDER = ["cat","shell","parcel","kids","oldfriend","photos"];
@@ -1965,21 +1980,15 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   // Returns the id of the NPC that will COMPLETE the in-progress micro-quest, or null if none is running.
   // (A micro-quest whose completion is a field pickup and not an NPC returns "" = running but no giver marker.)
   function microQuestActiveNpc(){
-    if(questState===1 || questState===2) return "nonna";                 // cat: find it, then hand back to nonna
-    if(shellQuest===1 || shellQuest===2) return "pino";                  // shell: find it, then back to pino
-    if(QUESTS.kids && QUESTS.kids.status==="active") return "girl";       // kids: reconcile with the girl
-    if(QUESTS.parcel && QUESTS.parcel.status==="active") return "marinaio"; // parcel: deliver to the sailor
-    if(QUESTS.oldfriend && QUESTS.oldfriend.status==="active") return "nico"; // oldfriend: return to nico
-    if(QUESTS.photos && QUESTS.photos.status==="active") return "";       // photos: field pickups only, no giver marker
-    return null;
+    return null;   // Crudo Merchant: micro-quest scritte a mano RIMOSSE.
   }
   // serialize/restore quest engine for saves
   function serializeQuests(){ const o={}; QORDER.forEach(k=>o[k]=[QUESTS[k].status,QUESTS[k].step]); return o; }
   function restoreQuests(o){ if(!o) return; QORDER.forEach(k=>{ if(o[k]&&QUESTS[k]){ QUESTS[k].status=o[k][0]; QUESTS[k].step=o[k][1]; } }); }
   function resetQuests(){ QORDER.forEach(k=>{ const q=QUESTS[k]; q.step=0; q.status = (k==="intro")?"available":"locked"; });
     for(const f in flags) delete flags[f]; chapter=1; }
-  // Called when the intro quest completes: opens the casual quests + the central story.
-  function unlockCasualQuests(){ ["cat","shell","parcel","kids","oldfriend","photos"].forEach(k=>{ if(QUESTS[k]&&QUESTS[k].status==="locked") QUESTS[k].status="available"; }); }
+  // Called when the intro quest completes: opens the central story. (Micro-quests removed in Crudo Merchant.)
+  function unlockCasualQuests(){ /* Crudo Merchant: micro-quest scritte a mano rimosse: niente da sbloccare. */ }
 
   // ---- QUEST CATEGORY: central story ("case", red marker) vs casual ("casual", yellow marker) ----
   // Ids of central-story (pirate story) quests. Populated when the Gemini story is integrated.
@@ -2602,9 +2611,21 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   const UPG_HULL_COST=[70,150,280,420];
   // shipyard rows = boats (BOAT_ORDER) + 3 upgrade rows
   function shipyardRows(){ return BOAT_ORDER.length + 3; }
-  function openShipyard(){ shipyard.open=true; shipyard.sel=Math.max(0,BOAT_ORDER.indexOf(player.boatType)); shipyard.note=""; shipyard.noteT=0; SFX.confirm&&SFX.confirm(); }
+  function openShipyard(){ shipyard.open=true; shipyard.sel=Math.max(0,BOAT_ORDER.indexOf(player.boatType)); shipyard.note=""; shipyard.noteT=0; if(typeof tutOnShipyard==="function") tutOnShipyard(); SFX.confirm&&SFX.confirm(); }
   // Crudo Merchant: recruit crew at the Tavern (Locanda). Crew is a count capped by the ship type.
   function openTavern(){
+    if(typeof tutOnTavern==="function") tutOnTavern();
+    // Crudo Merchant: menu della Locanda — recluta ciurma OPPURE gioca ai dadi (azzardo).
+    askChoice(t("tav_menu_q"), [
+      {label:t("tav_recruit"), key:"recruit"},
+      {label:t("tav_dice"), key:"dice"},
+      {label:t("dock_stay")||"Esci", key:"cancel"}
+    ], (i,opt)=>{
+      if(opt.key==="recruit") recruitCrew();
+      else if(opt.key==="dice") openDice();
+    });
+  }
+  function recruitCrew(){
     const max=crewMax();
     if(crew>=max){ showExamine(t("tav_full")); return; }
     const cost=nextCrewCost();
@@ -2614,6 +2635,43 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
         else { banner(t("tav_nogold").replace("#",cost)); SFX.cancel&&SFX.cancel(); }
       });
     });
+  }
+  // ===== Crudo Merchant: DADI DELLA LOCANDA (azzardo) =====
+  // Punti una posta, scommetti su ALTO(11-17) / BASSO(4-10) / PARI / DISPARI, tiri 3 dadi (3..18).
+  // Payout 1.9x sulla posta (piccolo vantaggio del banco). 11 esatto non conta ne' alto ne' basso? No:
+  // ALTO=11..18, BASSO=3..10 (11 e' alto), per bilanciare il leggero sbilanciamento c'e' gia' il payout <2x.
+  function openDice(){
+    const stakes=[10,25,50].filter(s=> (player.gold||0)>=s);
+    if(stakes.length===0){ showExamine(t("dice_nogold")); return; }
+    askChoice(t("dice_stake_q")+"  ("+t("log_gold")+": "+(player.gold||0)+"d)",
+      stakes.map(s=>({label:s+"d", key:"s:"+s})).concat([{label:t("dock_stay")||"Esci", key:"cancel"}]),
+      (i,opt)=>{ if(opt.key&&opt.key.indexOf("s:")===0){ diceChooseBet(parseInt(opt.key.slice(2))); } });
+  }
+  function diceChooseBet(stake){
+    askChoice(t("dice_bet_q")+" ("+stake+"d)", [
+      {label:t("dice_high"), key:"high"},
+      {label:t("dice_low"), key:"low"},
+      {label:t("dice_even"), key:"even"},
+      {label:t("dice_odd"), key:"odd"},
+      {label:t("dock_stay")||"Esci", key:"cancel"}
+    ], (i,opt)=>{ if(opt.key!=="cancel") diceRoll(stake, opt.key); });
+  }
+  function diceRoll(stake, bet){
+    if((player.gold||0)<stake){ banner(t("dice_nogold")); return; }
+    player.gold-=stake;                                   // metti la posta sul tavolo
+    const d=[1+Math.floor(Math.random()*6),1+Math.floor(Math.random()*6),1+Math.floor(Math.random()*6)];
+    const sum=d[0]+d[1]+d[2];
+    let win=false;
+    if(bet==="high") win = sum>=11;
+    else if(bet==="low") win = sum<=10;
+    else if(bet==="even") win = (sum%2===0);
+    else if(bet==="odd") win = (sum%2===1);
+    const payout = Math.round(stake*1.9);                 // vincita netta ~1.9x (banco ha un piccolo margine)
+    const rollLine = t("dice_roll")+": "+d[0]+" + "+d[1]+" + "+d[2]+" = "+sum;
+    if(win){ player.gold+=payout; SFX.unlock&&SFX.unlock();
+      showExamine([rollLine, t("dice_win").replace("#d",payout-stake)], ()=>{ saveGame(); askYesNo(t("dice_again_q"), ()=>openDice()); }); }
+    else { SFX.cancel&&SFX.cancel();
+      showExamine([rollLine, t("dice_lose").replace("#d",stake)], ()=>{ saveGame(); askYesNo(t("dice_again_q"), ()=>openDice()); }); }
   }
   function upgRow(i){ return i-BOAT_ORDER.length; } // 0=cannons,1=prow,2=hull  (else -1)
   function upgInfo(which){
@@ -2947,7 +3005,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     if(consumePress("a")){
       if(cargoUsed()>=cargoCap()){ trade.note=t("tr_full"); trade.noteT=2.0; SFX.cancel&&SFX.cancel(); return; }
       if((player.gold||0)<price){ trade.note=t("tr_nogold"); trade.noteT=2.0; SFX.cancel&&SFX.cancel(); return; }
-      player.gold-=price; cargo[g.id]++; marketNudge(port,g.id,+1); SFX.confirm&&SFX.confirm();
+      player.gold-=price; cargo[g.id]++; marketNudge(port,g.id,+1); if(typeof tutOnBuy==="function") tutOnBuy(); SFX.confirm&&SFX.confirm();
       trade.note=t("tr_bought").replace("#",price); trade.noteT=1.5;
     }
     if(consumePress("left")||consumePress("right")){
@@ -3076,6 +3134,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   }
   // ---- Merchant menu additions: choose to hand-trade OR dispatch a route ----
   function openMerchant(port){
+    if(typeof tutOnMerchant==="function") tutOnMerchant();
     if(route){ // a route is running: show status, offer to hand-trade meanwhile
       askChoice((t("rt_busy")||"Your ship is on a route.")+" "+(routeStatusLine()||""), [
         {label:t("mm_counter")||"Trade at the counter", key:"counter"},
@@ -4031,7 +4090,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   const SAVE_KEY="crudoRPG.save.v2";
   function serializeCase(){ const cl={}; if(window.CASE_REF){ for(const id in window.CASE_REF.clues){ cl[id]=window.CASE_REF.clues[id].taken?1:0; } } return {clues:cl, introDone: window.CASE_REF? (window.CASE_REF.introDone?1:0):0, closedUntil: window.CASE_REF? window.CASE_REF.closedUntil : {}, deduced: window.CASE_REF? window.CASE_REF.deduced : {}, reconstructed: window.CASE_REF? window.CASE_REF.reconstructed : {}, morals: window.CASE_REF? window.CASE_REF.morals : {}, fought: window.CASE_REF? window.CASE_REF.fought : {}, chaseCaught: window.CASE_REF? window.CASE_REF.chaseCaught : {}, naval: window.CASE_REF? window.CASE_REF.naval : {}}; }
   function restoreCase(o){ if(!o||!window.CASE_REF) return; if(o.clues){ for(const id in o.clues){ if(window.CASE_REF.clues[id]) window.CASE_REF.clues[id].taken=!!o.clues[id]; } } window.CASE_REF.introDone=!!o.introDone; window.CASE_REF.closedUntil = o.closedUntil||{}; window.CASE_REF.deduced = o.deduced||{}; window.CASE_REF.reconstructed = o.reconstructed||{}; window.CASE_REF.morals = o.morals||{}; window.CASE_REF.fought = o.fought||{}; window.CASE_REF.chaseCaught = o.chaseCaught||{}; window.CASE_REF.naval = o.naval||{}; }
-  function saveGame(){ try{ localStorage.setItem(SAVE_KEY, JSON.stringify({areaKey,tx:player.tx,ty:player.ty,dir:player.dir,scooter:player.scooter,boat:player.boat,boatType:player.boatType,gold:player.gold,weapons:player.weapons,ship:player.ship,armor:player.armor,boatsOwned:boatsOwned,crew:crew,fame:fame,bounty:{active:bounty.active,tier:bounty.tier,treasure:bounty.treasure},scooterUnlocked,discovered:[...discovered],seaDone,season,seasonAutoTimer,dayCount,questState,catFound:cat.found,shellQuest,shellFound:shell.found,bikeTaken:bike.taken,ballTaken:ball.taken,keyringTaken:keyring.taken,photos:photos.map(p=>p.taken),lang,chapter,flags,quests:serializeQuests(),cs:serializeCase(),sq:(typeof serializeSQ==="function"?serializeSQ():null),cargo:cargo,market:(market.seeded?market.prices:null),mstock:(market.seeded?market.stock:null),minvest:(market.seeded?market.invest:null),mevent:market.event,route:route,contract:contract,merch:merchantStats})); return true;}catch(e){return false;} }
+  function saveGame(){ try{ localStorage.setItem(SAVE_KEY, JSON.stringify({areaKey,tx:player.tx,ty:player.ty,dir:player.dir,scooter:player.scooter,boat:player.boat,boatType:player.boatType,gold:player.gold,weapons:player.weapons,ship:player.ship,armor:player.armor,boatsOwned:boatsOwned,crew:crew,fame:fame,bounty:{active:bounty.active,tier:bounty.tier,treasure:bounty.treasure},scooterUnlocked,discovered:[...discovered],seaDone,season,seasonAutoTimer,dayCount,questState,catFound:cat.found,shellQuest,shellFound:shell.found,bikeTaken:bike.taken,ballTaken:ball.taken,keyringTaken:keyring.taken,photos:photos.map(p=>p.taken),lang,chapter,flags,quests:serializeQuests(),cs:serializeCase(),sq:(typeof serializeSQ==="function"?serializeSQ():null),cargo:cargo,market:(market.seeded?market.prices:null),mstock:(market.seeded?market.stock:null),minvest:(market.seeded?market.invest:null),mevent:market.event,route:route,contract:contract,tut:{step:tut.step,done:tut.done},merch:merchantStats})); return true;}catch(e){return false;} }
   function hasSave(){ try{ return !!localStorage.getItem(SAVE_KEY);}catch(e){return false;} }
   function loadGame(){ try{ const d=JSON.parse(localStorage.getItem(SAVE_KEY)||"null"); if(!d) return false;
     areaKey=d.areaKey&&AREAS[d.areaKey]?d.areaKey:"town"; useMap(AREAS[areaKey]);
@@ -4043,6 +4102,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     if(typeof cargo!=="undefined"){ for(const g of TRADE_GOODS){ cargo[g.id]=(d.cargo&&d.cargo[g.id])||0; } }
     if(typeof route!=="undefined") route = d.route||null;
     if(typeof contract!=="undefined") contract = d.contract||null;
+    if(typeof tut!=="undefined" && d.tut){ tut.step=d.tut.step||0; tut.done=!!d.tut.done; }
     if(typeof merchantStats!=="undefined" && d.merch){ merchantStats.routes=d.merch.routes||0; merchantStats.profit=d.merch.profit||0; merchantStats.revenue=d.merch.revenue||0; merchantStats.best=d.merch.best||0; merchantStats.raids=d.merch.raids||0; }
     if(!market.seeded) marketInit(); if(d.market){ for(const p of TRADE_HUBS){ if(d.market[p]) for(const g of TRADE_GOODS){ if(d.market[p][g.id]!=null) market.prices[p][g.id]=d.market[p][g.id]; } } }
     if(d.mstock){ for(const p of TRADE_HUBS){ if(d.mstock[p]) for(const g of TRADE_GOODS){ if(d.mstock[p][g.id]!=null) market.stock[p][g.id]=d.mstock[p][g.id]; } } }
@@ -4066,8 +4126,55 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     // anti-stuck safety: if we're on a water tile in a sea area but not in the boat, put the player back in the boat
     if(!player.boat && (areaKey==="opensea"||areaKey==="island"||areaKey==="cape") && tileAt(player.tx,player.ty)==="~"){ player.boat=true; }
     scooterUnlocked=!!d.scooterUnlocked; discovered.clear(); discovered.add("town"); (d.discovered||[]).forEach(a=>discovered.add(a)); discovered.add(areaKey); resetWeather(); return true;}catch(e){return false;} }
-  function resetProgress(){ areaKey="town"; useMap(TOWN); player.tx=21; player.ty=31; player.px=21*TILE; player.py=31*TILE; player.dir="up"; player.moving=false;
-    season="spring"; seasonAutoTimer=0; dayCount=0; scooterUnlocked=false; if(typeof contract!=="undefined"){ contract=null; contractOffer={}; } discovered.clear(); discovered.add("town"); player.scooter=false; player.boat=false; player.boatType="rowboat"; player.gold=0; player.weapons=["knife"]; player.ship={cannons:0,prow:0,hull:0}; player.armor=0; boatsOwned={rowboat:true,sloop:false,caravel:false,frigate:false,galleon:false}; crew=0; fame=0; bounty.active=null; bounty.tier=0; bounty.treasure=null; if(typeof seaDone!=="undefined"){ for(const k in seaDone) delete seaDone[k]; } questState=0; cat.found=false; shellQuest=0; shell.found=false; bike.taken=false; ball.taken=false; keyring.taken=false; photos.forEach(p=>p.taken=false); insideKey=null; if(window.CASE_REF){ window.CASE_REF.closedUntil={}; window.CASE_REF.deduced={}; window.CASE_REF.reconstructed={}; window.CASE_REF.morals={}; window.CASE_REF.fought={}; window.CASE_REF.chaseCaught={}; window.CASE_REF.naval={}; } if(window.SQ_REF){ SQ.done={}; SQ.log=[]; SQ_KINDS.forEach(k=>SQ.queueIdx[k]=0); } resetQuests(); resetWeather(); sqInit(); saveGame(); }
+  function resetProgress(){ areaKey="town"; useMap(TOWN);
+    // Crudo Merchant: si comincia IN BARCA accanto al molo di Porto Franco -> il tutorial fa sbarcare.
+    player.tx=23; player.ty=33; player.px=23*TILE; player.py=33*TILE; player.dir="left"; player.moving=false;
+    season="spring"; seasonAutoTimer=0; dayCount=0; scooterUnlocked=false; if(typeof contract!=="undefined"){ contract=null; contractOffer={}; } discovered.clear(); discovered.add("town"); player.scooter=false; player.boat=false; player.boatType="rowboat"; player.gold=50; player.weapons=["knife"]; player.ship={cannons:0,prow:0,hull:0}; player.armor=0; boatsOwned={rowboat:true,sloop:false,caravel:false,frigate:false,galleon:false}; crew=0; fame=0; bounty.active=null; bounty.tier=0; bounty.treasure=null; if(typeof seaDone!=="undefined"){ for(const k in seaDone) delete seaDone[k]; } questState=0; cat.found=false; shellQuest=0; shell.found=false; bike.taken=false; ball.taken=false; keyring.taken=false; photos.forEach(p=>p.taken=false); insideKey=null; if(window.CASE_REF){ window.CASE_REF.closedUntil={}; window.CASE_REF.deduced={}; window.CASE_REF.reconstructed={}; window.CASE_REF.morals={}; window.CASE_REF.fought={}; window.CASE_REF.chaseCaught={}; window.CASE_REF.naval={}; } if(window.SQ_REF){ SQ.done={}; SQ.log=[]; SQ_KINDS.forEach(k=>SQ.queueIdx[k]=0); } resetQuests(); resetWeather(); sqInit(); player.boat=true; if(typeof tutStart==="function") tutStart(); saveGame(); }
+
+  // ================= TUTORIAL GUIDATO =================
+  // Sequenza di passi con marcatori gialli e pannello-guida. Insegna i pilastri partendo dallo sbarco.
+  // tut.step avanza quando il giocatore compie l'azione chiave del passo. tut.done = tutorial concluso.
+  const TUT_STEPS = ["intro","move","merchant","buy","shipyard","sail","log","tavern","story"];
+  const tut = { step:0, done:false, moved:0, hintT:0 };
+  function tutStart(){ tut.step=0; tut.done=false; tut.moved=0; tut.hintT=4.0; }
+  function tutActive(){ return !tut.done && tut.step < TUT_STEPS.length; }
+  function tutCur(){ return tutActive() ? TUT_STEPS[tut.step] : null; }
+  function tutAdvance(from){
+    if(!tutActive()) return;
+    if(TUT_STEPS[tut.step]!==from) return;   // avanza solo se siamo sul passo giusto
+    tut.step++; tut.hintT=4.0; SFX.confirm&&SFX.confirm();
+    if(tut.step>=TUT_STEPS.length){ tut.done=true; banner(t("tut_done")); }
+    saveGame();
+  }
+  // hook chiamati dai vari sistemi quando l'azione avviene
+  function tutOnLand(){ if(tutCur()==="intro") tutAdvance("intro"); }
+  function tutOnMove(){ if(tutCur()==="move"){ tut.moved++; if(tut.moved>=6) tutAdvance("move"); } }
+  function tutOnMerchant(){ tutAdvance("merchant"); }
+  function tutOnBuy(){ tutAdvance("buy"); }
+  function tutOnShipyard(){ tutAdvance("shipyard"); }
+  function tutOnSail(){ tutAdvance("sail"); }
+  function tutOnLog(){ tutAdvance("log"); }
+  function tutOnTavern(){ tutAdvance("tavern"); }
+  function tutOnStoryTalk(){ tutAdvance("story"); }
+  // il bersaglio (per il marcatore giallo) del passo corrente: id NPC oppure null
+  function tutTargetNpc(){
+    const s=tutCur();
+    if(s==="merchant") return "trader_town";
+    if(s==="story") return "hawkins";
+    return null;
+  }
+  // pannello-guida in alto: testo del passo corrente
+  function drawTutorial(){
+    if(!tutActive()) return;
+    if(insideKey && tutCur()!=="tavern" && tutCur()!=="merchant") { /* mostra comunque un promemoria breve dentro */ }
+    const s=tutCur(); const msg=t("tut_"+s);
+    if(!msg || msg==="tut_"+s) return;
+    // pannello in alto, sotto l'HUD
+    const lines=wrapLines(msg, 30);
+    const h=6+lines.length*8;
+    panelBox(6, 40, W-12, h);
+    lines.forEach((l,i)=> textCenter(l, W/2, 44+i*8, "#ffd840"));
+  }
 
   // ================= MENU =================
   const menu = { open:false, index:0, showMap:false, showJournal:false, showNotebook:false, showRules:false, rulesPage:0,
@@ -4088,10 +4195,9 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   // YELLOW quests in progress NOW: the accepted/running SQ side-quest + the current micro-quest (if active).
   function journalActiveYellow(){
     const out=[];
-    // micro-quests (fixed) currently active/available-in-progress
-    ["cat","shell","parcel","kids","oldfriend","photos","intro"].forEach(k=>{ const q=QUESTS[k];
-      if(q && (q.status==="active")) out.push(jItem("yellow",q,k)); });
-    // SQ side-quest currently accepted/running
+    // Crudo Merchant: micro-quest scritte a mano rimosse. Resta solo la quest 'intro' (avvio storia).
+    { const q=QUESTS["intro"]; if(q && q.status==="active") out.push(jItem("yellow",q,"intro")); }
+    // SQ side-quest currently accepted/running (se presenti)
     if(SQ.acceptedNpc){ const m=SQ.byNpc[SQ.acceptedNpc]; if(m){ out.push({ kind:"yellow", id:m.id, title:(m.title&&m.title[lang])||m.id, status:"active", step:(m.giver&&m.giver[lang]?m.giver[lang].join(" "):"") }); } }
     return out;
   }
@@ -4104,8 +4210,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   // COMPLETED yellow: fixed micro-quests done (in MICRO_ORDER) + SQ side-quests from SQ.log (chronological).
   function journalDoneYellow(){
     const out=[];
-    (typeof MICRO_ORDER!=="undefined"?MICRO_ORDER:["cat","shell","parcel","kids","oldfriend","photos"]).forEach(k=>{
-      const q=QUESTS[k]; if(q && q.status==="done") out.push(jItem("yellow",q,k)); });
+    // Crudo Merchant: micro-quest scritte a mano rimosse. Solo SQ side-quest concluse (se presenti).
     (SQ.log||[]).forEach(e=>{ out.push({ kind:"yellow", id:e.id, title:(e.title&&e.title[lang])||e.id, status:"done",
       step:(e.giver&&e.giver[lang]?e.giver[lang].join(" "):"") }); });
     return out;
@@ -4186,9 +4291,9 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
         if(consumePress("b")||consumePress("start")){ menu.jDetail=null; SFX.cancel(); }
         return;
       }
-      // cambio scheda con sinistra/destra
-      if(consumePress("left")){ menu.jTab=(menu.jTab+1)%2; menu.jSel=0; SFX.up&&SFX.up(); }
-      if(consumePress("right")){ menu.jTab=(menu.jTab+1)%2; menu.jSel=0; SFX.down&&SFX.down(); }
+      // cambio scheda con sinistra/destra (0=Missioni, 1=Economia, 2=Prezzi)
+      if(consumePress("left")){ menu.jTab=(menu.jTab+2)%3; menu.jSel=0; SFX.up&&SFX.up(); }
+      if(consumePress("right")){ menu.jTab=(menu.jTab+1)%3; menu.jSel=0; SFX.down&&SFX.down(); }
       if(menu.jTab===0){
         // MISSIONI: lista unica (attive + completate), niente distinzione rosso/giallo
         const list=journalAllMissions();
@@ -4218,7 +4323,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     if(consumePress("b")||consumePress("start")){ closeMenu(); return; }
     if(consumePress("a")){
       const k=MENU_KEYS[menu.index];
-      if(k==="menu_journal"){ menu.showJournal=true; menu.jView="main"; menu.jTab=0; menu.jSel=0; menu.jDetail=null; SFX.confirm(); }
+      if(k==="menu_journal"){ menu.showJournal=true; menu.jView="main"; menu.jTab=0; menu.jSel=0; menu.jDetail=null; if(typeof tutOnLog==="function") tutOnLog(); SFX.confirm(); }
       else if(k==="menu_notebook"){ menu.showNotebook=true; SFX.confirm(); }
       else if(k==="menu_crew"){ menu.showCrew=true; menu.crewSel=0; SFX.confirm(); }
       else if(k==="menu_map"){ menu.showMap=true; mapNav.zoom=null; const gp=gridPosOf(areaKey); mapNav.col=gp[0]; mapNav.row=gp[1]; SFX.confirm(); }
@@ -4308,7 +4413,17 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     }
 
     // fishing activity: 5-second rod animation, no input except waiting
-    if(fishing.active){ fishing.t+=dt; if(fishing.t>=5){ fishing.active=false; banner(t("fishing_done")); SFX.pickup(); } return; }
+    if(fishing.active){ fishing.t+=dt; if(fishing.t>=5){ fishing.active=false;
+      // Crudo Merchant: la pesca FRUTTA — 1-2 pesci in stiva (o un po' d'oro se la stiva e' piena).
+      // Rete di sicurezza economica: il giocatore puo' sempre guadagnare da zero.
+      const catchN = 1 + (Math.random()<0.5?1:0);
+      let gained=0;
+      if(typeof cargo!=="undefined" && typeof cargoUsed==="function" && typeof cargoCap==="function"){
+        for(let k=0;k<catchN && cargoUsed()<cargoCap();k++){ cargo.fish=(cargo.fish||0)+1; gained++; }
+      }
+      if(gained>0){ banner(t("fishing_caught").replace("#n",gained)); }
+      else { const coin=6+Math.floor(Math.random()*6); player.gold+=coin; banner(t("fishing_sold").replace("#d",coin)); }
+      SFX.pickup(); saveGame(); } return; }
     // interrogation multiple-choice
     if(naval.active){ updateNaval(dt); return; }
     if(battle.active){ updateBattle(dt); return; }
@@ -4387,7 +4502,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
           if(landable(fx,fy)) dst={tx:fx,ty:fy};
           else { for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]){ if(landable(player.tx+dx,player.ty+dy)){ dst={tx:player.tx+dx,ty:player.ty+dy}; break; } } }
           if(dst){ player.boat=false; player.swimming=false; player.tx=dst.tx; player.ty=dst.ty; player.px=dst.tx*TILE; player.py=dst.ty*TILE;
-            SFX.door&&SFX.door(); banner(t("island_land")); saveGame(); return; }
+            SFX.door&&SFX.door(); banner(t("island_land")); if(typeof tutOnLand==="function")tutOnLand(); saveGame(); return; }
         } else {
           // on foot/swimming: set sail if facing water (or any adjacent water tile)
           let btx=null,bty=null;
@@ -4420,7 +4535,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
             if(landable(fx,fy)) dst={tx:fx,ty:fy};
             else { for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]){ if(landable(player.tx+dx,player.ty+dy)){ dst={tx:player.tx+dx,ty:player.ty+dy}; break; } } }
             if(dst){ player.boat=false; player.swimming=false; player.tx=dst.tx; player.ty=dst.ty; player.px=dst.tx*TILE; player.py=dst.ty*TILE;
-              SFX.door&&SFX.door(); banner(t("island_land")); saveGame(); return; }
+              SFX.door&&SFX.door(); banner(t("island_land")); if(typeof tutOnLand==="function")tutOnLand(); saveGame(); return; }
           }
         } else {
           // On foot at the dock, facing water -> board. Accept any adjacent sea tile.
@@ -4539,7 +4654,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
           }
           return; // don't fall through to tryMove
         }
-        if(tryMove(ntx,nty)) { player.moving=true; }
+        if(tryMove(ntx,nty)) { player.moving=true; if(!player.boat && typeof tutOnMove==="function") tutOnMove(); }
       }
     } else {
       const footSpeed = keys.a ? SNEAK_SPEED : (keys.b ? RUN_SPEED : MOVE_SPEED);   // hold A=sneak, B=run
@@ -4730,6 +4845,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       ctx.beginPath(); ctx.moveTo(bx+3,by+3); ctx.lineTo(bx+13,by+13); ctx.moveTo(bx+13,by+3); ctx.lineTo(bx+3,by+13); ctx.stroke();
     }
     drawHUD();
+    if(screen==="overworld" && !menu.open && typeof drawTutorial==="function") drawTutorial();
     if(screen==="overworld" && !insideKey && inTown() && !menu.open) drawTownHint();
     if(screen==="overworld" && !insideKey && areaKey==="industrial" && !menu.open) drawRaftHint();
     if(screen==="overworld" && !insideKey && areaKey==="opensea" && !menu.open) drawSeaHint();
@@ -6192,70 +6308,95 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     const type=player.boatType||"rowboat";
     // per-type profile: hull half-length, mast count, sail height, hull tint, flag colour
     const P={
-      rowboat:{len:8,  masts:0, sailH:0, wood:"#8a6a44", accent:null,      flag:null      },
-      sloop:  {len:10, masts:1, sailH:9, wood:"#8a5c34", accent:"#a5713a", flag:null      },
-      caravel:{len:12, masts:2, sailH:10,wood:"#7a5230", accent:"#b8863a", flag:"#c0322c" },
-      frigate:{len:14, masts:3, sailH:11,wood:"#6a4a28", accent:"#c89a40", flag:"#3a4a8a" },
-      galleon:{len:17, masts:3, sailH:13,wood:"#5a4020", accent:"#e8c24a", flag:"#141418" }
-    }[type]||{len:10,masts:1,sailH:9,wood:"#8a5c34",accent:"#a5713a",flag:null};
-    const dark="#0a0a12", woodDk=tint(P.wood,-22), woodLt=tint(P.wood,20), sail="#f0e8cf", sailDk="#d8cca6";
+      rowboat:{len:8,  masts:0, sailH:0, wood:"#8a6a44", accent:null,      flag:null,     windows:false },
+      sloop:  {len:10, masts:1, sailH:11,wood:"#8a5c34", accent:"#a5713a", flag:null,     windows:false }, // sloop ambientale: 1 albero, vela alta
+      caravel:{len:12, masts:2, sailH:11,wood:"#7a5230", accent:"#b8863a", flag:"#c0322c", windows:false }, // come BRIG: 2 alberi, 2 vele grandi
+      frigate:{len:16, masts:2, sailH:11,wood:"#6a4a28", accent:"#c89a40", flag:"#3a4a8a", windows:true  }, // BRIG allungata + finestre laterali
+      galleon:{len:17, masts:3, sailH:13,wood:"#5a4020", accent:"#e8c24a", flag:"#141418", windows:true  }  // 3 alberi, 3 vele
+    }[type]||{len:10,masts:1,sailH:11,wood:"#8a5c34",accent:"#a5713a",flag:null,windows:false};
+    const dark="#0a0a12", woodDk=tint(P.wood,-22), woodLt=tint(P.wood,20), sail="#efe6c8", sailDk="#cdbf98", sailLt="#fbf7ea";
     const L=P.len;
     // wake
     ctx.fillStyle="rgba(255,255,255,0.4)"; ctx.fillRect(x+8-L, y+16, L*2-4, 2);
-    if(dir==="left"||dir==="right"){
-      const br=(dir==="right"); const hx=x+8-L, hw=L*2-1;
-      // hull
-      ctx.fillStyle=dark; ctx.fillRect(hx-1,y+7,hw+2,9);
-      ctx.fillStyle=P.wood; ctx.fillRect(hx,y+8,hw,7);
-      ctx.fillStyle=woodLt; ctx.fillRect(hx,y+8,hw,1);
-      ctx.fillStyle=woodDk; ctx.fillRect(hx,y+13,hw,2);
-      if(P.accent){ ctx.fillStyle=P.accent; ctx.fillRect(hx,y+11,hw,1); }         // painted strake
-      // pointed bow + small stern castle for big ships
-      ctx.fillStyle=P.wood; ctx.fillRect(br?hx+hw:hx-3,y+9,3,3);
-      if(P.masts>=3){ ctx.fillStyle=woodDk; ctx.fillRect(br?hx-2:hx+hw-4,y+5,5,4); }  // stern castle
-      // gunports for frigate/galleon
-      if(P.masts>=2){ ctx.fillStyle=dark; for(let i=0;i<Math.min(6,L-6);i++) ctx.fillRect(hx+2+i*3, y+11, 1,1); }
-      // masts + sails
-      if(P.masts>=1){ const mxs = P.masts===1?[x+7]:(P.masts===2?[hx+4,hx+hw-6]:[hx+3,x+7,hx+hw-6]);
-        mxs.forEach((mx,mi)=>{ const top=y+9-P.sailH; ctx.fillStyle=woodDk; ctx.fillRect(mx,top,1,P.sailH+2);
-          ctx.fillStyle=sail; ctx.fillRect(mx-3,top+1,7,P.sailH-2); ctx.fillStyle=sailDk; ctx.fillRect(mx-3,top+P.sailH-2,7,1); }); }
-      // flag on the tallest mast
-      // rowboat: OARS with a paddle blade, gently animated (rowing motion)
-      if(type==="rowboat"){
+
+    // ---- ROWBOAT: profilo originale (remi + teste), che ruota con la direzione ----
+    if(type==="rowboat"){
+      if(dir==="left"||dir==="right"){
+        const hx=x+8-L, hw=L*2-1;
+        ctx.fillStyle=dark; ctx.fillRect(hx-1,y+7,hw+2,9);
+        ctx.fillStyle=P.wood; ctx.fillRect(hx,y+8,hw,7);
+        ctx.fillStyle=woodLt; ctx.fillRect(hx,y+8,hw,1);
+        ctx.fillStyle=woodDk; ctx.fillRect(hx,y+13,hw,2);
         const stroke=Math.floor(performance.now()/260)%2; const so=stroke?1:-1;
-        // two oars per side (fore & aft), shaft (dark) + wider blade dipping in the water
-        // Crudo Merchant: rowing sideways -> OARS stick out ABOVE and BELOW the hull (rotate with heading).
-        // Two oars along the hull (fore & aft); shaft (dark) + wider blade dipping in the water.
-        [hx+4, hx+hw-5].forEach((ox,oi)=>{ const dx=ox + (oi?so:-so);
-          // top oar (sticks up above the hull)
-          ctx.fillStyle=woodDk; ctx.fillRect(dx,y+3,1,4);
-          ctx.fillStyle=P.wood; ctx.fillRect(dx-1+ (stroke?1:0),y+2,3,2);        // blade
-          // bottom oar (sticks down below the hull)
-          ctx.fillStyle=woodDk; ctx.fillRect(dx,y+16,1,4);
-          ctx.fillStyle=P.wood; ctx.fillRect(dx-1+ (stroke?1:0),y+19,3,2);       // blade
-        });
-      }
-    } else {
-      const bowUp=(dir==="up"); const hy=y+7, hh=Math.min(11,7+Math.floor(L/3));
-      ctx.fillStyle=dark; ctx.fillRect(x+0,hy-1,16,hh+2);
-      ctx.fillStyle=P.wood; ctx.fillRect(x+1,hy,14,hh);
-      ctx.fillStyle=woodLt; ctx.fillRect(x+1,hy,14,1);
-      ctx.fillStyle=woodDk; ctx.fillRect(x+1,hy+hh-2,14,2);
-      if(P.accent){ ctx.fillStyle=P.accent; ctx.fillRect(x+1,hy+3,14,1); }
-      ctx.fillStyle=P.wood; ctx.fillRect(x+5,bowUp?hy-2:hy+hh,6,2);
-      // masts/sails (top-down: stacked square sails)
-      if(P.masts>=1){ const cols=P.masts===1?[x+7]:(P.masts===2?[x+4,x+10]:[x+3,x+7,x+11]);
-        cols.forEach(mx=>{ ctx.fillStyle=woodDk; ctx.fillRect(mx,hy+1,1,hh-2); ctx.fillStyle=sail; ctx.fillRect(mx-1,hy+2,4,Math.min(6,P.sailH-4)); }); }
-      if(P.flag){ ctx.fillStyle=P.flag; ctx.fillRect(x+7,bowUp?hy-3:hy+hh+1,3,2); }
-      // rowboat: oars sticking out both sides (top-down) with paddle blades
-      if(type==="rowboat"){
+        [hx+4, hx+hw-5].forEach((ox,oi)=>{ const dx=ox+(oi?so:-so);
+          ctx.fillStyle=woodDk; ctx.fillRect(dx,y+3,1,4); ctx.fillStyle=P.wood; ctx.fillRect(dx-1+(stroke?1:0),y+2,3,2);
+          ctx.fillStyle=woodDk; ctx.fillRect(dx,y+16,1,4); ctx.fillStyle=P.wood; ctx.fillRect(dx-1+(stroke?1:0),y+19,3,2); });
+      } else {
+        const hy=y+7, hh=9;
+        ctx.fillStyle=dark; ctx.fillRect(x+0,hy-1,16,hh+2);
+        ctx.fillStyle=P.wood; ctx.fillRect(x+1,hy,14,hh);
+        ctx.fillStyle=woodLt; ctx.fillRect(x+1,hy,14,1); ctx.fillStyle=woodDk; ctx.fillRect(x+1,hy+hh-2,14,2);
         const stroke=Math.floor(performance.now()/260)%2; const off=stroke?1:0;
         ctx.fillStyle=woodDk; ctx.fillRect(x-4,hy+2+off,4,1); ctx.fillRect(x+15,hy+2+off,4,1); ctx.fillRect(x-4,hy+hh-2-off,4,1); ctx.fillRect(x+15,hy+hh-2-off,4,1);
         ctx.fillStyle=P.wood; ctx.fillRect(x-5,hy+1+off,2,3); ctx.fillRect(x+18,hy+1+off,2,3); ctx.fillRect(x-5,hy+hh-3-off,2,3); ctx.fillRect(x+18,hy+hh-3-off,2,3);
       }
     }
-    // Crudo Merchant: on the SCIALUPPA (rowboat) only, show HEADS peeking over the hull —
-    // Crudo + one per crew member, up to a maximum of 3 heads total. Other boats show no rider.
+    // ---- NAVI A VELA (sloop/caravel/frigate/galleon): stile "navi ambientali" con vele quadrate grandi ----
+    else {
+      const N=P.masts;
+      // helper: una vela quadrata grande (bianca écru, bordo illuminato + ombra bassa)
+      function squareSail(sx,sy,sw,sh){
+        ctx.fillStyle=dark; ctx.fillRect(sx-1,sy-1,sw+2,sh+2);      // outline
+        ctx.fillStyle=sail; ctx.fillRect(sx,sy,sw,sh);
+        ctx.fillStyle=sailLt; ctx.fillRect(sx,sy,sw,1);            // bordo illuminato
+        ctx.fillStyle=sailDk; ctx.fillRect(sx,sy+sh-1,sw,1);       // ombra bassa
+        ctx.fillStyle="#0a0a1230"; ctx.fillRect(sx+Math.floor(sw/2),sy,1,sh);   // cucitura centrale
+      }
+      if(dir==="left"||dir==="right"){
+        // VISTA DI LATO: scafo orizzontale + alberi verticali con vele quadrate
+        const br=(dir==="right"); const hx=x+8-L, hw=L*2-1;
+        // vele + alberi (sopra lo scafo), da poppa a prua
+        const mxs = N===1?[x+7] : (N===2?[hx+5,hx+hw-6] : [hx+4,x+7,hx+hw-6]);
+        mxs.forEach(mx=>{ const sh=P.sailH, sw=7; const top=y+7-sh;
+          ctx.fillStyle=woodDk; ctx.fillRect(mx,top-1,1,sh+3);      // albero
+          squareSail(mx-Math.floor(sw/2), top, sw, sh);
+        });
+        // scafo
+        ctx.fillStyle=dark; ctx.fillRect(hx-1,y+7,hw+2,8);
+        ctx.fillStyle=P.wood; ctx.fillRect(hx,y+8,hw,6);
+        ctx.fillStyle=woodLt; ctx.fillRect(hx,y+8,hw,1);
+        ctx.fillStyle=woodDk; ctx.fillRect(hx,y+13,hw,1);
+        if(P.accent){ ctx.fillStyle=P.accent; ctx.fillRect(hx,y+11,hw,1); }
+        // prua a punta
+        ctx.fillStyle=P.wood; ctx.fillRect(br?hx+hw:hx-3,y+9,3,3);
+        // finestre laterali (fregata/galeone)
+        if(P.windows){ for(let i=0;i<Math.min(6,L-5);i++){ ctx.fillStyle="#d8e4f0"; ctx.fillRect(hx+3+i*3, y+10, 2,2); ctx.fillStyle=woodDk; ctx.fillRect(hx+3+i*3, y+10, 1,1); } }
+      } else {
+        // VISTA DAVANTI/DIETRO: scafo compatto in basso + alberi verticali con vele quadrate impilate
+        const cols = N===1?[x+8] : (N===2?[x+5,x+11] : [x+3,x+8,x+13]);
+        // vele: per ogni albero, 1-2 vele quadrate impilate secondo la stazza
+        const stacked = N>=3 ? 2 : 1;
+        cols.forEach(cx=>{
+          ctx.fillStyle=woodDk; ctx.fillRect(cx,y+1,1,13);          // albero
+          for(let s=0;s<stacked;s++){ const sw=(N===1?7:6); const shh=(N===1?7:5);
+            squareSail(cx-Math.floor(sw/2), y+1+s*(shh+1), sw, shh); }
+        });
+        // scafo compatto (trapezio: prua stretta in alto o in basso)
+        const bowUp=(dir==="up"); const hy=y+13, hw=16, hh=4;
+        ctx.fillStyle=dark; ctx.fillRect(x, hy-1, hw, hh+2);
+        ctx.fillStyle=P.wood; ctx.fillRect(x+1, hy, hw-2, hh);
+        ctx.fillStyle=woodLt; ctx.fillRect(x+1, hy, hw-2, 1);
+        ctx.fillStyle=woodDk; ctx.fillRect(x+1, hy+hh-1, hw-2, 1);
+        // prua/poppa
+        ctx.fillStyle=P.wood; ctx.fillRect(x+5, bowUp?hy-2:hy+hh, 6, 2);
+        if(P.accent){ ctx.fillStyle=P.accent; ctx.fillRect(x+2, hy+1, hw-4, 1); }
+        // finestre (fregata/galeone) sulla poppa
+        if(P.windows){ ctx.fillStyle="#d8e4f0"; ctx.fillRect(x+4, hy+1, 2,1); ctx.fillRect(x+7, hy+1, 2,1); ctx.fillRect(x+10, hy+1, 2,1); }
+        // bandiera in cima all'albero centrale
+        if(P.flag){ ctx.fillStyle=P.flag; ctx.fillRect(cols[Math.floor(cols.length/2)]+1, y, 3, 2); }
+      }
+    }
+    // (rowboat: teste dell'equipaggio disegnate sotto)
     if(type==="rowboat"){
       const heads=Math.min(3, 1 + (crew||0));   // Crudo + crew, cap 3
       const skin="#f0c890";
@@ -6359,13 +6500,17 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   function drawQuestMarksOverlay(){
     if(insideKey) return;
     const list = currentNpcs();
+    // Crudo Merchant: bersaglio del TUTORIAL — un "!" giallo sull'NPC del passo corrente.
+    const tutTgt = (typeof tutTargetNpc==="function") ? tutTargetNpc() : null;
     for(const n of list){
       if(!n) continue;
-      const qk = npcQuestKind(n); if(!qk) continue;
+      const qk = npcQuestKind(n);
+      const isTut = (tutTgt && n.id===tutTgt);
+      if(!qk && !isTut) continue;
       const x = Math.round(n.px - cam.x), y = Math.round(n.py - cam.y);
       // skip if clearly off-screen
       if(x < -TILE || x > W+TILE || y < -TILE || y > H+TILE) continue;
-      drawQuestMark(x, y, qk);
+      drawQuestMark(x, y, qk||"casual");
     }
   }
   // fishing rod + line into the water, pointing in the given direction ('left'=west, else 'down'=south)
@@ -7189,10 +7334,12 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       textCenter(t("menu_hint"), W/2, JFOOT, "#c8c8d0");
       return;
     }
-    // ---- HEADER a schede: MISSIONI | ECONOMIA ----
-    const tabs=[t("log_tab_missions"), t("log_tab_economy")];
-    let tx=W/2-46;
-    tabs.forEach((lab,i)=>{ const on=(menu.jTab===i); text((on?"[":" ")+lab+(on?"]":" "), tx, 17, on?"#ffe070":"#7a7a88"); tx+=52; });
+    // ---- HEADER a schede: MISSIONI | ECONOMIA | PREZZI ----
+    ctx.font="6px monospace";
+    const tabs=[t("log_tab_missions"), t("log_tab_economy"), t("log_tab_prices")];
+    let tx=10;
+    tabs.forEach((lab,i)=>{ const on=(menu.jTab===i); ctx.fillStyle=on?"#ffe070":"#7a7a88"; ctx.fillText((on?"[":"")+lab+(on?"]":""), tx, 20); tx+=60; });
+    ctx.font="8px monospace";
     // ---- SCHEDA 0: MISSIONI (lista unica) ----
     if(menu.jTab===0){
       if(!list.length){ text(t("j_none_active"),12,36,"#7a7a88"); textCenter(t("log_hint_nav"),W/2,JFOOT,"#c8c8d0"); return; }
@@ -7210,10 +7357,30 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       return;
     }
     // ---- SCHEDA 1: ECONOMIA (sola lettura) ----
-    const lines=economyLines(); let y=32;
-    lines.forEach(ln=>{ wrapLines(ln.s,30).forEach(l=>{ if(y<JCOUNT-2){ text(l, 12, y, ln.c); y+=10; } }); });
+    if(menu.jTab===1){
+      const lines=economyLines(); let y=32;
+      lines.forEach(ln=>{ wrapLines(ln.s,30).forEach(l=>{ if(y<JCOUNT-2){ text(l, 12, y, ln.c); y+=10; } }); });
+      textCenter(t("log_hint_nav"), W/2, JFOOT, "#c8c8d0");
+      return;
+    }
+    // ---- SCHEDA 2: PREZZI (tabella porto x merce, prezzo corrente) ----
+    ctx.font="6px monospace";
+    // intestazione colonne (merci)
+    let cx=44; ctx.fillStyle="#c8a24a";
+    g_TRADE_GOODS().forEach(gg=>{ ctx.fillText(t(gg.nameK).slice(0,4), cx, 30); cx+=24; });
+    let ry=40;
+    TRADE_HUBS.forEach(p=>{
+      ctx.fillStyle="#9ab0c8"; ctx.fillText(t(TRADE_PORTS[p].nameK).slice(0,7), 10, ry);
+      let px=44;
+      g_TRADE_GOODS().forEach(gg=>{ const pr=goodPrice(p,gg.id);
+        // colore: verde se conviene comprare (economico), rosso se caro, rispetto alla media della merce
+        ctx.fillStyle="#dfe8f2"; ctx.fillText(String(pr), px, ry); px+=24; });
+      ry+=11;
+    });
+    ctx.font="8px monospace";
     textCenter(t("log_hint_nav"), W/2, JFOOT, "#c8c8d0");
   }
+  function g_TRADE_GOODS(){ return TRADE_GOODS; }
     // ---- RULES: paginated rules screen (localized) ----
   // ---- Crudo Merchant: SHIP & CREW status screen ----
   // The five ship values, derived from type + components + crew%.
@@ -8000,6 +8167,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   }
   function introOnTalk(npcId){
     const m=introActiveFor(npcId); if(!m) return false;
+    if(typeof tutOnStoryTalk==="function") tutOnStoryTalk();
     if(m==="start"){
       qStart("intro"); saveGame();
       // explain the marker system, then ask if understood; "no" repeats the explanation.
@@ -8035,8 +8203,9 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   SQ_KINDS.forEach(k=>{ SQ.pool[k]=[]; SQ.queueIdx[k]=0; });
   function sqLoadPool(){
     const src = window.SIDEQUESTS || null;
-    if(src){ SQ_KINDS.forEach(k=>{ SQ.pool[k] = (src[k]||[]).slice(); }); return; }
-    SQ_KINDS.forEach(k=>{ SQ.pool[k]=[]; for(let i=0;i<4;i++){ SQ.pool[k].push({ id:k+"_ph"+i, kind:k, title:{it:k+" #"+i, en:k+" #"+i}, giver:{it:["..."],en:["..."]} }); } });
+    // Crudo Merchant: only REAL side-quests from window.SIDEQUESTS. If none are defined, the pool stays
+    // empty (no placeholder "..." junk missions). The hand-authored micro-quests still run normally.
+    SQ_KINDS.forEach(k=>{ SQ.pool[k] = (src && src[k]) ? src[k].slice() : []; });
   }
   // NPCs that are already dedicated micro-quest givers/receivers: they must NEVER also receive an SQ
   // side-quest (no "double hat" -> a single yellow source per NPC).
