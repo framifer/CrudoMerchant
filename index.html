@@ -6557,19 +6557,25 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       if(x < -TILE || x > W+TILE || y < -TILE || y > H+TILE) continue;
       drawQuestMark(x, y, qk||"casual");
     }
-    // Crudo Merchant: FRECCIA-GUIDA verso il bersaglio della MISSIONE/TUTORIAL attiva se e' fuori schermo.
+    // Crudo Merchant: FRECCIA-GUIDA verso il bersaglio della MISSIONE/TUTORIAL attiva.
     const tp = (typeof questTargetPoint==="function") ? questTargetPoint() : null;
     if(tp){
       const tx=Math.round(tp.px-cam.x), ty=Math.round(tp.py-cam.y);
-      const off = (tx< 4 || tx> W-4 || ty< 22 || ty> H-4);
+      // "coperto/fuori": oltre i bordi, OPPURE dietro i box HUD in alto (y<46).
+      const off = (tx< 8 || tx> W-8 || ty< 46 || ty> H-8);
       if(off){
-        const cxs=W/2, cys=H/2; let dx=tx-cxs, dy=ty-cys; const d=Math.hypot(dx,dy)||1; dx/=d; dy/=d;
-        const mgn=14; const ex=Math.max(mgn,Math.min(W-mgn, cxs+dx*(W/2-mgn))), ey=Math.max(mgn+20,Math.min(H-mgn, cys+dy*(H/2-mgn)));
-        const bob=Math.floor(performance.now()/250)%2;
-        ctx.fillStyle="#0a0a12"; ctx.beginPath(); ctx.arc(ex,ey,6,0,Math.PI*2); ctx.fill();
-        ctx.fillStyle="#ffd020"; ctx.beginPath();
-        const px=-dy, py=dx;
-        ctx.moveTo(ex+dx*(6+bob), ey+dy*(6+bob)); ctx.lineTo(ex+px*3-dx*2, ey+py*3-dy*2); ctx.lineTo(ex-px*3-dx*2, ey-py*3-dy*2); ctx.closePath(); ctx.fill();
+        const cxs=W/2, cys=H/2+10; let dx=tx-cxs, dy=ty-cys; const d=Math.hypot(dx,dy)||1; dx/=d; dy/=d;
+        const mgn=16; const ex=Math.max(mgn,Math.min(W-mgn, cxs+dx*(W/2-mgn))), ey=Math.max(48,Math.min(H-mgn, cys+dy*(H/2-mgn)));
+        const bob=Math.floor(performance.now()/220)%2;
+        // disco scuro + freccia gialla grande e con bordo, ben visibile
+        ctx.fillStyle="rgba(0,0,0,0.55)"; ctx.beginPath(); ctx.arc(ex,ey,9,0,Math.PI*2); ctx.fill();
+        const px=-dy, py=dx; const tipx=ex+dx*(8+bob), tipy=ey+dy*(8+bob);
+        ctx.fillStyle="#141018"; ctx.beginPath(); ctx.moveTo(tipx+dx, tipy+dy); ctx.lineTo(ex+px*5-dx*3, ey+py*5-dy*3); ctx.lineTo(ex-px*5-dx*3, ey-py*5-dy*3); ctx.closePath(); ctx.fill();
+        ctx.fillStyle="#ffd020"; ctx.beginPath(); ctx.moveTo(tipx, tipy); ctx.lineTo(ex+px*4-dx*3, ey+py*4-dy*3); ctx.lineTo(ex-px*4-dx*3, ey-py*4-dy*3); ctx.closePath(); ctx.fill();
+      } else {
+        // bersaglio a schermo: anello pulsante intorno per farlo notare
+        const r=8+Math.floor(performance.now()/200)%3;
+        ctx.strokeStyle="#ffd020"; ctx.lineWidth=1; ctx.beginPath(); ctx.arc(tx+8,ty+8,r,0,Math.PI*2); ctx.stroke();
       }
     }
   }
@@ -7492,16 +7498,16 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     }
     // ---- SCHEDA 2: PREZZI (tabella porto x merce, prezzo corrente) ----
     ctx.font="7px monospace"; ctx.textBaseline="top"; ctx.textAlign="left";
-    const COLW=26, X0=48;
+    const COLW=23, X0=42;
     // media di mercato per merce (per colorare economico/caro)
     const avg={}; g_TRADE_GOODS().forEach(gg=>{ let s=0; TRADE_HUBS.forEach(p=>s+=goodPrice(p,gg.id)); avg[gg.id]=s/TRADE_HUBS.length; });
-    // intestazione colonne (merci)
+    // intestazione colonne (merci) - etichette a 3 lettere
     let cx=X0; ctx.fillStyle="#f0c860";
-    g_TRADE_GOODS().forEach(gg=>{ ctx.fillText(t(gg.nameK).slice(0,4), cx, 30); cx+=COLW; });
+    g_TRADE_GOODS().forEach(gg=>{ ctx.fillText(t(gg.nameK).slice(0,3), cx, 30); cx+=COLW; });
     ctx.fillStyle="#3a3a4e"; ctx.fillRect(8,38,W-16,1);
     let ry=41;
     TRADE_HUBS.forEach(p=>{
-      ctx.fillStyle="#e8eef6"; ctx.fillText(t(TRADE_PORTS[p].nameK).slice(0,7), 10, ry);
+      ctx.fillStyle="#e8eef6"; ctx.fillText(t(TRADE_PORTS[p].nameK).slice(0,6), 8, ry);
       let px=X0;
       g_TRADE_GOODS().forEach(gg=>{ const pr=goodPrice(p,gg.id);
         // verde = sotto media (conviene COMPRARE), rosso = sopra media (conviene VENDERE)
