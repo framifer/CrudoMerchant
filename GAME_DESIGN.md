@@ -191,7 +191,15 @@ Obiettivo: economia viva con **progressi potenzialmente infiniti**. Tutte le fun
 - **Duelli a terra** (`startFight`): action Zelda-like (A colpisci, B schiva).
 - **Boss verbale** (`startConfront`): scegli la prova giusta per abbattere la resistenza.
 - **Pedinamento** (`startTail`), **perlustrazione** (`startScour`), **deduzione** (`startDeduction`).
-- **Side-quest** (SQ slot engine): missioni gialle a rotazione, una per volta.
+- **Taverna / Locanda** (`openTavern`): menu con **Recluta ciurma** (`recruitCrew`) e **Gioca ai dadi**
+  (`openDice`). Dadi: punti 10/25/50 dobloni, scommetti ALTO(11-18)/BASSO(3-10)/PARI/DISPARI, tiri 3
+  dadi, payout **1.9×** (margine del banco ~5%, verificato su 20k giocate). Persistente coi dobloni reali.
+- **Side-quest micro (RIMOSSE in Crudo Merchant)**: le 6 quest scritte a mano (cat/shell/parcel/kids/
+  oldfriend/photos) erano residui del vecchio tema e sono state disattivate — `npcHasQuest` ritorna
+  sempre false, `microQuestActiveNpc` null, `unlockCasualQuests` no-op, e non compaiono nel Registro
+  né come marcatori "!"/punti gialli. Le variabili/collezionabili restano dichiarati ma inerti
+  (le quest restano `locked`), quindi niente errori. La quest `intro` (avvio storia) resta attiva.
+- **SQ slot engine**: pool vuoto (nessuna side-quest a rotazione al momento; `window.SIDEQUESTS` vuoto).
 - **Ciclo giorno/notte**: `clock`, `DAY_LEN=180s` per giorno, `dayCount`. `nightFactor()` per il tinting.
 - **Sbarco universale**: in barca, premendo A vicino a qualsiasi spiaggia/molo/isola si sbarca
   (logica message-driven in `interact`, hint `drawBoatLandHint`).
@@ -204,13 +212,33 @@ La voce STAGIONE e MOTORINO NON sono nel menu (sistemi rispettivamente automatic
 Menu Mercante (parlando con un Mercante in un hub): Contratta al banco / Organizza rotta /
 Investi nel porto / **Contratti** / Esci.
 
-### 6.1 Registro del Capitano (ex "DIARIO") — `drawJournal`
-Il vecchio diario è stato evoluto in **Registro del Capitano**, a 2 schede (sinistra/destra per cambiare):
+### 6.05 "Ordini del Capitano" (tutorial vestito da missioni) — `tut` / `drawTutorial`
+Una NUOVA PARTITA (`resetProgress`) inizia **in barca accanto al molo di Porto Franco** (tx23,ty33,
+boat=true), con **50 dobloni** di capitale iniziale, e avvia una sequenza di **9 "Ordini"** (a schermo NON
+si chiama "tutorial": è vestita da prime missioni, testi "ORDINE n/9"):
+`TUT_STEPS = intro, move, merchant, buy, shipyard, sail, log, tavern, story`.
+- **intro** → sbarca (A) — `tutOnLand` (3 punti di sbarco).
+- **move** → cammina (6 passi) — `tutOnMove`.
+- **merchant** → parla col Mercante [! su `trader_town`] — `tutOnMerchant`.
+- **buy** → compra una merce al banco — `tutOnBuy` (nel `updateTrade`).
+- **shipyard** → entra nel Cantiere — `tutOnShipyard` (in `openShipyard`).
+- **sail** → salpa in Mare Aperto — `tutOnSail` (in `goOpenSea`).
+- **log** → apri il Registro (START) — `tutOnLog`.
+- **tavern** → entra in Taverna — `tutOnTavern`.
+- **story** → parla con Hawkins [! su `hawkins`] — `tutOnStoryTalk` (in `introOnTalk`) → fine ordini.
+Copre così tutte le funzioni maggiori: barca/sbarco, movimento, mercante, compra/vendi, cantiere,
+navigazione, registro, ciurma/taverna, avvio storia. Pannello-guida `drawTutorial` (stringhe `tut_*`),
+marcatori "!" via `tutTargetNpc`, stato `tut{step,done}` persistito. NUOVA PARTITA riavvia gli Ordini;
+CONTINUA (vecchio save) no.
+
+### 6.1 Registro del Capitano (ex "DIARIO") — `drawJournal`Il vecchio diario è stato evoluto in **Registro del Capitano**, a 3 schede (sinistra/destra per cambiare):
 - **MISSIONI**: lista UNICA (storia + secondarie insieme), **senza distinzione rosso/giallo**. Attive
   prima, poi completate ([>]=attiva, [x]=completata). A = dettaglio, su/giù = scorri.
   (`journalAllMissions()` unisce active red+yellow e done red+yellow.)
 - **ECONOMIA** (sola lettura, `economyLines()`): stagione corrente, contratto attivo, rotta in corso,
-  investimenti per porto/merce (livelli >0), oro e fama. È la "UI economica" che rende leggibile il motore.
+  investimenti per porto/merce (livelli >0), oro e fama.
+- **PREZZI**: tabella porto × merce col prezzo corrente (`goodPrice`) — rende il commercio leggibile
+  a colpo d'occhio (dove comprare basso / vendere alto).
 - Marcatori "!" nel mondo: **tutti GIALLI** (`drawQuestMark`, `body="#ffd020"`), incluse le missioni
   di storia — nessun marcatore rosso.
 - Le vecchie funzioni `journalActive/DoneRed/Yellow` restano come sorgenti dati per `journalAllMissions`.
@@ -232,6 +260,28 @@ Il vecchio diario è stato evoluto in **Registro del Capitano**, a 2 schede (sin
   stubbano DOM/Canvas/Audio, iniettano un export di stato interno e pilotano il game loop.)
 
 ---
+
+## 7b. Diagnostica & QA (sessione 2026-09-19)
+Metodo: harness headless in Node che stubba DOM/Canvas/Audio, carica i 3 blocchi `<script>` del gioco,
+cattura i listener tastiera e il game loop, e inietta un export dello stato interno (`window.__g`) per
+pilotare il gioco come un giocatore. Suite eseguita: init, completabilità storia (10/10), coerenza
+i18n, griglia mappe, economia end-to-end (prezzi/stock/investimenti/contratti), minigiochi, tutte le
+viste di menu/Registro, menu Mercante dei 4 hub, tutte le 9 aree, **fuzzing 50k input**. Risultato:
+0 crash, 0 errori runtime, tutti i sistemi core superati.
+
+Bug/problemi REALI trovati e CORRETTI in questa sessione:
+1. **Stallo economico iniziale**: il giocatore parte con 0 oro e la pesca (`fishing`) non fruttava nulla
+   (solo animazione). Ora la pesca dà 1-2 pesci in stiva (o un po' d'oro se piena) → rete di sicurezza
+   economica: si può sempre guadagnare da zero. (`fishing_caught`/`fishing_sold`.)
+2. **Hint mare col tema vecchio**: "Isola del Culto/Cult Island" → "Isola del Tesoro/Treasure Island";
+   "Mare Profondo/Deep Sea" (rimosso) → "acque aperte / open waters".
+3. **Placeholder SQ-spazzatura**: `sqLoadPool` generava side-quest fittizie ("recon #0", "...") se
+   `window.SIDEQUESTS` era vuoto. Ora il pool resta vuoto (nessuna missione-spazzatura); le micro-quest
+   scritte a mano continuano a funzionare.
+
+Falsi allarmi verificati (NON bug): il duello (fight) è action real-time e un driver AI ingenuo può non
+vincere sempre (un umano sì); nessuno stato senza uscita reale. Gli identificatori `scooter`/`kind:"scooter"`
+sono meccanica disattivata (SELECT off), non testo visibile.
 
 ## 8. Backlog / idee non ancora implementate
 
