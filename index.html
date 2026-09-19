@@ -4379,6 +4379,8 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     if(bannerT>0) bannerT-=dt;
     if(questPopT>0) questPopT-=dt;
     if(screen==="overworld" && !insideKey && !menu.open){ updateWeather(dt); updateFog(dt); advanceClock(dt); if(typeof marketTick==="function") marketTick(dt); if(typeof routeTick==="function") routeTick(dt); if(typeof contractTick==="function") contractTick(dt);
+      // Crudo Merchant: l'ultimo ordine (salpa) si completa appena lasci Porto Franco via mare.
+      if(typeof tutActive==="function" && tutActive() && tutCur()==="sail" && areaKey!=="town"){ tutAdvance("sail"); }
       // Crudo Merchant: le stagioni ruotano SEMPRE col passare del tempo (economia + aspetto del mondo)
       seasonAutoTimer+=dt; if(seasonAutoTimer>=SEASON_AUTO_SECS){ seasonAutoTimer=0; cycleSeason(); }
     }
@@ -4636,7 +4638,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
           // Crudo Merchant: PORTO FRANCO (town) now ends in a northern cliff -> no walking north to the sea.
           if(areaKey==="town" && dir==="N") return;   // north cliff wall, no crossing
           // Crudo Merchant: sailing SOUTH out of Free Port's waters -> the Open Sea. (boat/swim only)
-          if(areaKey==="town" && dir==="S" && (player.boat||player.swimming)){ crossSeaEdge("opensea","S"); return; }
+          if(areaKey==="town" && dir==="S" && (player.boat||player.swimming)){ if(typeof tutOnSail==="function") tutOnSail(); crossSeaEdge("opensea","S"); return; }
           // Crudo Merchant: sailing SOUTH out of King's Borough waters -> Treasure Island's sea. (boat/swim only)
           if(areaKey==="industrial" && dir==="S" && (player.boat||player.swimming)){ crossSeaEdge("island","S"); return; }
           // Crudo Merchant: the northern seas (Natives' Archipelago = forestNW, North Sea = mountain)
