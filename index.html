@@ -1924,10 +1924,11 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"co
   Object.values(AREA_NPCS).forEach(list=>list.forEach(n=>{ n.px=n.tx*TILE; n.py=n.ty*TILE; }));
   // Crudo Merchant (point 4): make sure NO npc ever sits/roams on sea '~' or cliff 'g'. Snap any such
   // npc (home + routine waypoints) to the nearest dry walkable tile of its own area.
-  function _nearestDry(rows,tx,ty,minCol,maxRow,avoidSand){
+  function _nearestDry(rows,tx,ty,minCol,maxRow,avoidSand,avoidSolid){
     minCol = minCol||0; maxRow = (maxRow==null)?rows.length-1:maxRow;
     const isSea=(x,y)=>{ if(y<0||y>=rows.length||x<0||x>=rows[0].length) return true; const c=rows[y][x]; return c==="~"||c==="g"; };
-    const bad=(x,y)=> isSea(x,y) || x<minCol || y>maxRow || (avoidSand && rows[y] && rows[y][x]==="s");
+    const solid=(x,y)=>{ if(y<0||y>=rows.length||x<0||x>=rows[0].length) return true; const c=rows[y][x]; if(/[1-9]/.test(c)||c==="D") return true; return OUT_SOLID.has(c); };
+    const bad=(x,y)=> isSea(x,y) || x<minCol || y>maxRow || (avoidSand && rows[y] && rows[y][x]==="s") || (avoidSolid && solid(x,y));
     if(!bad(tx,ty)) return [tx,ty];
     for(let rad=1; rad<=16; rad++){ for(let dy=-rad;dy<=rad;dy++) for(let dx=-rad;dx<=rad;dx++){
       const x=tx+dx,y=ty+dy; if(x<minCol||y<0||y>maxRow||x>=rows[0].length||y>=rows.length) continue;
@@ -1935,19 +1936,31 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"co
     return [Math.max(tx,minCol),Math.min(ty,maxRow)];
   }
   function snapNpcsOffWater(){
-    for(const ak in AREA_NPCS){ const rows=AREAS[ak]; if(!rows) continue;
-      // Pirates' Bay (holiday) & Lighthouse Cape (cape): keep NPCs EAST of the west sea corridor/cliff
-      // (col>=9), and in Pirates' Bay keep them out of the southern BEACH (rows>=28) so none appear to
-      // "swim" on the sand. (Points 3 & beach-npc fix)
-      const minCol=(ak==="holiday"||ak==="cape")?9:0;
-      const maxRow=(ak==="holiday")?26:undefined;      // holiday: stay above the south beach
-      const avoidSand=(ak==="holiday");
-      for(const n of AREA_NPCS[ak]){
-        const [sx,sy]=_nearestDry(rows,n.tx,n.ty,minCol,maxRow,avoidSand); n.tx=sx; n.ty=sy; n.px=sx*TILE; n.py=sy*TILE;
-        if(n.home) n.home=_nearestDry(rows,n.home[0],n.home[1],minCol,maxRow,avoidSand);
-        if(n.routine) n.routine.forEach(seg=>{ if(seg.go) seg.go=_nearestDry(rows,seg.go[0],seg.go[1],minCol,maxRow,avoidSand); });
+    // Sposta gli NPC fuori da tile NON valide (mare/sabbia dove serve, muri/edifici/alberi), cercando
+    // la tile calpestabile piu' vicina. Copre sia gli NPC delle aree (AREA_NPCS) sia quelli di Porto
+    // Franco (array npcs). Eccezione: gli NPC che lavorano sui moli (pescatori/pescivendoli, fishing:true
+    // o id "fishmonger*"/"pesc*") restano dove sono, anche se il molo (w) e' un tile "solido".
+    const isDockWorker=(n)=> !!(n && (n.fishing || /^(fishmonger|pesc)/.test(n.id||"")));
+    function snapList(rows, list, minCol, maxRow, avoidSand){
+      for(const n of list){
+        if(!n || isDockWorker(n)) continue;
+        const c = (rows[n.ty] && rows[n.ty][n.tx]!==undefined) ? rows[n.ty][n.tx] : "~";
+        const onBad = (c==="~"||c==="g") || OUT_SOLID.has(c) || /[1-9]/.test(c) || c==="D"
+                      || n.tx<minCol || (maxRow!==undefined && n.ty>maxRow) || (avoidSand && c==="s");
+        if(!onBad) continue;
+        const [sx,sy]=_nearestDry(rows,n.tx,n.ty,minCol,maxRow,avoidSand,true); n.tx=sx; n.ty=sy; n.px=sx*TILE; n.py=sy*TILE;
+        if(n.home) n.home=_nearestDry(rows,n.home[0],n.home[1],minCol,maxRow,avoidSand,true);
+        if(n.routine) n.routine.forEach(seg=>{ if(seg.go) seg.go=_nearestDry(rows,seg.go[0],seg.go[1],minCol,maxRow,avoidSand,true); });
       }
     }
+    for(const ak in AREA_NPCS){ const rows=AREAS[ak]; if(!rows) continue;
+      const minCol=(ak==="holiday"||ak==="cape")?9:0;
+      const maxRow=(ak==="holiday")?26:undefined;
+      const avoidSand=(ak==="holiday");
+      snapList(rows, AREA_NPCS[ak], minCol, maxRow, avoidSand);
+    }
+    // Porto Franco (town): gli NPC stanno nell'array `npcs`
+    if(typeof npcs!=="undefined" && AREAS.town){ snapList(AREAS.town, npcs, 0, undefined, false); }
   }
   // Crudo Merchant — TRADE: a Merchant NPC in each of the 4 hubs opens the market when talked to (A).
   (function addTraders(){
@@ -8379,6 +8392,8 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"co
     resetProgress: ()=>(typeof resetProgress==="function"?resetProgress():null),
     questTargetPoint: ()=>(typeof questTargetPoint==="function"?questTargetPoint():null),
     tutTargetNpc: ()=>(typeof tutTargetNpc==="function"?tutTargetNpc():null),
+    get OUT_SOLID(){ return (typeof OUT_SOLID!=="undefined")?OUT_SOLID:null; },
+    get STORY_POS(){ return window.STORY_POS||null; },
   };
 
   // ================= LOOP =================
