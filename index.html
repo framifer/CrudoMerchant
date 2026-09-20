@@ -75,7 +75,7 @@ window.STORY_POS={"npc":{"hawkins":["town",6,8],"bess":["town",24,6],"quill":["t
 </script>
 
 <script>
-window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"scooter":[],"courier":[]};
+window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"courier":[]};
 </script>
 
 <script>
@@ -114,31 +114,17 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       title_sub:"Crudo the Merchant",
       continue:"CONTINUA", newgame:"NUOVA PARTITA", press_ab:"A / START",
       season_spring:"PRIMAVERA", season_summer:"ESTATE", season_autumn:"AUTUNNO", season_winter:"INVERNO",
-      quest_label:"Missione:", q_none:"Parla in giro", q_find:"Trova Micio", q_return:"Riporta Micio", q_done:"Fatto!",
-      hud_find_red:"Segui il (!) rosso per portare avanti la tua storia.",
-      hud_report_clue:"Torna dal (!) rosso per riferire cosa hai scoperto.",
-      new_quest:"NUOVA MISSIONE!", quest_done:"MISSIONE COMPLETATA!", found_cat:"Hai ritrovato il gatto. Ti fissa, poi il mare.",
-      hint_lang:"START: Menu",
-      nonna:"Nonna Rosa", vito:"Vito", lena:"Lena", marinaio:"Marinaio", ciclista:"Ciclista", pino:"Pino",
-      shopkeeper:"Bottegaio", mayor:"Sindaco",
-      nonna0:["Oh, sei tu, piccolo.","Il mio gatto e' sparito","un'altra volta... torna","sempre giu' al mare.","Cercalo a sud. Fa' presto."],
-      nonna1:["Micio si aggira","dove l'acqua e' scura,","in spiaggia. Vai a sud...","e non voltarti."],
-      nonna2:["Sei tornato. E lui","con te. Certe cose","tornano sempre a casa,","volenti o nolenti."],
-      nonna3:["Il gatto fa le fusa.","Ma guarda ancora il mare,","come se aspettasse","qualcuno."],
-      vito_l:["Bella la nostra","cittadina di mare, eh?","Cambia con le stagioni...","(START apre il menu)"],
-      lena_l:["Il porto e' laggiu'","a sud-est. D'estate","il mare e' stupendo!"],
-      marinaio_l:["Le barche dormono","al molo. In inverno","il vento e' gelido!"],
-      ciclista_l:["Scusa, di corsa!","Giro tutta la","passeggiata in bici!"],
-      pino0:["La mia conchiglia.","L'ho persa sulla sabbia,","la notte in cui...","lascia stare. Me la","ritrovi tu?"],
-      pino1:["E' la' sulla spiaggia,","a est. Dove la marea","lascia le cose che","nessuno rivuole."],
-      pino2:["L'hai trovata. Bene.","Ora quella notte","posso quasi","dimenticarla."],
-      pino3:["La tengo in tasca","sempre. Mi ricorda","che il mare restituisce","tutto, prima o poi."],
-      found_shell:"Hai trovato la conchiglia, mezza sepolta nella sabbia.",
+      quest_label:"Missione:", q_none:"Parla in giro", hud_find_red:"Segui il (!) giallo per portare avanti la tua storia.",
+      hud_report_clue:"Torna dal (!) giallo per riferire cosa hai scoperto.",
+      new_quest:"NUOVA MISSIONE!", quest_done:"MISSIONE COMPLETATA!", hint_lang:"START: Menu",
+      vito:"Vito", lena:"Lena", marinaio:"Marinaio", shopkeeper:"Bottegaio", mayor:"Sindaco",
+      vito_l:["Bello il nostro","Porto Franco, eh?","Il mercato cambia con","le stagioni... (START apre il menu)"],
+      lena_l:["Il mercante e' al banco,","in piazza. D'estate","arrivano navi cariche","di rum e spezie!"],
+      marinaio_l:["Le navi dormono","al molo. D'inverno","il mare del Re e'","gonfio e crudele!"],
       in_nonna:["Benvenuto in casa mia!","Mettiti comodo,","c'e' il camino acceso."],
       in_store:["Benvenuto al magazzino!","Presto potrai comprare","viveri, corde e polvere."],
       in_mayor:["Sono il governatore","di Porto Franco.","Presta attenzione alle","stagioni e alle maree","di queste acque."],
-      menu_title:"MENU", menu_map:"MAPPA", menu_lang:"LINGUA", menu_season:"STAGIONE", menu_close:"CHIUDI", menu_journal:"REGISTRO", menu_notebook:"MERCANTILE", menu_scooter:"CAVALLO",
-      menu_rules:"REGOLE DI GIOCO", menu_exit:"ESCI DAL GIOCO", menu_crew:"CIURMA",
+      menu_title:"MENU", menu_map:"MAPPA", menu_lang:"LINGUA", menu_season:"STAGIONE", menu_close:"CHIUDI", menu_journal:"REGISTRO", menu_notebook:"MERCANTILE", menu_guide:"GUIDA", menu_rules:"REGOLE DI GIOCO", menu_exit:"ESCI DAL GIOCO", menu_crew:"CIURMA",
       crew_count:"Ciurma: #/$ marinai", crew_hint:"Recluta alla Locanda. B: chiudi",
       crew_gunner:"Cannoniere", crew_gunner_d:"+ danno in battaglia",
       crew_healer:"Guaritore", crew_healer_d:"cura HP ad ogni tuo turno",
@@ -150,12 +136,8 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       j_tag_red:"[Missione Storia]", j_tag_yellow:"[Missione Secondaria]",
       j_completed_title:"MISSIONI STORIA COMPLETATE", j_done_red:"Missioni Storia", j_done_yellow:"Missioni Secondarie",
       j_none_active:"(nessuna al momento)", j_none_done:"(nessuna ancora)", j_recap:"Cosa hai fatto:",
-      scooter_on:"Monti in sella.", scooter_off:"Scendi di sella.", scooter_water:"Non si cavalca in acqua!", scooter_boat:"Non da bordo! Prima sbarca a terra.",
-      scooter_locked:"Non hai (ancora) un cavallo.",
-      scooter_reward0:"Il governatore: 'Ti serve un mezzo per la terraferma.'", scooter_reward1:"Ti affida un cavallo baio.", scooter_reward2:"Ti servira' per le imprese via terra.",
       chase_intro:"Inseguilo! Raggiungilo a piedi.", chase_hint:"Corri e raggiungi il sospetto!", chase_caught:"Preso! L'hai bloccato.",
       chase_lost0:"Ti e' sfuggito.", chase_lost1:"Torna da Vito e riprova.",
-      sc_needscooter:"Devi essere in sella!", sc_label:"TEMPO", sc_go:"Vai! Consegna in tempo!", sc_gotoff:"Sei sceso di sella. Consegna fallita.", sc_delivered:"Consegnato appena in tempo!", sc_toolate:"Troppo tardi! Riprova.",
       cr_label:"CONSEGNA", cr_go:"Corri! Attraversa la mappa!", cr_to:"Consegna a:", cr_here:"Ci sei! Raggiungi il punto!", cr_done:"Consegnato! Bel lavoro.", cr_toolate:"Troppo tardi! Riprova.",
       journal_case:"Missioni Storia:", notebook_title:"TACCUINO DEL CAPITANO", merc_title:"REGISTRO DEL MERCANTE", merc_cargo:"In stiva", merc_empty:"stiva vuota", merc_routes:"Rotte concluse", merc_profit:"Profitto totale", merc_best:"Miglior rotta", merc_raids:"Assalti subiti", merc_route:"Rotta in corso", merc_none:"nessuna", notebook_empty:"Nessun indizio raccolto.", notebook_hint:"Indizi dell'impresa raccolti finora:", clue_logged:"Indizio annotato:", menu_hint:"A: ok  B: chiudi",
       examine_intro:"Esamino la scena...", interro_q:"Cosa gli metti davanti?", interro_ok:"Il testimone vacilla. Parla.",
@@ -165,7 +147,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       confront_intro:"E' l'ora della verita'.", confront_suspect:"SOSPETTO", confront_you:"TU", confront_q:"Quale prova usi?", confront_win:"Ha ceduto. Confessa tutto.", confront_lose:"Hai perso il filo. Ti liquida.",
       tail_label:"SOSPETTO", tail_intro:"Seguilo a distanza. Tieni A per andare furtivo e lento.", tail_ok:"L'hai seguito senza farti notare.",
       scour_label:"PERLUSTRA", scour_intro:"Cerca gli indizi nella scena. La barra si scalda vicino a un indizio.", scour_found:"Trovato!", scour_ok:"Hai perlustrato la scena a fondo.",
-      photo_label:"FOTO", photo_intro:"Scatta 3 foto nitide! Premi A quando la linea e' nel verde.", photo_hint:"A: scatta   B: rinuncia", photo_good:"Scatto riuscito!", photo_miss:"Foto mossa! Ricominci da capo.", photo_spotted:["Hai perso l'occasione!","L'incappucciato e' sparito.","Dovrai riprovare la","prossima volta."], photo_ok:"Cosi' puo' andare. Ben fatto!",
       fight_intro:"Ti aggredisce!", fight_win:"L'hai messo al tappeto.", fight_lose:"Ti ha steso... ti rialzi.", fight_you:"CRUDO", fight_enemy:"AGGRESSORE", fight_hint:"A: colpisci  B: schiva",
       nv_appears:"Nave nemica: %!", nv_you:"LA TUA NAVE", nv_enemy:"NEMICO", nv_wind:"VENTO", nv_ready:"ALL'ARREMBAGGIO!",
       nv_hint:"Frecce: naviga  A: bordata  (fianco a fianco!)", nv_broadside:"Bordata! # danni", nv_ram:"Speronata! # danni",
@@ -200,7 +181,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       cs_case11b_fight_intro:"'Non dovevi cercare!'", cs_case11b_fight_win:"Cede. 'Parlera' Teo, ora.'",
       cs_case13b_fight_intro:"Uno scagnozzo ti sbarra: 'Fermo!'", cs_case13b_fight_win:"Cede. 'Il Capo... parlera'.'",
       sq_done:"Incarico risolto.", sq_fail:"Non e' andata. Riprova.", sq_busy:"Finisci prima l'incarico in corso!",
-      moral_case5_q:"Un testimone ti implora di tacere. Che fai?", moral_case5_a:"Verbalizzo tutto. La legge e' legge.", moral_case5_b:"Taccio. Certe ferite non vanno riaperte.",
       moral_ky09_q:"Lady Isabel, nobile del Re, e' in tuo potere.", moral_ky09_a:"Giustizia. Paghera' per i suoi crimini.", moral_ky09_b:"Pieta'. La lascio andare in esilio.",
       ending_just_0:"Il trono e' caduto: ho reso giustizia al mare.", ending_just_1:"Chi ha strozzato questi porti ha pagato.", ending_just_2:"Non mi ameranno tutti. Non importa: sono liberi.",
       ending_mercy_0:"Il Re e' sconfitto, ma non ho versato sangue inutile.", ending_mercy_1:"Ho scelto le persone, non solo la vendetta.", ending_mercy_2:"Dormiro' sereno: ho lasciato vivere chi poteva cambiare.",
@@ -225,54 +205,15 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       journal_title:"DIARIO", journal_main:"Principali:", journal_side:"Missioni Secondarie:", chapter:"Capitolo", chapter_done:"CAPITOLO COMPLETATO!",
       log_title:"REGISTRO DEL CAPITANO", log_tab_missions:"MISSIONI", log_tab_economy:"ECONOMIA", log_tab_prices:"PREZZI", log_hint_nav:"<> scheda  A apri  B esci",
       log_season:"Stagione", log_contract:"Contratto", log_route:"Rotta", log_invest:"Investimenti", log_gold:"Oro", log_fame:"Fama", log_none:"nessuno", log_days_short:"gg",
-      q_intro_t:"L'arrivo a Crudo", q_intro_s0:"Chiedi in giro di chi ti ha convocato", q_intro_s1:"Presentati alla committente",
+      q_intro_t:"Il ritorno di Crudo", q_intro_s0:"Ascolta il vecchio Hawkins al porto", q_intro_s1:"Raduna la ciurma da Moll alla taverna",
       intro_start:["Capitano Crudo.","Sei tornato dal mare.","Prima di cominciare,","lascia che ti ricordi","una cosa."],
-      intro_marks:["Sopra le teste vedrai","dei punti esclamativi.","ROSSO (!): la storia","della ribellione. GIALLO","(!): aiuti extra."],
-      intro_marks2:["Segui i ROSSI per","abbattere il Re.","I GIALLI, se vuoi,","per aiutare la gente.","Uno alla volta, pero'."],
+      intro_marks:["Sopra le teste vedrai","dei punti esclamativi","GIALLI (!): sono le","persone che fanno","avanzare la tua marea."],
+      intro_marks2:["Seguili uno alla volta:","chi ti affida la storia","e chi ti apre nuove","rotte, alleati e affari.","Il mare e' tuo, capitano."],
       intro_understood_q:"Hai capito la differenza?",
       intro_go_widow:["Bene. Vai da Moll","alla taverna del porto.","Ti aspetta. La ciurma","si raduna li'."],
       intro_wait:["Moll ti aspetta","alla taverna del","porto. Non farla","aspettare."],
       intro_end:["Eccoti, capitano.","Il Re ci strozza con","le tasse. Ma tu hai","una nave e una ciurma.","E' ora di ribellarsi."],
-      intro_done:"La ribellione comincia. Segui i (!) rossi.",
-      q_room_t:"Sistemare la stanza", q_room_s0:"Torna a casa e sistema la tua stanza", q_room_s1:"Stanza sistemata!",
-      q_job_t:"Trovare un lavoro", q_job_s0:"Chiedi lavoro all'officina", q_job_s1:"Hai trovato un lavoro!",
-      q_fri_t:"Ritrovare i vecchi amici", q_fri_s0:"Parla con il tuo vecchio amico Teo", q_fri_s1:"Hai riconquistato la loro stima!",
-      q_bike_t:"Recuperare una bici", q_bike_s0:"Trova una bicicletta in citta'", q_bike_s1:"Hai una bici!",
-      q_cat_t:"Il gatto e il mare", q_cat_s0:"Ritrova il gatto sparito e riportalo a Nonna Rosa", q_cat_s1:"Il gatto e' tornato a casa.",
-      q_shell_t:"Cio' che la marea restituisce", q_shell_s0:"Ritrova la conchiglia di Pino sulla spiaggia", q_shell_s1:"Conchiglia riconsegnata.",
-      q_par_t:"Un pacco, nessuna domanda", q_par_s0:"Consegna il pacco al molo, senza aprirlo", q_par_s1:"Pacco consegnato.",
-      q_kids_t:"Cio' che e' rotolato nel buio", q_kids_s0:"Parla con i due bambini che litigano", q_kids_s1:"Ritrova la palla finita lontano", q_kids_s2:"Bambini rappacificati.",
-      q_of_t:"Vecchie promesse", q_of_s0:"Ritrova il portachiavi d'infanzia di Nico", q_of_s1:"Ricordo restituito.",
-      q_ph_t:"Volti sbiaditi", q_ph_s0:"Ritrova le 3 vecchie foto in giro per la citta'", q_ph_s1:"Album ricomposto.",
-      fornaio:"Fornaio", nico:"Nico",
-      fornaio0:["Tu che giri di notte.","Porta questo pacco","al molo. Non chiedere","cosa c'e' dentro."],
-      fornaio1:["Hai consegnato.","Non l'hai aperto.","Bravo. Certe cose","e' meglio non saperle."],
-      dest0:["Il pacco del fornaio.","Puntuale. Lo aspettavo","da parecchio.","Non una parola a nessuno."],
-      nico0:["Sei tornato, dopo","tutto questo tempo.","Da bambini giuravamo","tutto qui... ho perso","il mio portachiavi."],
-      nico1:["Il portachiavi. Lo","credevo perso come","il resto. Alcune promesse","non si sciolgono."],
-      kid_a0:["E' colpa sua! Ha","preso la palla e l'ha","buttata dove non","si dovrebbe andare."],
-      kid_b0:["Non e' vero...","e' rotolata da sola.","Verso il buio.","Lo giuro."],
-      kids_done:"Riporti la palla dal buio: i bambini fanno pace.",
-      kids_done_l0:["L'hai ripresa la palla?","Da... la' sotto?","Dammela. Facciamo","pace e non parliamone piu'."],
-      parcel_got:"Hai preso il pacco. Non chiederti cosa contiene.",
-      keyring_found:"Hai ritrovato il portachiavi di Nico.",
-      photo_found:"Una vecchia foto. I volti sono quasi svaniti.",
-      photos_msg:"Hai ricomposto le 3 foto. Adesso li riconosci.",
-      mamma_photos:["Capitano, un favore.","Ho perso 3 vecchie foto","in giro per la citta'.","Me le ritrovi?"],
-      photos_start:"Cerca le 3 vecchie foto in citta'.",
-      ball_found:"Hai recuperato la palla, dove nessuno guarda mai.",
-      teo:"Teo", capo:"Capo Officina", mamma:"Mamma",
-      teo0:["Ma... sei proprio tu?!","Quanto tempo!","Fatti valere e vedrai","che i ragazzi ti","riaccolgono."],
-      teo1:["Bentornato tra noi,","vecchio mio! Andiamo","a farci un giro."],
-      capo0:["Cerchi lavoro, eh?","Va bene, ti prendo","in prova all'officina.","Non deludermi!"],
-      capo1:["Bravo, lavori bene!","A domani in officina."],
-      mamma0:["Bentornato, tesoro!","La tua stanza e' un","disastro... dai una","sistemata, per favore."],
-      mamma1:["Che bello riaverti","a casa dopo 15 anni."],
-      room_msg:"Hai sistemato la tua vecchia stanza!",
-      bike_found:"Hai trovato una vecchia bici!",
-      bimbo:"Bambino", bimba:"Bambina",
-      bimbo_l:["Giochi a nascondino","con noi? Non andare","pero' oltre gli alberi..."],
-      bimba_l:["Ho trovato una","conchiglia rosa.","Era in un posto","dove non dovevo essere."],
+      intro_done:"La ribellione comincia. Segui i (!) gialli.",
       map_title:"MAPPA", map_hint:"B: indietro", map_nav:"Frecce: scegli  A: apri  B: esci", map_back:"A/B: indietro",
       sea_spring:"Che fresca l'acqua!",
       sea_summer:"Che bello rinfrescarsi in mare!",
@@ -302,6 +243,28 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       tut_story:"Ordine 8/9: parla con Hawkins (!), a NORD-OVEST.",
       tut_sail:"Ordine 9/9: salpa verso il Mare Aperto (sud).",
       tut_done:"Ordini eseguiti! Il mare e' tuo, capitano.",
+      // ---- Seconda serie: IMPRESE DEL CAPITANO (meccaniche avanzate) ----
+      tut2_start:["Bene, capitano.","Ora impara i veri","affari del mare:","le IMPRESE DEL CAPITANO.","Seguile quando vuoi."],
+      tut2_sell:"Impresa: vendi una merce al banco del Mercante (A al banco, poi scegli VENDI).",
+      tut2_prices:"Impresa: apri il Registro (START) e leggi la scheda PREZZI dei porti.",
+      tut2_route:"Impresa: dal Mercante scegli 'Organizza rotta' e manda la nave a commerciare.",
+      tut2_invest:"Impresa: dal Mercante scegli 'Investi nel porto' per far crescere la produzione.",
+      tut2_contract:"Impresa: dal Mercante scegli 'Contratti' e accetta una consegna a prezzo fisso.",
+      tut2_recruit:"Impresa: alla Locanda recluta un marinaio per la tua ciurma.",
+      tut2_upgrade:"Impresa: al Cantiere potenzia la nave (scafo, cannoni o prua).",
+      tut2_bounty:"Impresa: dal Banditore in piazza accetta una taglia sul Re.",
+      tut2_naval:"Impresa: in Mare Aperto affronta e vinci una battaglia navale.",
+      tut2_done:"Tutte le Imprese compiute! Ora sei un vero Mercante Pirata.",
+      tut2_progress:"Imprese del Capitano: #/9",
+      // ---- Tutorial contestuale "primo utilizzo" di ogni meccanica ----
+      learn_trade:["COMMERCIO — al banco del Mercante:","A = COMPRA la merce evidenziata,","freccia SINISTRA = VENDI, B = esci.","Compra dove costa poco, rivendi","dove scarseggia."],
+      learn_naval:["BATTAGLIA NAVALE — Frecce: manovra.","Mettiti FIANCO A FIANCO al nemico","e A = BORDATA (cannoni). Sperona","con la prua per l'ARREMBAGGIO.","Potenzia la nave al Cantiere!"],
+      learn_fight:["DUELLO — in tempo reale:","A = COLPISCI quando sei vicino,","B = SCHIVA il suo attacco.","Alterna colpo e schivata; armi","e armatura migliori aiutano."],
+      learn_tail:["PEDINAMENTO — segui la spia a","distanza, ne' troppo vicino ne'","troppo lontano. Tieni premuto A","per muoverti FURTIVO e lento.","Non farti scoprire!"],
+      learn_scour:["PERLUSTRAZIONE — cerca gli indizi","nella scena. La barra 'CALDO/FREDDO'","si scalda quando ti avvicini a","un punto. Premi A sul punto giusto","per raccogliere l'indizio."],
+      learn_confront:["RESA DEI CONTI — a parole:","scegli la PROVA giusta da mettere","sul tavolo (A). Le prove buone","piegano la resistenza; quelle","sbagliate ti indeboliscono."],
+
+
       tg_fish:"Pesce", tg_rum:"Rum", tg_timber:"Legname", tg_spice:"Spezie", tg_iron:"Ferro", tg_pearl:"Perle",
       tr_title:"MERCATO", tr_hold:"Stiva", tr_good:"Merce", tr_price:"Prezzo", tr_have:"Hai",
       tr_bought:"Comprato per #d.", tr_sold:"Venduto per #d.", tr_full:"Stiva piena!", tr_nogold:"Oro insufficiente.", tr_none:"Non ne hai da vendere.",
@@ -351,8 +314,8 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       rg_label:"ROTTA", rg_intro:"Segui la rotta tra i marker in ordine!", rg_next:"Prossimo marker!", rg_ok:"Rotta completata!", rg_fail:"Tempo scaduto!",
       rc_label:"RECUPERO", rc_intro:"Raggiungi il carico alla deriva!", rc_ok:"Carico recuperato!", rc_fail:"Perso tra le onde...",
       gina:"Gina", bruno:"Bruno",
-      gina_lines:["Che bella giornata","per due passi in","piazza, non trovi?"],
-      bruno_lines:["Devo comprare il pane","prima che chiuda","il forno!"],
+      gina_lines:["Che bella giornata","per veder salpare","le navi dal molo!"],
+      bruno_lines:["Devo comprare provviste","prima che il mercante","chiuda il banco!"],
       pescatore:"Pescatore",
       fisher_ask:["Bella giornata di pesca!","Il mare oggi e' pescoso...","ne vuoi sapere?"],
       fisher_ask2:["Shhh, non spaventare","i pesci! Vuoi provare","anche tu?"],
@@ -368,31 +331,17 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       title_sub:"Crudo the Merchant",
       continue:"CONTINUE", newgame:"NEW GAME", press_ab:"A / START",
       season_spring:"SPRING", season_summer:"SUMMER", season_autumn:"AUTUMN", season_winter:"WINTER",
-      quest_label:"Quest:", q_none:"Talk around", q_find:"Find Micio", q_return:"Bring Micio back", q_done:"Done!",
-      hud_find_red:"Look for the red (!) to keep investigating the venture.",
-      hud_report_clue:"Return to the red (!) to report what you found.",
-      new_quest:"NEW QUEST!", quest_done:"QUEST COMPLETE!", found_cat:"You found the cat. He stares at you, then the sea.",
-      hint_lang:"START: Menu",
-      nonna:"Granny Rosa", vito:"Vito", lena:"Lena", marinaio:"Sailor", ciclista:"Cyclist", pino:"Pino",
-      shopkeeper:"Shopkeeper", mayor:"Mayor",
-      nonna0:["Oh, it's you, dear.","My cat is gone","again... he always","goes down to the sea.","Look south. Be quick."],
-      nonna1:["The cat prowls where","the water runs dark,","on the beach. Go south...","and don't look back."],
-      nonna2:["You're back. And he's","with you. Some things","always come home,","willing or not."],
-      nonna3:["The cat is purring.","But he still watches","the sea, as if waiting","for someone."],
-      vito_l:["Nice little","seaside town, huh?","It changes with seasons...","(START opens menu)"],
-      lena_l:["The port is down","to the south-east.","The summer sea is gorgeous!"],
-      marinaio_l:["The boats sleep","at the dock. In winter","the wind is freezing!"],
-      ciclista_l:["Sorry, in a hurry!","I ride the whole","promenade by bike!"],
-      pino0:["My seashell.","I lost it on the sand,","the night that... never","mind. Would you find","it for me?"],
-      pino1:["It's out there on the","beach, to the east.","Where the tide leaves","what no one wants back."],
-      pino2:["You found it. Good.","Now maybe that night","I can almost","forget."],
-      pino3:["I keep it in my pocket","always. Reminds me the","sea gives everything","back, sooner or later."],
-      found_shell:"You found the seashell, half-buried in the sand.",
+      quest_label:"Quest:", q_none:"Talk around", hud_find_red:"Follow the yellow (!) to carry your story forward.",
+      hud_report_clue:"Return to the yellow (!) to report what you found.",
+      new_quest:"NEW QUEST!", quest_done:"QUEST COMPLETE!", hint_lang:"START: Menu",
+      vito:"Vito", lena:"Lena", marinaio:"Sailor", shopkeeper:"Shopkeeper", mayor:"Mayor",
+      vito_l:["Fine Free Port","of ours, huh?","The market shifts with","the seasons... (START opens menu)"],
+      lena_l:["The merchant's at the","stall, in the square.","In summer, ships come","laden with rum and spice!"],
+      marinaio_l:["The ships sleep","at the dock. In winter","the King's sea is","swollen and cruel!"],
       in_nonna:["Welcome to my home!","Make yourself comfy,","the fire is lit."],
       in_store:["Welcome to the storehouse!","Soon you'll be able to buy","victuals, rope and powder."],
       in_mayor:["I'm the governor","of Free Port.","Mind the seasons","and the tides of","these waters."],
-      menu_title:"MENU", menu_map:"MAP", menu_lang:"LANGUAGE", menu_season:"SEASON", menu_close:"CLOSE", menu_journal:"CAPTAIN LOG", menu_notebook:"MERCHANT", menu_scooter:"HORSE",
-      menu_rules:"GAME RULES", menu_exit:"EXIT GAME", menu_crew:"CREW",
+      menu_title:"MENU", menu_map:"MAP", menu_lang:"LANGUAGE", menu_season:"SEASON", menu_close:"CLOSE", menu_journal:"CAPTAIN LOG", menu_notebook:"MERCHANT", menu_guide:"GUIDE", menu_rules:"GAME RULES", menu_exit:"EXIT GAME", menu_crew:"CREW",
       crew_count:"Crew: #/$ sailors", crew_hint:"Recruit at the Tavern. B: close",
       crew_gunner:"Gunner", crew_gunner_d:"+ battle damage",
       crew_healer:"Healer", crew_healer_d:"heals HP each of your turns",
@@ -404,12 +353,8 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       j_tag_red:"[Story Quest]", j_tag_yellow:"[Side Quest]",
       j_completed_title:"COMPLETED STORY QUESTS", j_done_red:"Story Quests", j_done_yellow:"Side Quests",
       j_none_active:"(none right now)", j_none_done:"(none yet)", j_recap:"What you did:",
-      scooter_on:"You mount up.", scooter_off:"You dismount.", scooter_water:"You can't ride on water!", scooter_boat:"Not from the deck! Step ashore first.",
-      scooter_locked:"You don't have a horse (yet).",
-      scooter_reward0:"The governor: 'You need a mount for the mainland.'", scooter_reward1:"He entrusts you a bay horse.", scooter_reward2:"You'll need it for ventures inland.",
       chase_intro:"Chase him! Catch him on foot.", chase_hint:"Run and catch the suspect!", chase_caught:"Got him! You cornered him.",
       chase_lost0:"He slipped away.", chase_lost1:"Go back to Vito and retry.",
-      sc_needscooter:"You need to be in the saddle!", sc_label:"TIME", sc_go:"Go! Deliver in time!", sc_gotoff:"You left the saddle. Delivery failed.", sc_delivered:"Delivered just in time!", sc_toolate:"Too late! Try again.",
       cr_label:"DELIVERY", cr_go:"Run! Cross the map!", cr_to:"Deliver to:", cr_here:"You're here! Reach the spot!", cr_done:"Delivered! Nice work.", cr_toolate:"Too late! Try again.",
       journal_case:"Story Quests:", notebook_title:"CAPITANO'S NOTEBOOK", merc_title:"MERCHANT LEDGER", merc_cargo:"In hold", merc_empty:"hold empty", merc_routes:"Routes done", merc_profit:"Total profit", merc_best:"Best route", merc_raids:"Raids suffered", merc_route:"Active route", merc_none:"none", notebook_empty:"No clues collected yet.", notebook_hint:"Case clues collected so far:", clue_logged:"Clue logged:", menu_hint:"A: ok  B: close",
       examine_intro:"I examine the scene...", interro_q:"What do you show them?", interro_ok:"The witness cracks. They talk.",
@@ -419,7 +364,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       confront_intro:"It's the moment of truth.", confront_suspect:"SUSPECT", confront_you:"YOU", confront_q:"Which proof do you use?", confront_win:"They break. Full confession.", confront_lose:"You lost the thread. They brush you off.",
       tail_label:"SUSPICION", tail_intro:"Follow at a distance. Hold A to sneak slowly.", tail_ok:"You followed them unseen.",
       scour_label:"SEARCH", scour_intro:"Search the scene for clues. The bar warms up near a clue.", scour_found:"Found!", scour_ok:"You searched the scene thoroughly.",
-      photo_label:"PHOTO", photo_intro:"Take 3 sharp photos! Press A when the line is in the green.", photo_hint:"A: shoot   B: give up", photo_good:"Good shot!", photo_miss:"Blurry! Start over.", photo_spotted:["You missed your chance!","The hooded figure is gone.","You'll have to try","again next time."], photo_ok:"That'll do. Well done!",
       fight_intro:"They attack you!", fight_win:"You put them down.", fight_lose:"They dropped you... you get back up.", fight_you:"CRUDO", fight_enemy:"ATTACKER", fight_hint:"A: strike  B: dodge",
       nv_appears:"Enemy ship: %!", nv_you:"YOUR SHIP", nv_enemy:"ENEMY", nv_wind:"WIND", nv_ready:"BATTLE STATIONS!",
       nv_hint:"Arrows: sail  A: broadside  (get side-by-side!)", nv_broadside:"Broadside! # dmg", nv_ram:"Ram! # dmg",
@@ -454,7 +398,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       cs_case11b_fight_intro:"'You shouldn't have dug!'", cs_case11b_fight_win:"He yields. 'Teo will talk now.'",
       cs_case13b_fight_intro:"A thug blocks you. 'No further!'", cs_case13b_fight_win:"He caves. 'The Chief... he'll talk.'",
       sq_done:"Job done.", sq_fail:"Didn't work out. Try again.", sq_busy:"Finish your current job first!",
-      moral_case5_q:"A witness begs you to stay quiet. What do you do?", moral_case5_a:"I log it all. The law is the law.", moral_case5_b:"I stay quiet. Some wounds shouldn't reopen.",
       moral_ky09_q:"Lady Isabel, the King's noble, is in your power.", moral_ky09_a:"Justice. She'll pay for her crimes.", moral_ky09_b:"Mercy. I let her go into exile.",
       ending_just_0:"The throne has fallen: I gave the sea its justice.", ending_just_1:"Those who choked these ports have paid.", ending_just_2:"Not all will love me. No matter: they are free.",
       ending_mercy_0:"The King is beaten, but I spilled no needless blood.", ending_mercy_1:"I chose the people, not just revenge.", ending_mercy_2:"I'll sleep easy: I let those who could change, live.",
@@ -479,54 +422,15 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       journal_title:"JOURNAL", journal_main:"Main:", journal_side:"Side Quests:", chapter:"Chapter", chapter_done:"CHAPTER COMPLETE!",
       log_title:"CAPTAIN'S LOG", log_tab_missions:"MISSIONS", log_tab_economy:"ECONOMY", log_tab_prices:"PRICES", log_hint_nav:"<> tab  A open  B exit",
       log_season:"Season", log_contract:"Contract", log_route:"Route", log_invest:"Investments", log_gold:"Gold", log_fame:"Fame", log_none:"none", log_days_short:"d",
-      q_intro_t:"Arrival in Crudo", q_intro_s0:"Ask around for who summoned you", q_intro_s1:"Introduce yourself to the client",
+      q_intro_t:"Crudo's Return", q_intro_s0:"Hear out old Hawkins at the port", q_intro_s1:"Gather the crew at Moll's tavern",
       intro_start:["Captain Crudo.","You're back from the sea.","Before you begin,","let me remind you","of one thing."],
-      intro_marks:["Above people's heads","you'll see exclamation","marks. RED (!): the","rebellion's story. YELLOW","(!): extra help."],
-      intro_marks2:["Follow the RED ones to","bring down the King.","The YELLOW ones, if you","like, to help folks.","One at a time, though."],
+      intro_marks:["Above people's heads","you'll see YELLOW","exclamation marks (!):","those are the folk who","push your tide forward."],
+      intro_marks2:["Follow them one by one:","some hand you the story,","some open new routes,","allies and deals.","The sea is yours, captain."],
       intro_understood_q:"Got the difference?",
       intro_go_widow:["Good. Go to Moll","at the harbour tavern.","She's waiting. The crew","gathers there."],
       intro_wait:["Moll waits for you","at the harbour","tavern. Don't keep","her waiting."],
       intro_end:["There you are, captain.","The King throttles us with","taxes. But you have a","ship and a crew.","Time to rise up."],
-      intro_done:"The rebellion begins. Follow the red (!).",
-      q_room_t:"Tidy your room", q_room_s0:"Go home and tidy your room", q_room_s1:"Room tidied!",
-      q_job_t:"Find a job", q_job_s0:"Ask for work at the workshop", q_job_s1:"You got a job!",
-      q_fri_t:"Reunite with old friends", q_fri_s0:"Talk to your old friend Teo", q_fri_s1:"You won back their trust!",
-      q_bike_t:"Get a bike", q_bike_s0:"Find a bicycle in town", q_bike_s1:"You have a bike!",
-      q_cat_t:"The cat and the sea", q_cat_s0:"Find the missing cat and bring him to Granny Rosa", q_cat_s1:"The cat is home.",
-      q_shell_t:"What the tide gives back", q_shell_s0:"Find Pino's seashell on the beach", q_shell_s1:"Shell returned.",
-      q_par_t:"A parcel, no questions", q_par_s0:"Deliver the parcel to the pier, unopened", q_par_s1:"Parcel delivered.",
-      q_kids_t:"What rolled into the dark", q_kids_s0:"Talk to the two quarreling kids", q_kids_s1:"Find the ball that rolled away", q_kids_s2:"Kids made up.",
-      q_of_t:"Old promises", q_of_s0:"Find Nico's childhood keyring", q_of_s1:"Memory returned.",
-      q_ph_t:"Faded faces", q_ph_s0:"Find the 3 old photos around town", q_ph_s1:"Album pieced together.",
-      fornaio:"Baker", nico:"Nico",
-      fornaio0:["You, out at this hour.","Take this parcel","to the pier. Don't ask","what's inside."],
-      fornaio1:["You delivered it.","You didn't open it.","Good. Some things","are better not known."],
-      dest0:["The baker's parcel.","On time. I've been","waiting a long while.","Not a word to anyone."],
-      nico0:["You came back, after","all this time.","As kids we swore","everything here... I lost","my keyring."],
-      nico1:["The keyring. I thought","it was lost like all","the rest. Some promises","don't come undone."],
-      kid_a0:["It's his fault! He took","the ball and threw it","where no one's supposed","to go."],
-      kid_b0:["Not true...","it rolled off on its own.","Toward the dark.","I swear."],
-      kids_done:"You bring the ball back from the dark: the kids make up.",
-      kids_done_l0:["Did you get the ball back?","From... down there?","Give it to me. Let's make","up and never speak of it."],
-      parcel_got:"You took the parcel. Don't wonder what's inside.",
-      keyring_found:"You found Nico's keyring.",
-      photo_found:"An old photo. The faces are almost gone.",
-      photos_msg:"You pieced the 3 photos together. Now you recognize them.",
-      mamma_photos:["Capitano, a favour.","I lost 3 old photos","around the town.","Would you find them?"],
-      photos_start:"Find the 3 old photos in town.",
-      ball_found:"You recovered the ball, where no one ever looks.",
-      teo:"Teo", capo:"Workshop Boss", mamma:"Mom",
-      teo0:["Wait... is that really you?!","Long time!","Show us what you've got","and the crew will","take you back."],
-      teo1:["Welcome back, old friend!","Let's go for a ride."],
-      capo0:["Looking for work, huh?","Alright, I'll take you on","at the workshop.","Don't let me down!"],
-      capo1:["Good job, you work well!","See you tomorrow."],
-      mamma0:["Welcome home, dear!","Your room is a mess...","give it a tidy,","please."],
-      mamma1:["So good to have you","home after 15 years."],
-      room_msg:"You tidied your old room!",
-      bike_found:"You found an old bike!",
-      bimbo:"Boy", bimba:"Girl",
-      bimbo_l:["Play hide and seek","with us? Just don't go","past the trees..."],
-      bimba_l:["I found a pink","seashell.","It was somewhere","I wasn't supposed to be."],
+      intro_done:"The rebellion begins. Follow the yellow (!).",
       map_title:"MAP", map_hint:"B: back", map_nav:"Arrows: pick  A: open  B: exit", map_back:"A/B: back",
       sea_spring:"The water is chilly!",
       sea_summer:"So refreshing to swim in the sea!",
@@ -546,7 +450,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       ship_menu_q:"At the ship - what do you do?", ship_free:"Sail the open sea", ship_cancel:"Stay ashore", seaq_done:"Sea task complete!", seaq_fail:"Failed. Try again from the ship.",
       dock_menu_q:"A ship is moored here. What do you do?", dock_setsail:"Set sail for the open sea", dock_board:"Board the boat", dock_disembark:"Step onto the dock", dock_stay:"Stay where you are", hint_ship:"A: board the ship",
       ship_island:"Sail to the treasure island", area_island:"TREASURE ISLAND", island_entered:"Island waters. Dock:A  North:back", island_left:"Back at the works' pier.", island_land:"You dock and step ashore.", island_board:"You climb back into the boat.", raft_locked:"A raft. You don't know where it leads yet.", hint_dock:"A: land on the dock", hint_board:"A: board the boat", hint_land:"A: land ashore", hint_setsail:"A: set sail",
-      tut_intro:"You are Captain Crudo. The King burned your ship: time for vengeance. Press A to step onto the pier.",
       tut_intro:"Order 1/9: press A to land on the pier.",
       tut_move:"Order 2/9: explore Free Port (D-pad).",
       tut_merchant:"Order 3/9: talk to the Merchant (!) - press A.",
@@ -557,6 +460,28 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       tut_story:"Order 8/9: talk to Hawkins (!), to the NORTH-WEST.",
       tut_sail:"Order 9/9: set sail to the Open Sea (south).",
       tut_done:"Orders done! The sea is yours, captain.",
+      // ---- Second series: CAPTAIN'S VENTURES (advanced mechanics) ----
+      tut2_start:["Well done, captain.","Now learn the real","business of the sea:","the CAPTAIN'S VENTURES.","Tackle them whenever you like."],
+      tut2_sell:"Venture: sell a good at the Merchant's counter (A at the stall, then choose SELL).",
+      tut2_prices:"Venture: open the Log (START) and read the PRICES tab for the ports.",
+      tut2_route:"Venture: from the Merchant pick 'Set up a route' and send your ship to trade.",
+      tut2_invest:"Venture: from the Merchant pick 'Invest in the port' to grow its output.",
+      tut2_contract:"Venture: from the Merchant pick 'Contracts' and accept a fixed-price delivery.",
+      tut2_recruit:"Venture: at the Tavern recruit a sailor for your crew.",
+      tut2_upgrade:"Venture: at the Shipyard upgrade your ship (hull, cannons or prow).",
+      tut2_bounty:"Venture: from the Crier in the square accept a bounty on the King.",
+      tut2_naval:"Venture: in the Open Sea face and win a naval battle.",
+      tut2_done:"All Ventures complete! You're a true Merchant Pirate now.",
+      tut2_progress:"Captain's Ventures: #/9",
+      // ---- Contextual "first use" tutorial for each mechanic ----
+      learn_trade:["TRADE — at the Merchant's counter:","A = BUY the highlighted good,","LEFT arrow = SELL, B = leave.","Buy where it's cheap, sell where","it's scarce."],
+      learn_naval:["NAVAL BATTLE — Arrows: manoeuvre.","Get SIDE-BY-SIDE with the enemy","and A = BROADSIDE (cannons). Ram","with the prow to BOARD.","Upgrade your ship at the Shipyard!"],
+      learn_fight:["DUEL — real-time:","A = STRIKE when you're close,","B = DODGE their attack.","Alternate hit and dodge; better","weapons and armour help."],
+      learn_tail:["TAILING — follow the spy at a","distance, not too close, not too","far. Hold A to move STEALTHY","and slow.","Don't get spotted!"],
+      learn_scour:["SEARCHING — hunt for clues in the","scene. The 'HOT/COLD' bar warms up","as you near a spot. Press A on the","right tile to collect the clue."],
+      learn_confront:["SHOWDOWN — with words:","choose the right PROOF to lay on","the table (A). Good proofs break","their resistance; wrong ones","weaken you."],
+
+
       tg_fish:"Fish", tg_rum:"Rum", tg_timber:"Timber", tg_spice:"Spice", tg_iron:"Iron", tg_pearl:"Pearls",
       tr_title:"MARKET", tr_hold:"Hold", tr_good:"Good", tr_price:"Price", tr_have:"Have",
       tr_bought:"Bought for #d.", tr_sold:"Sold for #d.", tr_full:"Hold is full!", tr_nogold:"Not enough gold.", tr_none:"None to sell.",
@@ -606,8 +531,8 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       rg_label:"COURSE", rg_intro:"Follow the course markers in order!", rg_next:"Next marker!", rg_ok:"Course complete!", rg_fail:"Time's up!",
       rc_label:"RECOVERY", rc_intro:"Reach the drifting cargo!", rc_ok:"Cargo recovered!", rc_fail:"Lost in the waves...",
       gina:"Gina", bruno:"Bruno",
-      gina_lines:["What a lovely day","for a stroll in the","square, isn't it?"],
-      bruno_lines:["I need to buy bread","before the bakery","closes!"],
+      gina_lines:["What a lovely day","to watch the ships","set sail from the pier!"],
+      bruno_lines:["I need to buy supplies","before the merchant","closes the stall!"],
       pescatore:"Fisherman",
       fisher_ask:["Nice day for fishing!","The sea's full today...","want in?"],
       fisher_ask2:["Shhh, don't scare","the fish! Want to","give it a try too?"],
@@ -902,98 +827,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     if(fishSkill.msgT>0) textCenter(fishSkill.msg,W/2,by+9,pal().accent); else textCenter(t("fs_hint"),W/2,by+9,"#c8c8d0");
   }
 
-  // ===== PHOTO STAKEOUT: shoot 3 good photos in a row. A vertical "tension bar" (right side) has a
-  // green safe zone that drifts up/down irregularly; press A when the marker is in the green. 3 hits in
-  // a row = success; a miss resets the streak to 0; 3 misses in a row = "spotted", retry another night. =====
-  const photoCam={ active:false, pos:0.5, vel:0.6, zoneC:0.5, zoneH:0.16, zVel:0.4, streak:0, misses:0, flash:0, msg:"", msgT:0, onWin:null, onFail:null };
-  function startPhotoCam(onWin,onFail){
-    photoCam.active=true; photoCam.pos=0.5; photoCam.vel=0.7; photoCam.zoneC=0.5; photoCam.zoneH=0.15; photoCam.zVel=0.35;
-    photoCam.streak=0; photoCam.misses=0; photoCam.flash=0; photoCam.msg=t("photo_intro"); photoCam.msgT=2.4;
-    photoCam.onWin=onWin; photoCam.onFail=onFail; SFX.talk&&SFX.talk();
-  }
-  function updatePhotoCam(dt){
-    if(photoCam.msgT>0) photoCam.msgT-=dt;
-    if(photoCam.flash>0) photoCam.flash-=dt;
-    // marker bounces up/down with slightly varying speed (unpredictable)
-    photoCam.pos+=photoCam.vel*dt;
-    if(photoCam.pos>=1){ photoCam.pos=1; photoCam.vel=-(0.6+Math.random()*0.5); }
-    else if(photoCam.pos<=0){ photoCam.pos=0; photoCam.vel=(0.6+Math.random()*0.5); }
-    // green zone drifts irregularly (random walk), staying within bounds
-    photoCam.zoneC+=photoCam.zVel*dt;
-    if(photoCam.zoneC> (1-photoCam.zoneH/2)){ photoCam.zoneC=1-photoCam.zoneH/2; photoCam.zVel=-(0.25+Math.random()*0.35); }
-    else if(photoCam.zoneC< (photoCam.zoneH/2)){ photoCam.zoneC=photoCam.zoneH/2; photoCam.zVel=(0.25+Math.random()*0.35); }
-    if(Math.random()<0.03) photoCam.zVel=(Math.random()*2-1)*(0.25+Math.random()*0.4);   // occasional random direction change
-    if(consumePress("a")){
-      const lo=photoCam.zoneC-photoCam.zoneH/2, hi=photoCam.zoneC+photoCam.zoneH/2;
-      if(photoCam.pos>=lo && photoCam.pos<=hi){
-        photoCam.streak++; photoCam.misses=0; photoCam.flash=0.25; SFX.shutter&&SFX.shutter();
-        if(photoCam.streak>=3){ photoCam.active=false; showExamine([t("photo_ok")], photoCam.onWin); return; }
-        photoCam.msg=t("photo_good")+" "+photoCam.streak+"/3"; photoCam.msgT=1.2;
-      } else {
-        photoCam.streak=0; photoCam.misses++; SFX.cancel&&SFX.cancel();
-        if(photoCam.misses>=3){ photoCam.active=false; showExamine([].concat(t("photo_spotted")), photoCam.onFail); return; }
-        photoCam.msg=t("photo_miss"); photoCam.msgT=1.2;
-      }
-    }
-    if(consumePress("b")){ photoCam.active=false; if(photoCam.onFail) photoCam.onFail(); }
-  }
-  function drawPhotoCam(){
-    // analog camera body
-    ctx.fillStyle="#141416"; ctx.fillRect(0,0,W,H);
-    ctx.fillStyle="rgba(255,255,255,0.03)"; for(let i=0;i<40;i++){ ctx.fillRect((i*37)%W,(i*53)%H,1,1); }
-    // right control column (grip): shutter dial + ISO plate
-    const gx=W-16;
-    ctx.fillStyle="#0e0e10"; ctx.fillRect(gx-2,0,18,H);
-    ctx.fillStyle="#26262a"; ctx.fillRect(gx-1,2,16,H-4);
-    ctx.fillStyle="#3a3a40"; ctx.beginPath(); ctx.arc(gx+6,24,7,0,Math.PI*2); ctx.fill();
-    ctx.fillStyle="#8a8a92"; ctx.beginPath(); ctx.arc(gx+6,24,4,0,Math.PI*2); ctx.fill();
-    ctx.fillStyle="#c8c8d0"; ctx.fillRect(gx+5,18,2,4);
-    ctx.fillStyle="#0a0a0c"; ctx.fillRect(gx-1,H-26,15,16);
-    ctx.fillStyle="#d8a018"; ctx.fillRect(gx+1,H-24,11,12);
-    ctx.fillStyle="#2a2010"; ctx.font="6px monospace"; ctx.textAlign="center"; ctx.textBaseline="top"; ctx.fillText("200",gx+6,H-20); ctx.textAlign="left";
-    // top exposure ticks + centre index
-    ctx.fillStyle="#0a0a0c"; ctx.fillRect(6,4,W-28,10);
-    for(let i=0;i<18;i++){ const tx=12+i*((W-40)/18); const tall=(i%3===0); ctx.fillStyle=tall?"#c8c8d0":"#6a6a72"; ctx.fillRect(tx, tall?5:7, 1, tall?6:4); }
-    ctx.fillStyle="#ffffff"; ctx.fillRect((W-28)/2+4,4,4,8);
-    text("ISO 200", 8, 6, "#c8c0a0");
-    // viewfinder
-    const vx=8, vy=18, vw=W-40, vh=H-40;
-    ctx.fillStyle="#2e1214"; ctx.fillRect(vx,vy,vw,vh);
-    ctx.fillStyle="rgba(0,0,0,0.28)"; ctx.fillRect(vx,vy,vw,4); ctx.fillRect(vx,vy+vh-4,vw,4); ctx.fillRect(vx,vy,4,vh); ctx.fillRect(vx+vw-4,vy,4,vh);
-    // foggy human silhouette (solid, neutral)
-    const cxv=vx+vw/2, cyv=vy+vh/2+6;
-    const sway=Math.round(Math.sin(performance.now()/700)*2); const sc=cxv+sway;
-    ctx.fillStyle="#0a0608";
-    ctx.fillRect(sc-5,cyv+14,4,12); ctx.fillRect(sc+1,cyv+14,4,12);
-    ctx.fillRect(sc-8,cyv-8,16,24);
-    ctx.fillRect(sc-10,cyv-10,20,6);
-    ctx.fillRect(sc-3,cyv-16,6,5);
-    ctx.beginPath(); ctx.arc(sc,cyv-22,9,0,Math.PI*2); ctx.fill();
-    ctx.fillRect(sc-9,cyv-26,18,10);
-    ctx.beginPath(); ctx.moveTo(sc-9,cyv-24); ctx.lineTo(sc,cyv-33); ctx.lineTo(sc+9,cyv-24); ctx.closePath(); ctx.fill();
-    // drifting fog
-    const t0=performance.now()/1000;
-    for(let i=0;i<4;i++){ const fy=vy+6+i*(vh/5)+Math.sin(t0*0.6+i)*3; const fx=vx+((t0*(10+i*4)+i*40)%(vw+40))-20;
-      ctx.fillStyle="rgba(200,200,210,"+(0.08+0.035*i).toFixed(2)+")"; ctx.fillRect(vx,Math.round(fy),vw,3+i);
-      ctx.fillStyle="rgba(220,220,230,0.05)"; ctx.beginPath(); ctx.ellipse(fx,fy+2,22,5,0,0,Math.PI*2); ctx.fill(); }
-    // corner brackets
-    ctx.strokeStyle="#c8b0b0"; ctx.lineWidth=1; const cl=6;
-    [[vx+2,vy+2,1,1],[vx+vw-2,vy+2,-1,1],[vx+2,vy+vh-2,1,-1],[vx+vw-2,vy+vh-2,-1,-1]].forEach(function(a){ var cx=a[0],cy=a[1],dx=a[2],dy=a[3]; ctx.beginPath(); ctx.moveTo(cx,cy+dy*cl); ctx.lineTo(cx,cy); ctx.lineTo(cx+dx*cl,cy); ctx.stroke(); });
-    // light focus crosshair (does not cover silhouette)
-    ctx.fillStyle="rgba(230,200,200,0.55)";
-    ctx.fillRect(cxv-1,cyv-9,2,4); ctx.fillRect(cxv-1,cyv+5,2,4); ctx.fillRect(cxv-9,cyv-1,4,2); ctx.fillRect(cxv+5,cyv-1,4,2);
-    // tension bar (right of viewfinder)
-    const bx=vx+vw+4, by=vy, bw=6, bh=vh;
-    ctx.fillStyle="#0a0a12"; ctx.fillRect(bx-1,by-1,bw+2,bh+2);
-    ctx.fillStyle="#22242c"; ctx.fillRect(bx,by,bw,bh);
-    const lo=photoCam.zoneC-photoCam.zoneH/2, hi=photoCam.zoneC+photoCam.zoneH/2;
-    ctx.fillStyle="#3ad07a"; ctx.fillRect(bx,by+Math.round(bh*lo),bw,Math.round(bh*(hi-lo)));
-    ctx.fillStyle="#ffffff"; ctx.fillRect(bx-2,by+Math.round(bh*photoCam.pos)-1,bw+4,2);
-    if(photoCam.flash>0){ ctx.fillStyle="rgba(255,255,255,"+(photoCam.flash*2.5).toFixed(2)+")"; ctx.fillRect(vx,vy,vw,vh); }
-    text(t("photo_label")+"  "+photoCam.streak+"/3", vx+3, vy+vh+6, "#e0c0c0");
-    if(photoCam.msgT>0){ panelBox(vx, vy+vh-16, vw, 14); textCenter(photoCam.msg, vx+vw/2, vy+vh-12, pal().accent); }
-    else { textCenter(t("photo_hint"), vx+vw/2, vy+vh-12, "#c8c8d0"); }
-  }
+  // ===== PHOTO STAKEOUT: removed in Crudo Merchant (orphaned old-game minigame; no story beat used it). =====
 
   const regatta={ active:false, pts:[], idx:0, msg:"", msgT:0, onWin:null, onFail:null, timer:0 };
   function startRegatta(pts,onWin,onFail){ regatta.active=true; regatta.pts=pts.slice(); regatta.idx=0; regatta.msg=t("rg_intro"); regatta.msgT=2.0; regatta.onWin=onWin; regatta.onFail=onFail; regatta.timer=pts.length*10; }
@@ -1345,7 +1179,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     opts.push({label:t("dock_stay"),key:"__cancel"});
     const title = b ? (t("bnt_current")+" "+bountyText()) : t("bnt_none");
     askChoice(title, opts, (i,opt)=>{
-      if(opt.key==="__roll"){ rollBounty(); showExamine([t("bnt_new"), bountyText()]); }
+      if(opt.key==="__roll"){ rollBounty(); if(typeof tut2OnBounty==="function") tut2OnBounty(); showExamine([t("bnt_new"), bountyText()]); }
       else if(opt.key==="__claim"){ const g=bounty.active.gold; player.gold+=g; addFame(bountyFame());
         banner(t("bnt_paid").replace("#",g)); bounty.active=null; bounty.treasure=null; SFX.unlock&&SFX.unlock(); saveGame();
         rollBounty(); showExamine([t("bnt_new"), bountyText()]); }
@@ -1364,7 +1198,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     return 0;
   }
   function hasCrew(){ return crew>0; }
-  let scooterUnlocked=false;   // granted after the foot-chase story beat
   const discovered=new Set(["town"]);   // areas revealed on the Start-menu map (town known from the start)
   function discoverArea(a){ if(a && !discovered.has(a)){ discovered.add(a); try{saveGame();}catch(e){} } }
   const MOVE_SPEED=62;
@@ -1794,8 +1627,8 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     holiday_c:{ nameKey:"in_holiday_c_t", rows:["#########","#p.....s#","#.......#","#..b.t..#","#.......#","####e####"], spawn:{tx:4,ty:4},
       npc:{ tx:6, ty:3, color:"#4088b0", colorDk:"#2c5e7a", kind:"yw", hairCol:"#e0c040", pants:"#2c5e7a", nameKey:"in_holiday_c_npc", lines:()=>t("in_holiday_c") } },
     // ---- Baia del Sud (town): 3 tutorial ----
-    bay_scooter:{ nameKey:"in_bay_scooter_t", rows:["#########","#p.....s#","#.......#","#..b.t..#","#.......#","####e####"], spawn:{tx:4,ty:4},
-      npc:{ tx:2, ty:3, color:"#c8443a", colorDk:"#8a2820", kind:"ym", hairCol:"#3a2a1a", pants:"#3a3a4a", nameKey:"in_bay_scooter_npc", lines:()=>t("in_bay_scooter"), onTalk:()=>{ openShipyard(); } } },
+    bay_scooter:{ nameKey:"in_bay_horse_t", rows:["#########","#p.....s#","#.......#","#..b.t..#","#.......#","####e####"], spawn:{tx:4,ty:4},
+      npc:{ tx:2, ty:3, color:"#c8443a", colorDk:"#8a2820", kind:"ym", hairCol:"#3a2a1a", pants:"#3a3a4a", nameKey:"in_bay_horse_npc", lines:()=>t("in_bay_scooter"), onTalk:()=>{ openShipyard(); } } },
     shipyard_in:{ nameKey:"in_shipyard_t", rows:["#########","#c.....f#","#.......#","#..t.b..#","#.......#","####e####"], spawn:{tx:4,ty:4},
       npc:{ tx:2, ty:3, color:"#7a4a24", colorDk:"#5a3418", kind:"om", hairCol:"#c8c0a0", pants:"#3a3a4a", outfitBase:"worker", nameKey:"in_shipyard_npc", lines:()=>t("in_shipyard"), onTalk:()=>{ openShipyard(); } } },
     tavern_in:{ nameKey:"in_tavern_t",
@@ -1922,10 +1755,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   }
 
   // ================= QUESTS & ITEMS =================
-  let questState=0;                         // cat quest: 0..3
-  const cat={ tx:10, ty:31, found:false, animT:0 };  // on the beach
-  let shellQuest=0;                         // 0 none,1 find shell,2 found,3 done
-  const shell={ tx:30, ty:30, found:false, animT:0 };  // half-buried in sand
 
   // ================= STORY / CHAPTER / QUEST ENGINE =================
   // Declarative quests: each has steps; the current step's label shows in the journal.
@@ -1938,18 +1767,11 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
 
   // Chapter 1 quests. type main/side. steps: array of short journal labels (i18n keys).
   const QUESTS = {
-    // ---- INTRO (the only quest available at start; unlocks everything else) ----
-    intro:  { chap:1, type:"intro", nameK:"q_intro_t", steps:["q_intro_s0","q_intro_s1"], status:"available", step:0 },
-    // ---- MAIN ----
-    // ---- SIDE (open after the intro) ----
-    cat:    { chap:1, type:"side", nameK:"q_cat_t",   steps:["q_cat_s0","q_cat_s1"],   status:"locked", step:0 },
-    shell:  { chap:1, type:"side", nameK:"q_shell_t", steps:["q_shell_s0","q_shell_s1"],status:"locked",step:0 },
-    parcel: { chap:1, type:"side", nameK:"q_par_t",   steps:["q_par_s0","q_par_s1"],   status:"locked", step:0 },
-    kids:   { chap:1, type:"side", nameK:"q_kids_t",  steps:["q_kids_s0","q_kids_s1","q_kids_s2"], status:"locked", step:0 },
-    oldfriend:{ chap:1, type:"side", nameK:"q_of_t",  steps:["q_of_s0","q_of_s1"],     status:"locked", step:0 },
-    photos: { chap:1, type:"side", nameK:"q_ph_t",    steps:["q_ph_s0","q_ph_s1"],     status:"locked", step:0 }
+    // ---- INTRO (the only quest available at start; unlocks the central pirate story) ----
+    intro:  { chap:1, type:"intro", nameK:"q_intro_t", steps:["q_intro_s0","q_intro_s1"], status:"available", step:0 }
+    // The central pirate story (ky01..ky10) is injected at runtime by the story loader.
   };
-  const QORDER = ["intro","cat","shell","parcel","kids","oldfriend","photos"];
+  const QORDER = ["intro"];
   let questPop="", questPopT=0;
   function questPopup(msg){ questPop=msg; questPopT=2.6; }
 
@@ -1973,17 +1795,8 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   }
   // Does talking to this NPC currently start or complete a quest? (drives the "!" marker)
   function npcHasQuest(n){
-    if(!n||!n.id) return false;
-    // Crudo Merchant: le micro-quest scritte a mano (cat/shell/parcel/kids/oldfriend/photos) sono state
-    // RIMOSSE. Nessun NPC le offre piu' -> nessun marcatore "!" ne' punto giallo per esse.
+    // Crudo Merchant: hand-authored micro-quests removed. NPCs offer no yellow "!" of their own.
     return false;
-  }
-  // Micro-quest rotation order: only the FIRST not-yet-done micro-quest is offered at a time.
-  const MICRO_ORDER = ["cat","shell","parcel","kids","oldfriend","photos"];
-  function microDone(id){ return QUESTS[id] && QUESTS[id].status==="done"; }
-  function currentMicroSlot(){
-    for(const id of MICRO_ORDER){ if(!microDone(id)) return id; }
-    return null;   // all micro-quests completed
   }
   // ---- ORIGINAL micro-quests (cat/shell/parcel/kids/oldfriend/photos): are we mid-quest, and who closes it? ----
   // These live OUTSIDE the SQ slot engine, so they need their own "one yellow at a time" gate.
@@ -2037,35 +1850,16 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     if(!npcHasQuest(n)) return null;
     return "casual";
   }
-  // Can this NPC START a NEW micro-quest right now? Only if its yellow "!" is actually visible
-  // (i.e. no other yellow quest is running). This keeps interaction in sync with the marker, so an
-  // NPC never hands you a quest while its "!" is hidden by the one-yellow-at-a-time rule.
-  function canStartMicro(npcId, questId){
-    const microNpc = (typeof microQuestActiveNpc==="function") ? microQuestActiveNpc() : null;
-    const sqRunning = (SQ.acceptedNpc!=null) || (typeof sqBusy==="function" && sqBusy());
-    if(microNpc!==null || sqRunning) return false;          // something else running -> not free
-    if(questId && currentMicroSlot()!==questId) return false; // only the current rotation slot may start
-    return true;
-  }
 
   // ================= NPCs =================
   const npcs = [
     { id:"crier", tx:18, ty:29, dir:"down", color:"#8a5a2a", colorDk:"#5e3c18", kind:"om", hairCol:"#3a2a1a", pants:"#3a2e22", outfitBase:"", nameKey:"crier_n", lines:()=>t("crier_l"), onTalk:()=>{ openBounties(); } },
-    { id:"nonna", tx:2, ty:5, dir:"down", color:"#d060a0", colorDk:"#902c68", kind:"ow", hairCol:"#e8e8ec", pants:"#7a4a6a", nameKey:"nonna",
-      lines:()=>{ if(questState===0) return t("nonna0"); if(questState===1) return t("nonna1"); if(questState===2) return t("nonna2"); return t("nonna3"); },
-      onTalk:()=>{ if(questState===0 && QUESTS.cat.status==="available" && canStartMicro("nonna","cat")){ askYesNo(t("accept_quest_q"), ()=>{ questState=1; qStart("cat"); saveGame(); }); } else if(questState===2){questState=3;qComplete("cat");saveGame();} } },
     { id:"vito", tx:35, ty:19, dir:"down", color:"#5088d0", colorDk:"#2c5490", kind:"om", pants:"#5a5040", nameKey:"vito", lines:()=>t("vito_l"), onTalk:()=>{} },
-    { id:"pino", tx:28, ty:24, dir:"down", color:"#40a0a0", colorDk:"#2c7070", kind:"ym", hairCol:"#6a4a2a", pants:"#3a4a6a", nameKey:"pino",
-      lines:()=>{ if(shellQuest===0) return t("pino0"); if(shellQuest===1) return t("pino1"); if(shellQuest===2) return t("pino2"); return t("pino3"); },
-      onTalk:()=>{ if(shellQuest===0 && QUESTS.shell.status==="available" && canStartMicro("pino","shell")){ askYesNo(t("accept_quest_q"), ()=>{ shellQuest=1; qStart("shell"); saveGame(); }); } else if(shellQuest===2){shellQuest=3;qComplete("shell");saveGame();} } },
     { id:"lena", tx:8, ty:19, dir:"down", color:"#50b070", colorDk:"#2c7048", kind:"yw", hairCol:"#e0c040", pants:"#3a6a48", nameKey:"lena", lines:()=>t("lena_l"), onTalk:()=>{}, speed:24,
       home:[2,20], routine:[ {h:[7,9],go:[17,10]}, {h:[9,13],go:[30,8]}, {h:[13,15],go:[9,23]}, {h:[15,19],go:[8,29]}, {h:[19,24],go:[2,20]}, {h:[0,7],go:[2,20]} ] },
     { id:"marinaio", tx:28, ty:29, dir:"down", color:"#4060a0", colorDk:"#243c68", kind:"om", pants:"#2a3a4a", nameKey:"marinaio",
-      lines:()=>{ return (QUESTS.parcel.status==="active" && hasFlag("hasParcel")) ? t("dest0") : t("marinaio_l"); },
-      onTalk:()=>{ if(QUESTS.parcel.status==="active" && hasFlag("hasParcel")){ setFlag("parcelDone"); qComplete("parcel"); } }, speed:20,
+      lines:()=>t("marinaio_l"), onTalk:()=>{}, speed:20,
       home:[38,19], routine:[ {h:[6,17],go:[28,29]}, {h:[17,20],go:[8,29]}, {h:[20,24],go:[38,19]}, {h:[0,6],go:[38,19]} ] },
-    { id:"ciclista", tx:2, ty:20, dir:"right", color:"#e0a030", colorDk:"#a86818", kind:"ym", hairCol:"#3a2a1a", pants:"#5a4a2a", nameKey:"ciclista", lines:()=>t("ciclista_l"), onTalk:()=>{}, bike:true, speed:60,
-      home:[2,20], routine:[ {h:[8,12],go:[41,20]}, {h:[12,14],go:[9,23]}, {h:[14,19],go:[41,20]}, {h:[19,24],go:[2,20]}, {h:[0,8],go:[2,20]} ] },
     { id:"gina", tx:16, ty:20, dir:"down", color:"#c85088", colorDk:"#8a2c5a", kind:"yw", hairCol:"#6a4a2a", pants:"#8a2c5a", nameKey:"gina", lines:()=>t("gina_lines"), onTalk:()=>{}, speed:22,
       home:[16,20], routine:[ {h:[8,12],go:[18,18]}, {h:[12,16],go:[30,20]}, {h:[16,20],go:[9,23]}, {h:[20,24],go:[16,20]}, {h:[0,8],go:[16,20]} ] },
     { id:"bruno", tx:6, ty:7, dir:"right", color:"#6a8a40", colorDk:"#465e28", kind:"ym", hairCol:"#6a4a2a", pants:"#2a4a3a", nameKey:"bruno", lines:()=>t("bruno_lines"), onTalk:()=>{}, speed:20,
@@ -2073,37 +1867,9 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     { id:"pesc1", tx:8, ty:29, dir:"left", color:"#c88030", colorDk:"#8a5518", kind:"om", pants:"#4a3a2a", nameKey:"pescatore", fishing:true, lines:()=>t("fisher_ask"),
       onTalk:(n)=>{ askYesNo(t("fisher_join_q"), ()=>startFishing()); } },
     { id:"pesc2", tx:40, ty:29, dir:"down", color:"#3a7a9a", colorDk:"#245468", kind:"ym", hairCol:"#3a2a1a", pants:"#4a4038", nameKey:"pescatore", fishing:true, lines:()=>t("fisher_ask2"),
-      onTalk:(n)=>{ askYesNo(t("fisher_join_q"), ()=>startFishing()); } },
-    // ---- Children ----
-    { id:"boy", tx:9, ty:18, dir:"right", color:"#e05030", colorDk:"#a02c18", kind:"boy", pants:"#2a4a7a", nameKey:"bimbo",
-      lines:()=>{ if(QUESTS.kids.status==="done") return t("bimbo_l"); return t("kid_a0"); },
-      onTalk:()=>{ const q=QUESTS.kids; if(q.status==="available" && canStartMicro("boy","kids")){ askYesNo(t("accept_quest_q"), ()=>{ qStart("kids"); q.step=1; saveGame(); }); } }, speed:30,
-      home:[9,18], routine:[ {h:[0,6],go:[9,18]},{h:[6,12],go:[13,18]},{h:[12,18],go:[9,18]},{h:[18,24],go:[13,18]} ] },
-    { id:"girl", tx:24, ty:20, dir:"down", color:"#e0a0c0", colorDk:"#a05888", kind:"girl", hairCol:"#6a4a2a", pants:"#c04888", nameKey:"bimba",
-      lines:()=>{ if(QUESTS.kids.status==="done") return t("bimba_l"); if(QUESTS.kids.step>=2) return t("kids_done_l0"); return t("kid_b0"); },
-      onTalk:()=>{ const q=QUESTS.kids; if(q.status==="active" && q.step>=2){ qComplete("kids"); banner(t("kids_done")); } }, speed:28,
-      home:[24,20], routine:[ {h:[0,6],go:[24,20]},{h:[6,12],go:[24,23]},{h:[12,18],go:[24,20]},{h:[18,24],go:[24,23]} ] },
-    // ---- side-quest NPCs ----
-    { id:"fornaio", tx:34, ty:8, dir:"down", color:"#e0c080", colorDk:"#a88848", kind:"om", nameKey:"fornaio",
-      lines:()=>{ return hasFlag("parcelDone")? t("fornaio1") : t("fornaio0"); },
-      onTalk:()=>{ const q=QUESTS.parcel; if(q.status==="available" && canStartMicro("fornaio","parcel")){ askYesNo(t("accept_quest_q"), ()=>{ qStart("parcel"); setFlag("hasParcel"); banner(t("parcel_got")); saveGame(); }); } } },
-    { id:"nico", tx:12, ty:25, dir:"down", color:"#40b0a0", colorDk:"#2c7a70", kind:"ym", hairCol:"#3a2a1a", pants:"#3a4a5a", nameKey:"nico",
-      lines:()=>{ return QUESTS.oldfriend.status==="done"? t("nico1") : t("nico0"); },
-      onTalk:()=>{ const q=QUESTS.oldfriend; if(q.status==="available" && canStartMicro("nico","oldfriend")){ askYesNo(t("accept_quest_q"), ()=>{ qStart("oldfriend"); saveGame(); }); } else if(q.status==="active" && hasFlag("keyring")){ qComplete("oldfriend"); } } },
-    // ---- Chapter 1 story NPCs ----
-    { id:"mamma", tx:6, ty:12, dir:"down", color:"#c060a0", colorDk:"#8a2c6a", kind:"ow", hairCol:"#e8e8ec", pants:"#7a3a6a", nameKey:"mamma",
-      lines:()=>{ if(QUESTS.photos && QUESTS.photos.status==="available") return t("mamma_photos"); return t("mamma1"); },
-      onTalk:()=>{ const q=QUESTS.photos; if(q && q.status==="available" && canStartMicro("mamma","photos")){ askYesNo(t("accept_quest_q"), ()=>{ qStart("photos"); banner(t("photos_start")); saveGame(); }); } } },
-    { id:"capo", tx:20, ty:24, dir:"down", color:"#5a7a3a", colorDk:"#3a5424", kind:"om", pants:"#3a3a2a", nameKey:"capo",
-      lines:()=>t("capo0"),
-      onTalk:()=>{} },
-    { id:"teo", tx:17, ty:17, dir:"down", color:"#3a6ac0", colorDk:"#24448a", kind:"ym", hairCol:"#3a2a1a", pants:"#3a3a5a", nameKey:"teo",
-      lines:()=>t("teo0"),
-      onTalk:()=>{} }
+      onTalk:(n)=>{ askYesNo(t("fisher_join_q"), ()=>startFishing()); } }
   ];
   npcs.forEach(n=>{ n.px=n.tx*TILE; n.py=n.ty*TILE; });
-  // bike object for the 'bike' quest
-  const bike={ tx:37, ty:25, taken:false, animT:0 };
   const AREA_NPCS={};
   AREA_NPCS.holiday=[
     { id:"holiday_npc0", tx:33, ty:19, dir:"down", color:"#5088d0", colorDk:"#2c5490", kind:"ym", hairCol:"#3a2a1a", pants:"#2c5490", outfitBase:"vacation", nameKey:"passerby", lines:()=>t("passerby_l"), onTalk:()=>{}, speed:22, home:[34,19], routine:[{h:[0,6],go:[34,19]},{h:[6,12],go:[38,19]},{h:[12,18],go:[34,19]},{h:[18,24],go:[38,19]}] },
@@ -2199,10 +1965,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   function currentNpcs(){ return areaKey==="town" ? npcs : (AREA_NPCS[areaKey]||[]); }
 
   // side-quest collectibles
-  const ball={ tx:11, ty:22, taken:false };
-  const keyring={ tx:8, ty:23, taken:false };
-  const photos=[ {tx:2,ty:1,taken:false}, {tx:38,ty:3,taken:false}, {tx:6,ty:29,taken:false} ];
-  function photosFound(){ return photos.filter(p=>p.taken).length; }
 
   // ================= SEA / SWIMMING / BEACH =================
   // Beach sand rows 30-31, sea rows 32+. Swimmable band = rows SWIM_TOP..SWIM_BOTTOM
@@ -2660,7 +2422,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     const cost=nextCrewCost();
     showExamine([t("tav_greet").replace("#",crew).replace("$",max), t("tav_offer").replace("#",cost)], ()=>{
       askYesNo(t("tav_q").replace("#",cost), ()=>{
-        if(player.gold>=cost){ player.gold-=cost; crew++; SFX.unlock&&SFX.unlock(); banner(t("tav_hired").replace("#",crew).replace("$",max)); saveGame(); }
+        if(player.gold>=cost){ player.gold-=cost; crew++; SFX.unlock&&SFX.unlock(); banner(t("tav_hired").replace("#",crew).replace("$",max)); if(typeof tut2OnRecruit==="function") tut2OnRecruit(); saveGame(); }
         else { banner(t("tav_nogold").replace("#",cost)); SFX.cancel&&SFX.cancel(); }
       });
     });
@@ -2720,7 +2482,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     player.gold-=Math.round(info.cost*(1-rankDiscount()));
     if(!player.ship) player.ship={cannons:0,prow:0,hull:0};
     if(which===0) player.ship.cannons++; else if(which===1) player.ship.prow++; else player.ship.hull++;
-    shipyard.note=t("yard_bought"); shipyard.noteT=2.0; SFX.unlock&&SFX.unlock(); saveGame();
+    shipyard.note=t("yard_bought"); shipyard.noteT=2.0; SFX.unlock&&SFX.unlock(); if(typeof tut2OnUpgrade==="function") tut2OnUpgrade(); saveGame();
   }
   function updateShipyard(){
     if(shipyard.noteT>0) shipyard.noteT-=0.05;
@@ -3018,7 +2780,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   }
   // ---- trade menu overlay (styled like the shipyard) ----
   const trade = { open:false, port:null, sel:0, note:"", noteT:0 };
-  function openTrade(port){ if(!market.seeded) marketInit(); trade.open=true; trade.port=port; trade.sel=0; trade.note=""; trade.noteT=0; SFX.confirm&&SFX.confirm(); }
+  function openTrade(port){ if(!market.seeded) marketInit(); trade.open=true; trade.port=port; trade.sel=0; trade.note=""; trade.noteT=0; SFX.confirm&&SFX.confirm(); if(typeof teachOnce==="function") teachOnce("trade"); }
   function updateTrade(){
     if(trade.noteT>0) trade.noteT-=1/60;
     const N=TRADE_GOODS.length;
@@ -3037,6 +2799,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       if(cargo[g.id]<=0){ trade.note=t("tr_none"); trade.noteT=1.5; SFX.cancel&&SFX.cancel(); return; }
       player.gold+=price; cargo[g.id]--; marketNudge(port,g.id,-1); SFX.unlock&&SFX.unlock();
       trade.note=t("tr_sold").replace("#",price); trade.noteT=1.5;
+      if(typeof tut2OnSell==="function") tut2OnSell();
     }
   }
   function drawTrade(){
@@ -3111,6 +2874,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     const shipCost=routeShipCost(from,to,qty);
     route = { from, to, good:gid, qty, buyCost:cost, shipCost, dist:routeDist(from,to), elapsed:0, leg:"out", legSecs, raided:0, done:false, msg:"" };
     banner((t("rt_started")||"Route started").replace("#",qty).replace("%",t(TRADE_PORTS[to].nameK)));
+    if(typeof tut2OnRoute==="function") tut2OnRoute();
     saveGame(); return true;
   }
   function routeTick(dt){
@@ -3195,6 +2959,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       if(investProd(port, opt.key)){
         SFX.unlock&&SFX.unlock();
         banner(t("inv_done").replace("#g",t(TRADE_GOODS.find(g=>g.id===opt.key).nameK)).replace("#p",t(TRADE_PORTS[port].nameK)));
+        if(typeof tut2OnInvest==="function") tut2OnInvest();
         openInvest(port);   // reopen so you can keep investing
       }
     });
@@ -3248,7 +3013,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       (i,opt)=>{ if(opt.key==="accept"){
         contract={ good:o.good, qty:o.qty, from:o.from, to:o.to, price:o.price, dueDay:dayCount+o.days, accepted:true };
         contractOffer[port]=null; SFX.confirm&&SFX.confirm();
-        banner(t("ct_taken").replace("#n",o.qty).replace("#g",gname).replace("#p",dst)); saveGame();
+        banner(t("ct_taken").replace("#n",o.qty).replace("#g",gname).replace("#p",dst)); if(typeof tut2OnContract==="function") tut2OnContract(); saveGame();
       } });
   }
   function deliverContract(){
@@ -3342,6 +3107,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     confront.active=true; confront.id=null; confront.res=100; confront.comp=100; confront.options=options; confront.sel=0;
     confront.msg=introMsg||t("confront_intro"); confront.msgT=2.2; confront.onWin=onWin; confront.onLose=onLose; confront.endT=0; confront.ended=null;
     SFX.talk();
+    if(typeof teachOnce==="function") teachOnce("confront");
   }
   function updateConfront(dt){
     if(confront.msgT>0) confront.msgT-=dt;
@@ -3387,6 +3153,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     fight.ex=AR.x+AR.w-24; fight.ey=AR.y+AR.h/2; fight.ehp=100; fight.etimer=1.2; fight.elunge=0; fight.ehit=0;
     fight.msg=csvar(id,"fight_intro")||t("fight_intro"); fight.msgT=2.0; fight.endT=0; fight.ended=null;
     SFX.talk();
+    if(typeof teachOnce==="function") teachOnce("fight");
   }
   function updateFight(dt){
     if(fight.msgT>0) fight.msgT-=dt;
@@ -3537,6 +3304,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     if(naval.mode==="flee"){ naval.timer=opts.time||22; }   // survive/escape for N seconds (or reach the left edge)
     naval.msg = t(naval.mode==="sink" ? "nv_appears" : ("nv_obj_"+naval.mode)).replace("%",t(e.nameKey)); naval.msgT=2.2;
     SFX.talk&&SFX.talk();
+    if(typeof teachOnce==="function") teachOnce("naval");
   }
   function navalEnemy(){ return NAVAL_ENEMIES[naval.enemyKind]||NAVAL_ENEMIES.sloop; }
   function angDiff(a,b){ let d=(a-b)%(Math.PI*2); if(d>Math.PI)d-=Math.PI*2; if(d<-Math.PI)d+=Math.PI*2; return d; }
@@ -3576,7 +3344,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       naval.msg=t("nv_miss"); naval.msgT=0.8;   // not lined up abeam / too far
     }
   }
-  function navalWin(){ naval.ended="win"; naval.result="win"; naval.endT=1.6; naval.msg=t("nv_win"); naval.msgT=1.6; SFX.questDone&&SFX.questDone(); }
+  function navalWin(){ naval.ended="win"; naval.result="win"; naval.endT=1.6; naval.msg=t("nv_win"); naval.msgT=1.6; SFX.questDone&&SFX.questDone(); if(typeof tut2OnNaval==="function") tut2OnNaval(); }
   function navalLose(){ naval.ended="lose"; naval.result="lose"; naval.endT=1.6; naval.msg=t("nv_lose"); naval.msgT=1.6; SFX.cancel&&SFX.cancel(); }
   function updateNaval(dt){
     if(naval.msgT>0) naval.msgT-=dt;
@@ -4116,19 +3884,20 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   const SAVE_KEY="crudoRPG.save.v2";
   function serializeCase(){ const cl={}; if(window.CASE_REF){ for(const id in window.CASE_REF.clues){ cl[id]=window.CASE_REF.clues[id].taken?1:0; } } return {clues:cl, introDone: window.CASE_REF? (window.CASE_REF.introDone?1:0):0, closedUntil: window.CASE_REF? window.CASE_REF.closedUntil : {}, deduced: window.CASE_REF? window.CASE_REF.deduced : {}, reconstructed: window.CASE_REF? window.CASE_REF.reconstructed : {}, morals: window.CASE_REF? window.CASE_REF.morals : {}, fought: window.CASE_REF? window.CASE_REF.fought : {}, chaseCaught: window.CASE_REF? window.CASE_REF.chaseCaught : {}, naval: window.CASE_REF? window.CASE_REF.naval : {}}; }
   function restoreCase(o){ if(!o||!window.CASE_REF) return; if(o.clues){ for(const id in o.clues){ if(window.CASE_REF.clues[id]) window.CASE_REF.clues[id].taken=!!o.clues[id]; } } window.CASE_REF.introDone=!!o.introDone; window.CASE_REF.closedUntil = o.closedUntil||{}; window.CASE_REF.deduced = o.deduced||{}; window.CASE_REF.reconstructed = o.reconstructed||{}; window.CASE_REF.morals = o.morals||{}; window.CASE_REF.fought = o.fought||{}; window.CASE_REF.chaseCaught = o.chaseCaught||{}; window.CASE_REF.naval = o.naval||{}; }
-  function saveGame(){ try{ localStorage.setItem(SAVE_KEY, JSON.stringify({areaKey,tx:player.tx,ty:player.ty,dir:player.dir,scooter:player.scooter,boat:player.boat,boatType:player.boatType,gold:player.gold,weapons:player.weapons,ship:player.ship,armor:player.armor,boatsOwned:boatsOwned,crew:crew,fame:fame,bounty:{active:bounty.active,tier:bounty.tier,treasure:bounty.treasure},scooterUnlocked,discovered:[...discovered],seaDone,season,seasonAutoTimer,dayCount,questState,catFound:cat.found,shellQuest,shellFound:shell.found,bikeTaken:bike.taken,ballTaken:ball.taken,keyringTaken:keyring.taken,photos:photos.map(p=>p.taken),lang,chapter,flags,quests:serializeQuests(),cs:serializeCase(),sq:(typeof serializeSQ==="function"?serializeSQ():null),cargo:cargo,market:(market.seeded?market.prices:null),mstock:(market.seeded?market.stock:null),minvest:(market.seeded?market.invest:null),mevent:market.event,route:route,contract:contract,tut:{step:tut.step,done:tut.done},merch:merchantStats})); return true;}catch(e){return false;} }
+  function saveGame(){ try{ localStorage.setItem(SAVE_KEY, JSON.stringify({areaKey,tx:player.tx,ty:player.ty,dir:player.dir,boat:player.boat,boatType:player.boatType,gold:player.gold,weapons:player.weapons,ship:player.ship,armor:player.armor,boatsOwned:boatsOwned,crew:crew,fame:fame,bounty:{active:bounty.active,tier:bounty.tier,treasure:bounty.treasure},discovered:[...discovered],seaDone,season,seasonAutoTimer,dayCount,lang,chapter,flags,quests:serializeQuests(),cs:serializeCase(),sq:(typeof serializeSQ==="function"?serializeSQ():null),cargo:cargo,market:(market.seeded?market.prices:null),mstock:(market.seeded?market.stock:null),minvest:(market.seeded?market.invest:null),mevent:market.event,route:route,contract:contract,tut:{step:tut.step,done:tut.done},tut2:{started:tut2.started,done:tut2.done,done_map:tut2.done_map},learned:learned,merch:merchantStats})); return true;}catch(e){return false;} }
   function hasSave(){ try{ return !!localStorage.getItem(SAVE_KEY);}catch(e){return false;} }
   function loadGame(){ try{ const d=JSON.parse(localStorage.getItem(SAVE_KEY)||"null"); if(!d) return false;
     areaKey=d.areaKey&&AREAS[d.areaKey]?d.areaKey:"town"; useMap(AREAS[areaKey]);
     player.tx=d.tx!=null?d.tx:15; player.ty=d.ty!=null?d.ty:12; player.px=player.tx*TILE; player.py=player.ty*TILE; player.dir=d.dir||"down";
-    season=(["spring","summer","autumn","winter"].indexOf(d.season)>=0)?d.season:"summer"; seasonAutoTimer=d.seasonAutoTimer||0; dayCount=d.dayCount||0; questState=d.questState||0; cat.found=!!d.catFound; shellQuest=d.shellQuest||0; shell.found=!!d.shellFound; bike.taken=!!d.bikeTaken; if(d.lang) lang=d.lang;
-    ball.taken=!!d.ballTaken; keyring.taken=!!d.keyringTaken; if(d.photos) photos.forEach((p,i)=>p.taken=!!d.photos[i]);
+    season=(["spring","summer","autumn","winter"].indexOf(d.season)>=0)?d.season:"summer"; seasonAutoTimer=d.seasonAutoTimer||0; dayCount=d.dayCount||0; if(d.lang) lang=d.lang;
     chapter=d.chapter||1; for(const f in flags) delete flags[f]; if(d.flags) Object.assign(flags,d.flags); if(d.seaDone){ for(const k in seaDone) delete seaDone[k]; Object.assign(seaDone,d.seaDone); } restoreQuests(d.quests); restoreCase(d.cs); restoreSQ(d.sq); sqInit();
     // Crudo Merchant TRADE: restore cargo hold + market prices
     if(typeof cargo!=="undefined"){ for(const g of TRADE_GOODS){ cargo[g.id]=(d.cargo&&d.cargo[g.id])||0; } }
     if(typeof route!=="undefined") route = d.route||null;
     if(typeof contract!=="undefined") contract = d.contract||null;
     if(typeof tut!=="undefined" && d.tut){ tut.step=d.tut.step||0; tut.done=!!d.tut.done; }
+    if(typeof tut2!=="undefined" && d.tut2){ tut2.started=!!d.tut2.started; tut2.done=!!d.tut2.done; tut2.done_map=d.tut2.done_map||{}; }
+    if(typeof learned!=="undefined"){ for(const k in learned) delete learned[k]; if(d.learned) Object.assign(learned,d.learned); }
     if(typeof merchantStats!=="undefined" && d.merch){ merchantStats.routes=d.merch.routes||0; merchantStats.profit=d.merch.profit||0; merchantStats.revenue=d.merch.revenue||0; merchantStats.best=d.merch.best||0; merchantStats.raids=d.merch.raids||0; }
     if(!market.seeded) marketInit(); if(d.market){ for(const p of TRADE_HUBS){ if(d.market[p]) for(const g of TRADE_GOODS){ if(d.market[p][g.id]!=null) market.prices[p][g.id]=d.market[p][g.id]; } } }
     if(d.mstock){ for(const p of TRADE_HUBS){ if(d.mstock[p]) for(const g of TRADE_GOODS){ if(d.mstock[p][g.id]!=null) market.stock[p][g.id]=d.mstock[p][g.id]; } } }
@@ -4151,11 +3920,11 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     player.boat = !!d.boat || areaKey==="opensea";
     // anti-stuck safety: if we're on a water tile in a sea area but not in the boat, put the player back in the boat
     if(!player.boat && (areaKey==="opensea"||areaKey==="island"||areaKey==="cape") && tileAt(player.tx,player.ty)==="~"){ player.boat=true; }
-    scooterUnlocked=!!d.scooterUnlocked; discovered.clear(); discovered.add("town"); (d.discovered||[]).forEach(a=>discovered.add(a)); discovered.add(areaKey); resetWeather(); return true;}catch(e){return false;} }
+    discovered.clear(); discovered.add("town"); (d.discovered||[]).forEach(a=>discovered.add(a)); discovered.add(areaKey); resetWeather(); return true;}catch(e){return false;} }
   function resetProgress(){ areaKey="town"; useMap(TOWN);
     // Crudo Merchant: si comincia IN BARCA accanto al molo di Porto Franco -> il tutorial fa sbarcare.
     player.tx=23; player.ty=33; player.px=23*TILE; player.py=33*TILE; player.dir="up"; player.moving=false;
-    season="spring"; seasonAutoTimer=0; dayCount=0; scooterUnlocked=false; if(typeof contract!=="undefined"){ contract=null; contractOffer={}; } discovered.clear(); discovered.add("town"); player.scooter=false; player.boat=false; player.boatType="rowboat"; player.gold=50; player.weapons=["knife"]; player.ship={cannons:0,prow:0,hull:0}; player.armor=0; boatsOwned={rowboat:true,sloop:false,caravel:false,frigate:false,galleon:false}; crew=0; fame=0; bounty.active=null; bounty.tier=0; bounty.treasure=null; if(typeof seaDone!=="undefined"){ for(const k in seaDone) delete seaDone[k]; } questState=0; cat.found=false; shellQuest=0; shell.found=false; bike.taken=false; ball.taken=false; keyring.taken=false; photos.forEach(p=>p.taken=false); insideKey=null; if(window.CASE_REF){ window.CASE_REF.closedUntil={}; window.CASE_REF.deduced={}; window.CASE_REF.reconstructed={}; window.CASE_REF.morals={}; window.CASE_REF.fought={}; window.CASE_REF.chaseCaught={}; window.CASE_REF.naval={}; } if(window.SQ_REF){ SQ.done={}; SQ.log=[]; SQ_KINDS.forEach(k=>SQ.queueIdx[k]=0); } resetQuests(); resetWeather(); sqInit(); player.boat=true; if(typeof tutStart==="function") tutStart(); saveGame(); }
+    season="spring"; seasonAutoTimer=0; dayCount=0; if(typeof contract!=="undefined"){ contract=null; contractOffer={}; } discovered.clear(); discovered.add("town"); player.boat=false; player.boatType="rowboat"; player.gold=50; player.weapons=["knife"]; player.ship={cannons:0,prow:0,hull:0}; player.armor=0; boatsOwned={rowboat:true,sloop:false,caravel:false,frigate:false,galleon:false}; crew=0; fame=0; bounty.active=null; bounty.tier=0; bounty.treasure=null; if(typeof seaDone!=="undefined"){ for(const k in seaDone) delete seaDone[k]; } insideKey=null; if(window.CASE_REF){ window.CASE_REF.closedUntil={}; window.CASE_REF.deduced={}; window.CASE_REF.reconstructed={}; window.CASE_REF.morals={}; window.CASE_REF.fought={}; window.CASE_REF.chaseCaught={}; window.CASE_REF.naval={}; } if(window.SQ_REF){ SQ.done={}; SQ.log=[]; SQ_KINDS.forEach(k=>SQ.queueIdx[k]=0); } resetQuests(); resetWeather(); sqInit(); player.boat=true; if(typeof tutStart==="function") tutStart(); if(typeof tut2!=="undefined"){ tut2.started=false; tut2.done=false; tut2.done_map={}; } if(typeof learned!=="undefined"){ for(const k in learned) delete learned[k]; } saveGame(); }
 
   // ================= TUTORIAL GUIDATO =================
   // Sequenza di passi con marcatori gialli e pannello-guida. Insegna i pilastri partendo dallo sbarco.
@@ -4201,12 +3970,66 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     lines.forEach((l,i)=> textCenter(l, W/2, 44+i*8, "#ffd840"));
   }
 
+  // ================= SECONDA SERIE DI GUIDE: "IMPRESE DEL CAPITANO" =================
+  // Meccaniche avanzate (commercio + piratesco). A differenza degli Ordini iniziali (lineari), queste
+  // sono una CHECKLIST non lineare: il giocatore le compie nell'ordine che vuole, mentre gioca la storia.
+  // Parte automaticamente appena gli Ordini iniziali (tut) sono conclusi. Stato persistito nel save (tut2).
+  const TUT2_STEPS = ["sell","prices","route","invest","contract","recruit","upgrade","bounty","naval"];
+  const tut2 = { started:false, done:false, hintT:0, done_map:{} };
+  function tut2Start(){ tut2.started=true; tut2.done=false; tut2.hintT=5.0; tut2.done_map={};
+    const intro=t("tut2_start");
+    if(typeof showExamine==="function" && intro && intro!=="tut2_start"){ showExamine(intro); }
+    else banner(t("tut2_progress").replace("#","0"));
+    saveGame(); }
+  // called from the main loop: kick off series 2 the first time the initial Orders finish
+  function tut2Maybe(){ if(!tut2.started && !tut2.done && tut.done){ tut2Start(); } }
+  function tut2Active(){ return tut2.started && !tut2.done; }
+  function tut2Count(){ let n=0; TUT2_STEPS.forEach(k=>{ if(tut2.done_map[k]) n++; }); return n; }
+  // the current venture to hint = first not-yet-done step
+  function tut2Cur(){ if(!tut2Active()) return null; for(const k of TUT2_STEPS){ if(!tut2.done_map[k]) return k; } return null; }
+  // mark a venture done (idempotent). Completes the series when all are done.
+  function tut2Do(key){
+    if(!tut2Active()) return;
+    if(TUT2_STEPS.indexOf(key)<0 || tut2.done_map[key]) return;
+    tut2.done_map[key]=true; tut2.hintT=4.0; SFX.confirm&&SFX.confirm();
+    if(tut2Count()>=TUT2_STEPS.length){ tut2.done=true; banner(t("tut2_done")); }
+    else { banner(t("tut2_progress").replace("#",tut2Count())); }
+    saveGame();
+  }
+  // hooks fired by the various systems (no-op unless series 2 is active and the step is pending)
+  function tut2OnSell(){ tut2Do("sell"); }
+  function tut2OnPrices(){ tut2Do("prices"); }
+  function tut2OnRoute(){ tut2Do("route"); }
+  function tut2OnInvest(){ tut2Do("invest"); }
+  function tut2OnContract(){ tut2Do("contract"); }
+  function tut2OnRecruit(){ tut2Do("recruit"); }
+  function tut2OnUpgrade(){ tut2Do("upgrade"); }
+  function tut2OnBounty(){ tut2Do("bounty"); }
+  function tut2OnNaval(){ tut2Do("naval"); }
+
+  // ---- CONTEXTUAL "FIRST USE" TUTORIAL: teach a mechanic's controls the first time it happens. ----
+  // learned[key]=true once shown. Persisted in the save. teachOnce shows a modal explanation the FIRST
+  // time (then runs onDone); on later uses it goes straight to onDone. Keys: trade, naval, fight, tail,
+  // scour, confront. Strings are "learn_<key>" (arrays of lines).
+  const learned = {};
+  function teachOnce(key, onDone){
+    if(learned[key]){ if(onDone) onDone(); return; }
+    learned[key]=true; saveGame();
+    // Durante gli Ordini iniziali (tutorial base attivo) NON mostrare il pannello contestuale: gli Ordini
+    // gia' guidano il giocatore, eviteremmo un doppione. Marchiamo comunque come "appreso".
+    if(typeof tutActive==="function" && tutActive()){ if(onDone) onDone(); return; }
+    const msg=t("learn_"+key);
+    if(msg && msg!=="learn_"+key){ showExamine(msg, onDone); }
+    else if(onDone){ onDone(); }
+  }
+
   // ================= MENU =================
   const menu = { open:false, index:0, showMap:false, showJournal:false, showNotebook:false, showRules:false, rulesPage:0,
+                 showGuide:false, guidePage:0,
                  showCrew:false, crewSel:0,
                  jView:"main", jSel:0, jDoneMenuSel:0, jDetail:null };
   const mapNav = { zoom:null, col:1, row:1 };   // zoom=null -> grid view; else zoomed area key
-  const MENU_KEYS = ["menu_map","menu_journal","menu_notebook","menu_crew","menu_lang","menu_rules","menu_exit"];
+  const MENU_KEYS = ["menu_map","menu_journal","menu_notebook","menu_crew","menu_lang","menu_guide","menu_rules","menu_exit"];
   // Build a flat, navigable list of quests for the Journal: central story (red) + side/micro (yellow).
   // ---- Journal data helpers ----
   // A journal item: { kind:"red"|"yellow", id, title, status, step }
@@ -4232,7 +4055,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     QORDER.forEach(k=>{ const q=QUESTS[k]; if(q.type==="case" && q.status==="done") out.push(jItem("red",q,k)); });
     return out;
   }
-  // COMPLETED yellow: fixed micro-quests done (in MICRO_ORDER) + SQ side-quests from SQ.log (chronological).
+  // COMPLETED yellow: SQ side-quests from SQ.log (chronological). Hand-authored micro-quests removed.
   function journalDoneYellow(){
     const out=[];
     // Crudo Merchant: micro-quest scritte a mano rimosse. Solo SQ side-quest concluse (se presenti).
@@ -4280,8 +4103,8 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   const RULES_PAGES_DATA=[
     { it:{h:"Comandi",lines:["D-pad: muovi il pirata.","A: parla, conferma, raccogli.","B: annulla / indietro.","START: apre il menu.","A vicino a una barca: imbarco."]},
       en:{h:"Controls",lines:["D-pad: move the pirate.","A: talk, confirm, pick up.","B: cancel / go back.","START: open the menu.","A near a boat: board it."]} },
-    { it:{h:"Punti esclamativi",lines:["(!) ROSSO: la storia,","la tua rotta verso il Re.","(!) GIALLO: imprese extra,","facoltative, per la gente.","Una gialla alla volta."]},
-      en:{h:"Exclamation marks",lines:["RED (!): the story,","your course against the King.","YELLOW (!): extra ventures,","optional, for the folk.","One yellow at a time."]} },
+    { it:{h:"Punti esclamativi",lines:["(!) GIALLO: le persone",'che fanno avanzare la tua',"marea: chi ti affida la","storia e chi ti apre affari,","rotte e alleati. Uno alla volta."]},
+      en:{h:"Exclamation marks",lines:["YELLOW (!): the folk who","push your tide forward:","some hand you the story,","some open deals, routes","and allies. One at a time."]} },
     { it:{h:"Commercio e flotta",lines:["Compra dove costa poco,","rivendi dove scarseggia (MERCANTILE).","Potenzia la nave al Cantiere","e recluta la Ciurma alla Locanda.","Piu' fama = piu' rispetto in mare."]},
       en:{h:"Trade & fleet",lines:["Buy cheap, sell where scarce","(MERCHANT menu).","Upgrade your ship at the Shipyard","and recruit Crew at the Tavern.","More fame = more respect at sea."]} },
     { it:{h:"Mare e battaglie",lines:["Naviga tra 9 aree, molte via mare.","Affianca la nave nemica e spara","la bordata (A). Sperona per","l'arrembaggio. Attento ai mostri","e ai convogli del Re."]},
@@ -4290,8 +4113,48 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       en:{h:"Saving",lines:["The game saves itself,","all the time.","'EXIT GAME' saves and","returns to the main menu."]} },
   ];
   const RULES_PAGES = RULES_PAGES_DATA;   // alias used by updateMenu
-  function openMenu(){ menu.open=true; menu.index=0; menu.showMap=false; menu.showJournal=false; menu.showNotebook=false; menu.showRules=false; menu.showCrew=false; menu.rulesPage=0; menu.jView="main"; menu.jSel=0; menu.jDoneMenuSel=0; menu.jDetail=null; SFX.confirm(); }
-  function closeMenu(){ menu.open=false; menu.showMap=false; menu.showJournal=false; menu.showNotebook=false; menu.showRules=false; menu.showCrew=false; menu.jDetail=null; SFX.cancel(); }
+
+  // ---- GUIDE pages (localized): a full player manual covering every mode and mechanic. ----
+  const GUIDE_PAGES_DATA=[
+    { it:{h:"Benvenuto, Capitano",lines:["Crudo Merchant: avventura","piratesca + commercio vivo.","Naviga, commercia, combatti","e cresci. Questa GUIDA spiega","ogni modalita' e comando.","Scorri con le frecce."]},
+      en:{h:"Welcome, Captain",lines:["Crudo Merchant: pirate","adventure + living trade.","Sail, trade, fight and grow.","This GUIDE explains every","mode and control.","Scroll with the arrows."]} },
+    { it:{h:"Comandi base",lines:["D-pad: muovi il capitano.","A: parla / conferma / raccogli.","B: annulla / indietro.","START: apre questo menu.","A vicino a barca/molo:","imbarco o sbarco."]},
+      en:{h:"Basic controls",lines:["D-pad: move the captain.","A: talk / confirm / pick up.","B: cancel / go back.","START: open this menu.","A near boat/pier:","board or step ashore."]} },
+    { it:{h:"Missioni e (!)",lines:["I punti esclamativi GIALLI (!)","sopra le persone segnano chi","fa avanzare la tua storia o","ti apre affari e alleati.","Parla loro (A). Il Registro","(START) elenca le missioni."]},
+      en:{h:"Missions & (!)",lines:["YELLOW exclamation marks (!)","over people mark who moves","your story forward or opens","deals and allies.","Talk to them (A). The Log","(START) lists your missions."]} },
+    { it:{h:"Comprare",lines:["Parla con un Mercante in un","hub e scegli 'Contratta al","banco'. Nel MERCATO:","A = COMPRA la merce evidenziata.","Comprare svuota lo stock del","porto: il prezzo sale."]},
+      en:{h:"Buying",lines:["Talk to a Merchant in a hub","and pick 'Trade at the","counter'. In the MARKET:","A = BUY the highlighted good.","Buying drains the port stock:","the price goes up."]} },
+    { it:{h:"Vendere",lines:["Nello stesso MERCATO, con la","merce in stiva:","freccia SINISTRA = VENDI.","B = esci dal banco.","Vendere riempie lo stock:","il prezzo scende. Compra basso,","vendi dove scarseggia!"]},
+      en:{h:"Selling",lines:["In the same MARKET, with","goods in the hold:","LEFT arrow = SELL.","B = leave the counter.","Selling floods the stock:","the price drops. Buy low,","sell where it's scarce!"]} },
+    { it:{h:"Rotte commerciali",lines:["Dal Mercante: 'Organizza","rotta'. Scegli porto, merce","e quantita'. La nave parte","da sola e impiega tempo.","Puo' subire assalti. Al","ritorno incassi il ricavo","netto (meno il trasporto)."]},
+      en:{h:"Trade routes",lines:["From the Merchant: 'Set up","a route'. Pick port, good","and amount. The ship sails","on its own and takes time.","It may be raided. On return","you collect the net profit","(minus shipping cost)."]} },
+    { it:{h:"Investimenti",lines:["Dal Mercante: 'Investi nel","porto'. Ogni livello aumenta","la produzione di quella merce.","Il costo cresce, ma il porto","diventa una fonte di reddito","stabile e crescente. Senza tetto."]},
+      en:{h:"Investments",lines:["From the Merchant: 'Invest in","the port'. Each level raises","that good's output.","The cost grows, but the port","becomes a stable, rising","income source. No cap."]} },
+    { it:{h:"Contratti",lines:["Dal Mercante: 'Contratti'.","Consegna N casse di una merce","a un porto entro una scadenza,","a prezzo fisso premium.","Protegge dalle fluttuazioni.","Consegna al porto giusto in","tempo per la ricompensa + fama."]},
+      en:{h:"Contracts",lines:["From the Merchant: 'Contracts'.","Deliver N crates of a good to","a port by a deadline, at a","fixed premium price.","Shields you from price swings.","Deliver at the right port in","time for the reward + fame."]} },
+    { it:{h:"Stagioni e catene",lines:["Le stagioni ruotano da sole","e cambiano domanda e","produzione (es. poco pesce","d'inverno, tanto rum).","Le merci lavorate (rum, ferro,","perle) richiedono materie","prime: se mancano, il prezzo","sale. Nascono rotte redditizie."]},
+      en:{h:"Seasons & chains",lines:["Seasons rotate on their own","and shift demand and output","(e.g. little fish in winter,","lots of rum). Worked goods","(rum, iron, pearls) need raw","inputs: if they run out,","prices rise. Profitable","routes emerge."]} },
+    { it:{h:"Cantiere navale",lines:["Cerca l'insegna CANTIERE al","molo (A). Puoi comprare navi","piu' grandi (piu' stiva) e","potenziare SCAFO (vita),","CANNONI (danno) e PRUA","(speronamento). Servono dobloni."]},
+      en:{h:"Shipyard",lines:["Find the SHIPYARD sign at the","pier (A). Buy bigger ships","(more hold) and upgrade the","HULL (health), CANNONS (damage)","and PROW (ramming).","It all costs doubloons."]} },
+    { it:{h:"Battaglia navale",lines:["In mare, avvicina una nave","nemica. Frecce: manovra.","Mettiti FIANCO A FIANCO e","A = BORDATA (spari i cannoni).","Sperona con la PRUA per","l'arrembaggio e catturare la nave.","Occhio al vento e ai colpi!"]},
+      en:{h:"Naval battle",lines:["At sea, approach an enemy ship.","Arrows: manoeuvre.","Get SIDE-BY-SIDE and","A = BROADSIDE (fire cannons).","Ram with the PROW to board","and capture the ship.","Mind the wind and their fire!"]} },
+    { it:{h:"Duello a terra",lines:["Alcuni nemici ti sfidano corpo","a corpo. E' in tempo reale:","A = COLPISCI quando sei vicino,","B = SCHIVA il loro attacco.","Armi e armatura migliori","aiutano. Alterna colpo e schivata."]},
+      en:{h:"Land duel",lines:["Some foes challenge you hand","to hand. It's real-time:","A = STRIKE when close,","B = DODGE their attack.","Better weapons and armour","help. Alternate hit and dodge."]} },
+    { it:{h:"Ciurma e Taverna",lines:["Alla LOCANDA (insegna, A):","recluta marinai per la ciurma","(piu' bonus in mare e battaglia)","e gioca ai DADI per tentare","la fortuna coi dobloni.","Piu' ciurma = piu' forza."]},
+      en:{h:"Crew & Tavern",lines:["At the TAVERN (sign, A):","recruit sailors for your crew","(more bonuses at sea and in","battle) and play DICE to try","your luck with doubloons.","More crew = more strength."]} },
+    { it:{h:"Fama e Taglie",lines:["Il Banditore in piazza (A)","offre TAGLIE: caccia, tesori o","navi del Re. Completarle da'","oro e FAMA. Piu' fama = rango","piu' alto, sconti al Cantiere","e piu' rispetto in mare."]},
+      en:{h:"Fame & Bounties",lines:["The Crier in the square (A)","offers BOUNTIES: hunts, treasure","or King's ships. Completing them","grants gold and FAME. More fame","= higher rank, Shipyard","discounts and respect at sea."]} },
+    { it:{h:"Pesca (rete di sicurezza)",lines:["Parla con un Pescatore sul molo","(A) per pescare: ti frutta","sempre qualche pesce (o oro se","la stiva e' piena). Cosi' puoi","ripartire anche a corto di soldi.","Il commercio scorre da solo."]},
+      en:{h:"Fishing (safety net)",lines:["Talk to a Fisher on the pier","(A) to fish: it always yields","a few fish (or gold if the hold","is full). So you can recover","even when low on money.","Trade flows on its own."]} },
+    { it:{h:"Registro e Mappa",lines:["REGISTRO (START>REGISTRO): 3","schede - MISSIONI, ECONOMIA e","PREZZI (dove comprare basso e","vendere alto). MAPPA: le 9 aree","del mondo; molte si raggiungono","solo via nave. Il gioco si","salva da solo, di continuo."]},
+      en:{h:"Log & Map",lines:["LOG (START>CAPTAIN LOG): 3","tabs - MISSIONS, ECONOMY and","PRICES (where to buy low and","sell high). MAP: the world's 9","areas; many are reachable only","by ship. The game autosaves","all the time."]} },
+    { it:{h:"Le Imprese del Capitano",lines:["Finiti gli Ordini iniziali,","parte una serie di IMPRESE che","ti guida in tutte le meccaniche","avanzate (vendere, rotte,","investimenti, contratti, ciurma,","upgrade, taglie, battaglie).","Falle nell'ordine che vuoi!"]},
+      en:{h:"The Captain's Ventures",lines:["After the opening Orders, a","series of VENTURES begins,","guiding you through every","advanced mechanic (selling,","routes, investments, contracts,","crew, upgrades, bounties,","battles). Do them in any order!"]} },
+  ];
+  const GUIDE_PAGES = GUIDE_PAGES_DATA;
+
+  function openMenu(){ menu.open=true; menu.index=0; menu.showMap=false; menu.showJournal=false; menu.showNotebook=false; menu.showRules=false; menu.showGuide=false; menu.showCrew=false; menu.rulesPage=0; menu.guidePage=0; menu.jView="main"; menu.jSel=0; menu.jDoneMenuSel=0; menu.jDetail=null; SFX.confirm(); }
+  function closeMenu(){ menu.open=false; menu.showMap=false; menu.showJournal=false; menu.showNotebook=false; menu.showRules=false; menu.showGuide=false; menu.showCrew=false; menu.jDetail=null; SFX.cancel(); }
   function updateMenu(dt){
     if(menu.showMap){
       if(mapNav.zoom){
@@ -4317,8 +4180,8 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
         return;
       }
       // cambio scheda con sinistra/destra (0=Missioni, 1=Economia, 2=Prezzi)
-      if(consumePress("left")){ menu.jTab=(menu.jTab+2)%3; menu.jSel=0; SFX.up&&SFX.up(); }
-      if(consumePress("right")){ menu.jTab=(menu.jTab+1)%3; menu.jSel=0; SFX.down&&SFX.down(); }
+      if(consumePress("left")){ menu.jTab=(menu.jTab+2)%3; menu.jSel=0; SFX.up&&SFX.up(); if(menu.jTab===2 && typeof tut2OnPrices==="function") tut2OnPrices(); }
+      if(consumePress("right")){ menu.jTab=(menu.jTab+1)%3; menu.jSel=0; SFX.down&&SFX.down(); if(menu.jTab===2 && typeof tut2OnPrices==="function") tut2OnPrices(); }
       if(menu.jTab===0){
         // MISSIONI: lista unica (attive + completate), niente distinzione rosso/giallo
         const list=journalAllMissions();
@@ -4338,6 +4201,13 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       if(consumePress("b")||consumePress("start")){ menu.showRules=false; SFX.cancel(); }
       return;
     }
+    if(menu.showGuide){
+      const n=GUIDE_PAGES.length;
+      if(consumePress("left")||consumePress("up")){ menu.guidePage=(menu.guidePage-1+n)%n; SFX.up&&SFX.up(); }
+      if(consumePress("right")||consumePress("down")){ menu.guidePage=(menu.guidePage+1)%n; SFX.down&&SFX.down(); }
+      if(consumePress("b")||consumePress("start")){ menu.showGuide=false; SFX.cancel(); }
+      return;
+    }
     if(menu.showCrew){
       // Crudo Merchant: crew STATUS view (read-only). Recruitment happens at the Tavern.
       if(consumePress("b")||consumePress("start")||consumePress("a")){ menu.showCrew=false; SFX.cancel(); }
@@ -4353,6 +4223,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       else if(k==="menu_crew"){ menu.showCrew=true; menu.crewSel=0; SFX.confirm(); }
       else if(k==="menu_map"){ menu.showMap=true; mapNav.zoom=null; const gp=gridPosOf(areaKey); mapNav.col=gp[0]; mapNav.row=gp[1]; SFX.confirm(); }
       else if(k==="menu_lang"){ toggleLang(); }
+      else if(k==="menu_guide"){ menu.showGuide=true; menu.guidePage=0; SFX.confirm(); }
       else if(k==="menu_rules"){ menu.showRules=true; menu.rulesPage=0; SFX.confirm(); }
       else if(k==="menu_exit"){ saveGame(); closeMenu(); screen="title"; titleIndex=0; SFX.confirm(); }
     }
@@ -4381,6 +4252,8 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     if(screen==="overworld" && !insideKey && !menu.open){ updateWeather(dt); updateFog(dt); advanceClock(dt); if(typeof marketTick==="function") marketTick(dt); if(typeof routeTick==="function") routeTick(dt); if(typeof contractTick==="function") contractTick(dt);
       // Crudo Merchant: l'ultimo ordine (salpa) si completa appena lasci Porto Franco via mare.
       if(typeof tutActive==="function" && tutActive() && tutCur()==="sail" && areaKey!=="town"){ tutAdvance("sail"); }
+      // Crudo Merchant: avvia la seconda serie di guide (Imprese del Capitano) appena gli Ordini finiscono.
+      if(typeof tut2Maybe==="function") tut2Maybe();
       // Crudo Merchant: le stagioni ruotano SEMPRE col passare del tempo (economia + aspetto del mondo)
       seasonAutoTimer+=dt; if(seasonAutoTimer>=SEASON_AUTO_SECS){ seasonAutoTimer=0; cycleSeason(); }
     }
@@ -4405,12 +4278,11 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   function exitInterior(){ insideKey=null; areaKey=returnArea||"town"; useMap(AREAS[areaKey]); player.tx=outsideReturn.tx; player.ty=outsideReturn.ty; player.px=player.tx*TILE; player.py=player.ty*TILE; player.dir="down"; player.moving=false; outsideReturn=null; SFX.door(); saveGame(); }
 
   function updateWorld(dt){
-    player.animT+=dt; cat.animT+=dt; shell.animT+=dt;
+    player.animT+=dt;
     if(player.scooter && SFX.scooterRev) SFX.scooterRev(player.moving);
     if(mauling.active){ updateMauling(dt); return; }   // freeze the world during the attack fade
     if(!insideKey && chase.active) updateChase(dt);
     if(areaKey==="opensea"){ updateSeaCurrent(dt); if(regatta.active) updateRegatta(dt); if(recovery.active) updateRecovery(dt); }
-    if(!insideKey && typeof scDeliv!=="undefined" && scDeliv.active) updateScDelivery(dt);
     if(!insideKey && typeof courier!=="undefined" && courier.active) updateCourier(dt);
     if(!insideKey){ maybeStartTail(); if(tail.active) updateTail(dt); }
     if(!insideKey){ maybeStartScour(); if(scour.active) updateScour(dt); }
@@ -4452,11 +4324,12 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       else { const coin=6+Math.floor(Math.random()*6); player.gold+=coin; banner(t("fishing_sold").replace("#d",coin)); }
       SFX.pickup(); saveGame(); } return; }
     // interrogation multiple-choice
+    // Contextual tutorial / narrator panels take priority so they pause any minigame beneath them.
+    if(dialog.active){ dialog.reveal+=dt*48; if(consumePress("a")||consumePress("start")||consumePress("b")) advanceDialog(); return; }
     if(naval.active){ updateNaval(dt); return; }
     if(battle.active){ updateBattle(dt); return; }
     if(fight.active){ updateFight(dt); return; }
     if(fishSkill.active){ updateFishingSkill(dt); return; }
-    if(typeof photoCam!=="undefined" && photoCam.active){ updatePhotoCam(dt); return; }
     if(confront.active){ updateConfront(dt); return; }
     if(choice.active){ updateChoice(); return; }
     // yes/no prompt
@@ -4602,11 +4475,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
         if(interior){ enterInterior(interior, player.tx, player.ty); return; }
       }
       if(insideKey && fc==="e"){ exitInterior(); return; }
-      if(!insideKey && !cat.found && questState>=1 && fx===cat.tx && fy===cat.ty){ cat.found=true; questState=2; SFX.meow(); SFX.pickup(); banner(t("found_cat")); saveGame(); return; }
-      if(!insideKey && !shell.found && shellQuest>=1 && fx===shell.tx && fy===shell.ty){ shell.found=true; shellQuest=2; SFX.pickup(); banner(t("found_shell")); saveGame(); return; }
-      if(!insideKey && !ball.taken && QUESTS.kids.status==="active" && QUESTS.kids.step>=1 && fx===ball.tx && fy===ball.ty){ ball.taken=true; SFX.pickup(); QUESTS.kids.step=2; banner(t("ball_found")); saveGame(); return; }
-      if(!insideKey && !keyring.taken && QUESTS.oldfriend.status==="active" && fx===keyring.tx && fy===keyring.ty){ keyring.taken=true; setFlag("keyring"); SFX.pickup(); banner(t("keyring_found")); saveGame(); return; }
-      if(!insideKey && QUESTS.photos.status==="active"){ for(const ph of photos){ if(!ph.taken && fx===ph.tx && fy===ph.ty){ ph.taken=true; SFX.pickup(); banner(t("photo_found")); if(photosFound()>=3){ qComplete("photos"); banner(t("photos_msg")); } saveGame(); return; } } }
       if(!insideKey && typeof tryScourSpot==="function" && scour.active && tryScourSpot(fx,fy)){ return; }
       if(!insideKey && typeof tryPickupClue==="function" && tryPickupClue(fx,fy)){ return; }
     }
@@ -4720,14 +4588,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     // story clues currently active in this area (tail beats have no physical pickup -> excluded)
     if(typeof currentClues==="function"){
       for(const {c} of currentClues()){ if(c.tx===tx && c.ty===ty) return true; }
-    }
-    // micro-quest items
-    if(!cat.found && questState>=1 && tx===cat.tx && ty===cat.ty) return true;
-    if(!shell.found && shellQuest>=1 && tx===shell.tx && ty===shell.ty) return true;
-    if(typeof ball!=="undefined" && !ball.taken && QUESTS.kids && QUESTS.kids.status==="active" && QUESTS.kids.step>=1 && tx===ball.tx && ty===ball.ty) return true;
-    if(typeof keyring!=="undefined" && !keyring.taken && QUESTS.oldfriend && QUESTS.oldfriend.status==="active" && tx===keyring.tx && ty===keyring.ty) return true;
-    if(typeof photos!=="undefined" && QUESTS.photos && QUESTS.photos.status==="active"){
-      for(const ph of photos){ if(!ph.taken && tx===ph.tx && ty===ph.ty) return true; }
     }
     return false;
   }
@@ -4902,9 +4762,9 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     if(trade.open) drawTrade();   // Crudo Merchant: trade market overlay
     if(armory.open) drawArmory();       // Crudo Merchant: armoury menu overlay
     if(seasonPopup>0) drawSeasonPopup();
-    if(bannerT>0) drawBanner(bannerMsg, (questState>=3||shellQuest>=3)?"#7ae06a":pal().accent);
+    if(bannerT>0) drawBanner(bannerMsg, pal().accent);
     else if(questPopT>0) drawBanner(questPop, "#f0d840");
-    if(menu.open){ if(menu.showMap) drawMinimap(); else if(menu.showJournal) drawJournal(); else if(menu.showNotebook) drawNotebook(); else if(menu.showRules) drawRules(); else if(menu.showCrew) drawCrew(); else drawMenu(); }
+    if(menu.open){ if(menu.showMap) drawMinimap(); else if(menu.showJournal) drawJournal(); else if(menu.showNotebook) drawNotebook(); else if(menu.showRules) drawRules(); else if(menu.showGuide) drawGuide(); else if(menu.showCrew) drawCrew(); else drawMenu(); }
     if(prompt2.active) drawPrompt();
     if(choice.active) drawChoice();
     if(confront.active) drawConfront();
@@ -4914,12 +4774,10 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     if(tail.active) drawTailUI();
     if(scour.active) drawScourUI();
     if(chase.active) drawChaseUI();
-    if(typeof scDeliv!=="undefined" && scDeliv.active) drawScDeliveryUI();
     if(typeof courier!=="undefined" && courier.active) drawCourierUI();
     if(typeof regatta!=="undefined" && regatta.active) drawRegatta();
     if(typeof recovery!=="undefined" && recovery.active) drawRecovery();
     if(typeof fishSkill!=="undefined" && fishSkill.active) drawFishingSkill();
-    if(typeof photoCam!=="undefined" && photoCam.active) drawPhotoCam();
     if(fishing.active){ panelBox(W/2-72,H-20,144,16); textCenter(t("fishing_msg"),W/2,H-16,pal().accent); }
     // predator alert banner (mountains): flee!
     if(predator.active && predator.msgT>0 && !insideKey && !battle.active && !naval.active && !fight.active){ panelBox(6,24,W-12,16); textCenter(predator.msg,W/2,28,"#ff4a3a"); }
@@ -5026,11 +4884,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     const ents=[];
     const push=(ty,fn)=> ents.push({ty,fn});
     if(inTown()){
-      if(questState>=1 && !cat.found) push(cat.ty, ()=>drawCat(cat.tx*TILE-cam.x, cat.ty*TILE-cam.y, cat.animT));
-      if(shellQuest>=1 && !shell.found) push(shell.ty, ()=>drawShell(shell.tx*TILE-cam.x, shell.ty*TILE-cam.y, shell.animT));
-      if(QUESTS.kids.status==="active" && QUESTS.kids.step>=1 && !ball.taken) push(ball.ty, ()=>drawBall(ball.tx*TILE-cam.x, ball.ty*TILE-cam.y));
-      if(QUESTS.oldfriend.status==="active" && !keyring.taken) push(keyring.ty, ()=>drawKeyring(keyring.tx*TILE-cam.x, keyring.ty*TILE-cam.y));
-      photos.forEach(ph=>{ if(!ph.taken && QUESTS.photos.status==="active") push(ph.ty, ()=>drawPhoto(ph.tx*TILE-cam.x, ph.ty*TILE-cam.y)); });
       animals.forEach(a=> push(Math.round(a.py/TILE), ()=>drawAnimal(a, a.px-cam.x, a.py-cam.y)));
     }
     // ambient fauna (all areas): ground critters depth-sorted; flyers/jumpers drawn on top later
@@ -5100,14 +4953,9 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   function drawInteractHint(){
     if(dialog.active) return;
     const {fx,fy}=facingTile(); const n=npcAt(fx,fy); const fc=tileAt(fx,fy);
-    const onCat=(!insideKey && questState>=1 && !cat.found && fx===cat.tx && fy===cat.ty);
-    const onShell=(!insideKey && shellQuest>=1 && !shell.found && fx===shell.tx && fy===shell.ty);
-    const onBall=(!insideKey && QUESTS.kids.status==="active" && QUESTS.kids.step>=1 && !ball.taken && fx===ball.tx && fy===ball.ty);
-    const onKey=(!insideKey && QUESTS.oldfriend.status==="active" && !keyring.taken && fx===keyring.tx && fy===keyring.ty);
-    const onPhoto=(!insideKey && QUESTS.photos.status==="active" && photos.some(ph=>!ph.taken && fx===ph.tx && fy===ph.ty));
     const onShip=(!insideKey && inTown() && Math.abs(fx-ship.tx)<=2 && Math.abs(fy-ship.ty)<=2);
     const onDoor=(!insideKey && ((inTown() && !!DOORS[fc]) || (!inTown() && /[1-9]/.test(fc) && AREA_INTERIOR[areaKey]))) || (insideKey && fc==="e");
-    if(n||onCat||onShell||onBall||onKey||onPhoto||onShip||onDoor){ const bx=player.px-cam.x, by=player.py-cam.y; textOutlined("A",bx+6,by-8,"#fff","#000"); }
+    if(n||onShip||onDoor){ const bx=player.px-cam.x, by=player.py-cam.y; textOutlined("A",bx+6,by-8,"#fff","#000"); }
   }
 
   // --- Crudo Merchant: which areas render roads (=) as wood planks vs cobblestones ---
@@ -5889,38 +5737,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     ctx.fillStyle="#00000030"; ctx.fillRect(x,y+TILE-2,TILE,2); ctx.fillStyle="#ffffff18"; ctx.fillRect(x,y+2,TILE,1); }
   function drawCrate(x,y){ ctx.fillStyle="#a87838"; ctx.fillRect(x+2,y+3,12,11); ctx.fillStyle="#7a5424"; ctx.fillRect(x+2,y+3,12,2); ctx.fillRect(x+2,y+12,12,2);
     ctx.fillStyle="#5a3e18"; ctx.fillRect(x+2,y+3,2,11); ctx.fillRect(x+12,y+3,2,11); ctx.fillStyle="#c89858"; ctx.fillRect(x+7,y+5,2,7); }
-  function drawShell(x,y,animT){ x=Math.round(x); y=Math.round(y);
-    const g=(Math.floor(animT*3)%2)?1:0;
-    ctx.fillStyle="#0a0a12"; ctx.fillRect(x+4,y+7,8,6);
-    ctx.fillStyle="#f0a8c0"; ctx.fillRect(x+5,y+7,6,5); ctx.fillStyle="#f8d0e0"; ctx.fillRect(x+6,y+7,4,2);
-    ctx.fillStyle="#d06888"; ctx.fillRect(x+7,y+8,1,4); ctx.fillRect(x+9,y+9,1,3); ctx.fillRect(x+6,y+9,1,3);
-    ctx.fillStyle="#fff8"; if(g) ctx.fillRect(x+5,y+6,2,2); else ctx.fillRect(x+10,y+6,2,2); }
-  function drawBikeObj(x,y){ x=Math.round(x); y=Math.round(y);
-    ctx.fillStyle="rgba(0,0,0,0.22)"; ctx.fillRect(x+2,y+13,12,2);      // shadow
-    ctx.fillStyle="#15151a"; ctx.fillRect(x+2,y+8,5,5); ctx.fillRect(x+10,y+8,5,5);   // wheels
-    ctx.fillStyle="#7a7a84"; ctx.fillRect(x+3,y+9,3,3); ctx.fillRect(x+11,y+9,3,3);
-    ctx.fillStyle="#d03030"; ctx.fillRect(x+5,y+6,7,2); ctx.fillRect(x+6,y+4,2,3); ctx.fillRect(x+11,y+4,2,5); // frame
-    ctx.fillStyle="#3a2a1a"; ctx.fillRect(x+5,y+4,3,1);                 // saddle
-    ctx.fillStyle="#2a2a34"; ctx.fillRect(x+11,y+3,3,1);               // handlebar
-    // sparkle to hint interactivity
-    if(Math.floor(performance.now()/400)%2===0){ ctx.fillStyle="#fff"; ctx.fillRect(x+8,y+2,1,1); }
-  }
-  function drawBall(x,y){ x=Math.round(x); y=Math.round(y);
-    ctx.fillStyle="rgba(0,0,0,0.22)"; ctx.fillRect(x+5,y+13,6,1);
-    ctx.fillStyle="#f0f0f0"; ctx.fillRect(x+5,y+7,6,6); ctx.fillStyle="#e8e8e8"; ctx.fillRect(x+5,y+11,6,2);
-    ctx.fillStyle="#1a1a20"; ctx.fillRect(x+7,y+8,2,2); ctx.fillRect(x+6,y+10,1,1); ctx.fillRect(x+10,y+9,1,1);  // pentagon hints
-    ctx.fillStyle="#fff"; ctx.fillRect(x+6,y+7,2,1);
-    if(Math.floor(performance.now()/400)%2===0){ ctx.fillStyle="#fff"; ctx.fillRect(x+9,y+5,1,1); } }
-  function drawKeyring(x,y){ x=Math.round(x); y=Math.round(y);
-    ctx.fillStyle="rgba(0,0,0,0.20)"; ctx.fillRect(x+6,y+12,4,1);
-    ctx.fillStyle="#e0c040"; ctx.fillRect(x+6,y+7,4,4); ctx.fillStyle="#3a2a10"; ctx.fillRect(x+7,y+8,2,2); // ring
-    ctx.fillStyle="#c8c8d0"; ctx.fillRect(x+9,y+10,1,3); ctx.fillRect(x+10,y+12,2,1);   // key
-    if(Math.floor(performance.now()/400)%2===0){ ctx.fillStyle="#fff"; ctx.fillRect(x+6,y+6,1,1); } }
-  function drawPhoto(x,y){ x=Math.round(x); y=Math.round(y);
-    ctx.fillStyle="rgba(0,0,0,0.20)"; ctx.fillRect(x+4,y+12,8,1);
-    ctx.fillStyle="#f0ecdf"; ctx.fillRect(x+4,y+5,8,7); ctx.fillStyle="#c8c2b0"; ctx.fillRect(x+4,y+11,8,1); // paper
-    ctx.fillStyle="#7a8a9a"; ctx.fillRect(x+5,y+6,6,4); ctx.fillStyle="#5a6a7a"; ctx.fillRect(x+6,y+8,4,2); // faded image
-    if(Math.floor(performance.now()/400)%2===0){ ctx.fillStyle="#fff"; ctx.fillRect(x+8,y+4,1,1); } }
 
   // ---- INTERIOR ----
   function drawInterior(){ ctx.fillStyle="#2a2438"; ctx.fillRect(0,0,W,H);
@@ -6496,14 +6312,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   function drawNpc(n,x,y){ x=Math.round(x); y=Math.round(y);
     const walking=!!(n.moving), frame=walking?(Math.floor((n.animT||0)*7)%2):0;
     const opt={skin:"#f0c890",hair:n.hairCol||n.colorDk,shirt:n.color,shirtDk:n.colorDk,pants:n.pants||n.colorDk,kind:n.kind||"ym",outfit:outfitFor(n)};
-    if(n.bike){
-      // cyclist over a bike
-      ctx.fillStyle="#0a0a12"; ctx.fillRect(x+1,y+13,5,4); ctx.fillRect(x+10,y+13,5,4);
-      ctx.fillStyle="#888"; ctx.fillRect(x+2,y+14,3,2); ctx.fillRect(x+11,y+14,3,2);
-      ctx.fillStyle="#c0c0c8"; ctx.fillRect(x+4,y+13,8,1);
-      drawHuman(x, y-2, n.dir||"right", false, 0, opt);
-      return;
-    }
     drawHuman(x, y, n.dir||"down", walking, frame, opt);
     if(n.fishing) drawRod(x,y,n.animT||0, n.dir||"down");
     // quest "!" marker is drawn in drawQuestMarksOverlay() (on top of night/fog, always bright)
@@ -7187,6 +6995,11 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   function activeQuestText(){
     // Crudo Merchant: durante gli ORDINI (tutorial), il box in alto a destra mostra l'ordine corrente.
     if(typeof tutActive==="function" && tutActive()){ const s=tutCur(); const m=t("tut_"+s); if(m && m!=="tut_"+s) return m; }
+    // Seconda serie: IMPRESE DEL CAPITANO (checklist non lineare). Mostra l'impresa in sospeso solo se
+    // non c'e' una missione di storia attiva da guidare (la storia ha priorita' nell'HUD).
+    if(typeof tut2Active==="function" && tut2Active() && !firstActiveQuest()){
+      const s=tut2Cur(); if(s){ const m=t("tut2_"+s); if(m && m!=="tut2_"+s) return t("tut2_progress").replace("#",tut2Count())+" - "+m; }
+    }
     const q=firstActiveQuest();
     if(q){
       // ---- RED CASE QUEST: show the NEXT step based on progress, never a stale one ----
@@ -7571,6 +7384,18 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     textCenter((menu.rulesPage+1)+"/"+RULES_PAGES.length+"  \u25C0 \u25B6", W/2, by+bh-22, "#7a7a88");
     textCenter(t("menu_hint"), W/2, by+bh-11, "#c8c8d0");
   }
+  function drawGuide(){
+    const bx=6, by=12, bw=W-12, bh=H-16;
+    ctx.fillStyle="#0e0e18"; ctx.fillRect(bx,by,bw,bh);
+    ctx.strokeStyle="#f0f0e0"; ctx.lineWidth=1; ctx.strokeRect(bx+1.5,by+1.5,bw-3,bh-3);
+    textCenter(t("menu_guide"), W/2, 16, "#f0d840");
+    const p=GUIDE_PAGES[menu.guidePage]; const loc=p[lang]||p.it;
+    let y=30; text(loc.h, 12, y, pal().accent); y+=12;
+    ctx.font="8px monospace";
+    loc.lines.forEach(l=>{ wrapLines(l,30).forEach(w=>{ text(w,12,y,"#dfe8f2"); y+=9; }); });
+    textCenter((menu.guidePage+1)+"/"+GUIDE_PAGES.length+"  \u25C0 \u25B6", W/2, by+bh-22, "#7a7a88");
+    textCenter(t("menu_hint"), W/2, by+bh-11, "#c8c8d0");
+  }
   // ---- MERCHANT LEDGER: your Merchant-mode progress ----
   function drawNotebook(){
     ctx.fillStyle="#0e0e18"; ctx.fillRect(8,14,W-16,H-28);
@@ -7622,7 +7447,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     // enriched palette (previously fell back to generic green)
     "M":"#b8483a","O":"#7a8290","E":"#c0c2cc","Z":"#8a5a3a","U":"#a86838","+":"#9a9aa4",
     "F":"#4a4e56","Y":"#9a9aa2","I":"#356a24","i":"#2c5a1c","^":"#3f7a2c",
-    "l":"#8a5a2e","q":"#1c3450","k":"#5a5e66","e":"#8a8f9a","z":"#7a6a4a",
+    "l":"#8a5a2e","q":"#3a8ad8","k":"#5a5e66","e":"#8a8f9a","z":"#7a6a4a",
     "h":"#b8a070","p":"#c8b070","d":"#dcc890","v":"#2c6ab0","g":"#7a7e86",
     "1":"#ffd860","2":"#ffd860","3":"#ffd860","4":"#ffd860","5":"#ffd860","6":"#ffd860","7":"#ffd860","8":"#ffd860","9":"#ffd860","/":"#6a9a4a"
   };
@@ -7876,16 +7701,10 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     const q=QUESTS[a.id];
     if(a.mode==="start"){ if(q.season && season!==q.season) setSeason(q.season);
       qStart(a.id);
-      if(q.chase){ startChase(a.id); }   // begin the foot chase immediately
       if(DISCOVER_ON_START[a.id]){ discoverArea(DISCOVER_ON_START[a.id]); }   // bridge quests reveal their target area
       saveGame(); }
     else if(a.mode==="closed"){ banner(vpick("interro_wait_b")); }
     else if(a.mode==="complete"){
-      if(q.chase){   // chase caught -> complete + grant the scooter
-        qComplete(a.id); banner(t("cs_"+a.id+"_doneb"));
-        scooterUnlocked=true; SFX.unlock(); if(typeof sqActivate==="function") sqActivate(); showExamine([t("scooter_reward0"),t("scooter_reward1"),t("scooter_reward2")]);
-        saveGame(); afterCaseComplete(a.id); return;
-      }
       if(q.hasPickup){
         // climax beats use the phased CONFRONT; others use the simple interrogation
         const finishBeat = ()=>{
@@ -7902,14 +7721,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
           else { runDeductionThen(); }
         };
         // scripted fight first (rare, only on FIGHT_SNODI), if not already won
-        // night photo stakeout (rare): shoot 3 good photos in a row before the rest of the beat
-        if(PHOTO_SNODI[a.id]){
-          startPhotoCam(
-            ()=>{ if(CASE.clues[a.id]) CASE.clues[a.id].taken=true; qComplete(a.id); banner(t("cs_"+a.id+"_doneb")); saveGame(); afterCaseComplete(a.id); },  // win
-            ()=>{ CASE.closedUntil[a.id]=dayCount+1; saveGame(); }   // spotted -> retry another night
-          );
-          return;
-        }
         if(NAVAL_SNODI[a.id] && !(CASE.naval && CASE.naval[a.id])){
           const cfg=NAVAL_SNODI[a.id]; const kind=(typeof cfg==="string")?cfg:cfg.k; const mode=(typeof cfg==="string")?"sink":cfg.m;
           startNaval(kind, (res)=>{
@@ -7952,7 +7763,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   // ---- FIGHT beats (rare scripted Zelda-like duels) ----
   const FIGHT_SNODI = { "ky05":1 };   // duello alla Baia dei Pirati
   const NAVAL_SNODI = { "ky07":{k:"sloop",m:"sink"}, "ky08":{k:"brig",m:"board"}, "ky09":{k:"galleon",m:"sink"} };   // battaglie navali della storia
-  const PHOTO_SNODI = {};   // night photo stakeout: shoot 3 good photos in a row
   function startCaseConfront(id){
     // good proofs = this quest's clue + the deduction-linked clue (if any)
     const good=[id]; if(DEDUCTION_SNODI[id]) good.push(DEDUCTION_SNODI[id]);
@@ -8053,7 +7863,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   function currentClues(){ const out=[]; for(const id of CASE.order){ const q=QUESTS[id]; const c=CASE.clues[id];
     if(TAIL_SNODI[id]) continue;   // tail beats: clue obtained by shadowing, not by pickup
     if(SCOUR_SNODI[id]) continue;  // scour beats: clue obtained by searching the scene
-    if(typeof PHOTO_SNODI!=="undefined" && PHOTO_SNODI[id]) continue;  // photo beats: clue obtained via the stakeout minigame
     if(c && !c.taken && q.status==="active" && c.area===areaKey) out.push({id,c}); } return out; }
   function tryPickupClue(fx,fy){
     for(const {id,c} of currentClues()){
@@ -8089,6 +7898,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     tail.active=true; tail.id=id; tail.suspicion=0; tail.msg=t("tail_intro"); tail.msgT=2.4;
     tail.target={ px:cfg.from[0]*TILE, py:cfg.from[1]*TILE, dir:"down", animT:0,
                   dest:cfg.to.slice(), speed:cfg.speed||16, path:null, replan:0, tgt:null };
+    if(typeof teachOnce==="function") teachOnce("tail");
   }
   function endTail(win){
     const id=tail.id;
@@ -8147,6 +7957,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     scour.active=true; scour.id=id; scour.area=cfg.area;
     scour.points=cfg.points.map(p=>p.slice()); scour.found=cfg.points.map(()=>false);
     scour.msg=t("scour_intro"); scour.msgT=2.6;
+    if(typeof teachOnce==="function") teachOnce("scour");
   }
   function scourNearestDist(){   // Manhattan distance (tiles) to the closest not-yet-found point
     let best=Infinity;
@@ -8340,7 +8151,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   }
 
   // ================= SIDE-QUEST SLOT ENGINE (casual yellow quests, self-contained) =================
-  const SQ_KINDS = ["recon","morale","confront","tail","fight","scooter","courier"];
+  const SQ_KINDS = ["recon","morale","confront","tail","fight","courier"];
   const SLOTS_PER_KIND = 1;   // one active side-quest per kind at a time (6 kinds pre-scooter, 7 after unlock),
                               // rotated by the slot engine. While one yellow is ACCEPTED/in progress
                               // (SQ.acceptedNpc set) all OTHER yellow markers hide, in-game and on the map.
@@ -8373,7 +8184,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     // casual side-quests unlock only AFTER the intro is completed
     if(!(window.CASE_REF && window.CASE_REF.introDone)) return;
     SQ_KINDS.forEach(kind=>{
-      if(kind==="scooter" && !scooterUnlocked) return;   // scooter missions only after unlock
       let activeOfKind = SQ.active.filter(m=>m.kind===kind).length;
       while(activeOfKind < SLOTS_PER_KIND && SQ.queueIdx[kind] < SQ.pool[kind].length){
         const m = SQ.pool[kind][SQ.queueIdx[kind]++];
@@ -8403,7 +8213,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   // true if a casual side-quest activity is currently in progress (one yellow at a time)
   function sqBusy(){
     if(typeof courier!=="undefined" && courier.active) return true;
-    if(typeof scDeliv!=="undefined" && scDeliv.active) return true;
     if(tail.active && tail.id===null) return true;      // a casual tail is running
     if(chase.active && chase.id===null) return true;    // a casual scooter chase is running
     if(confront.active || fight.active || battle.active || naval.active || choice.active || fishing.active) return true;
@@ -8429,35 +8238,9 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
       runTailCfg(m.tail, win, ()=>fail());
     } else if(m.kind==="fight"){
       startFight("sq_"+m.id, win);
-    } else if(m.kind==="scooter"){
-      if(m.sub==="chase"){ startScChase(m, win, ()=>fail()); }
-      else { startScDelivery(m, win, ()=>fail()); }
     } else if(m.kind==="courier"){
       startCourier(m, win, ()=>fail());
     } else { win(); }
-  }
-  // ---- scooter side-quest: timed delivery (reach the target before time runs out) ----
-  const scDeliv={ active:false, tx:0, ty:0, t:0, onWin:null, onFail:null, msg:"", msgT:0 };
-  function startScDelivery(m, onWin, onFail){
-    if(!player.scooter){ banner(t("sc_needscooter")); if(onFail) onFail(); return; }
-    scDeliv.active=true; scDeliv.tx=m.to[0]; scDeliv.ty=m.to[1]; scDeliv.t=m.time||26; scDeliv.onWin=onWin; scDeliv.onFail=onFail;
-    scDeliv.msg=t("sc_go"); scDeliv.msgT=2.0;
-  }
-  function updateScDelivery(dt){
-    if(!scDeliv.active) return;
-    if(scDeliv.msgT>0) scDeliv.msgT-=dt;
-    if(!player.scooter){ scDeliv.active=false; showExamine([t("sc_gotoff")], scDeliv.onFail); return; }  // got off -> fail
-    scDeliv.t-=dt;
-    if(Math.abs(player.tx-scDeliv.tx)+Math.abs(player.ty-scDeliv.ty)<=1){ scDeliv.active=false; showExamine([t("sc_delivered")], scDeliv.onWin); return; }
-    if(scDeliv.t<=0){ scDeliv.active=false; showExamine([t("sc_toolate")], scDeliv.onFail); return; }
-  }
-  function drawScDeliveryUI(){
-    if(!scDeliv.active) return;
-    // timer bar + target arrow hint
-    text(t("sc_label"),8,6,"#ffd0d0");
-    ctx.fillStyle="#0a0a12"; ctx.fillRect(7,15,W-12,8); ctx.fillStyle="#1e2a3a"; ctx.fillRect(8,16,W-16,6);
-    const frac=Math.max(0,Math.min(1,scDeliv.t/26)); ctx.fillStyle=frac<0.3?"#d83a3a":"#3a8ad0"; ctx.fillRect(8,16,Math.round((W-16)*frac),6);
-    if(scDeliv.msgT>0){ panelBox(6,H-22,W-12,18); textCenter(scDeliv.msg,W/2,H-18,pal().accent); }
   }
   // ---- COURIER side-quest: cross-map timed delivery on foot (reach a target in ANOTHER area) ----
   const courier={ active:false, area:"", tx:0, ty:0, t:0, tmax:1, onWin:null, onFail:null, msg:"", msgT:0 };
@@ -8486,11 +8269,6 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
     if(courier.msgT>0){ panelBox(6,H-22,W-12,18); textCenter(courier.msg,W/2,H-18,pal().accent); }
     else { panelBox(6,H-22,W-12,18); textCenter((here?t("cr_here"):t("cr_to")+" "+dest),W/2,H-18, here?"#7ae06a":pal().accent); }
   }
-  // ---- scooter side-quest: chase (catch the fleeing target while on the scooter) ----
-  function startScChase(m, onWin, onFail){
-    chase.active=true; chase.id=null; chase.msg=t("chase_intro"); chase.msgT=2.4; chase._onWin=onWin; chase._onFail=onFail;
-    chase.target={ px:m.from[0]*TILE, py:m.from[1]*TILE, dir:"down", animT:0, dest:m.to.slice(), speed:m.speed||70, path:null, replan:0, tgt:null };
-  }
   function runTailCfg(cfg, onWin, onFail){
     tail.active=true; tail.id=null; tail.suspicion=0; tail.msg=t("tail_intro"); tail.msgT=2.4;
     tail._onWin=onWin; tail._onFail=onFail;
@@ -8500,6 +8278,46 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"sc
   function restoreSQ(o){ if(!o) return; if(o.done) SQ.done=o.done; if(o.qi) SQ.queueIdx=o.qi; SQ.log=o.log||[]; }
   function sqInit(){ sqLoadPool(); SQ.active=[]; SQ.byNpc={}; SQ.acceptedNpc=null; if(!SQ.log) SQ.log=[]; sqActivate(); }
   window.SQ_REF = SQ;
+
+  // ================= TEST HOOK (headless harness only; inert in normal play) =================
+  // Exposes internal state for the Node regression suite. Never used by gameplay.
+  window.__CRUDO_TEST__ = {
+    get STR(){ return STR; }, get AREAS(){ return AREAS; }, get AREA_GRID(){ return AREA_GRID; },
+    get QUESTS(){ return QUESTS; }, get TUT_STEPS(){ return TUT_STEPS; }, get tut(){ return tut; },
+    t: (k)=>t(k), get lang(){ return lang; },
+    get player(){ return player; }, get npcs(){ return npcs; }, get AREA_NPCS(){ return AREA_NPCS; },
+    get areaKey(){ return areaKey; },
+    get screen(){ return screen; }, setScreen: (s)=>{ screen=s; },
+    update: (dt)=>update(dt), draw: ()=>draw(),
+    useArea: (k)=>{ if(AREAS[k]){ areaKey=k; useMap(AREAS[k]); return true; } return false; },
+    talkTo: (n)=>{ try{ if(n && typeof n.onTalk==="function") n.onTalk(n); if(n && typeof n.lines==="function") n.lines(); return true; }catch(e){ return e; } },
+    get TUT2_STEPS(){ return TUT2_STEPS; }, get tut2(){ return tut2; },
+    get GUIDE_PAGES(){ return GUIDE_PAGES; }, get RULES_PAGES(){ return RULES_PAGES; }, get MENU_KEYS(){ return MENU_KEYS; },
+    get learned(){ return learned; }, teachOnce: (k,cb)=>teachOnce(k,cb),
+    tut2Start: ()=>tut2Start(), tut2Do: (k)=>tut2Do(k), tut2Count: ()=>tut2Count(), tut2Cur: ()=>tut2Cur(),
+    // economy access (diagnostics)
+    get market(){ return (typeof market!=="undefined")?market:null; },
+    get TRADE_GOODS(){ return (typeof TRADE_GOODS!=="undefined")?TRADE_GOODS:null; },
+    get TRADE_PORTS(){ return (typeof TRADE_PORTS!=="undefined")?TRADE_PORTS:null; },
+    get TRADE_HUBS(){ return (typeof TRADE_HUBS!=="undefined")?TRADE_HUBS:null; },
+    goodPrice: (p,gid)=>(typeof goodPrice==="function"?goodPrice(p,gid):null),
+    marketNudge: (p,gid,d)=>(typeof marketNudge==="function"?marketNudge(p,gid,d):null),
+    investProd: (p,gid)=>(typeof investProd==="function"?investProd(p,gid):null),
+    marketInit: ()=>(typeof marketInit==="function"?marketInit():null),
+    marketTick: (dt)=>(typeof marketTick==="function"?marketTick(dt):null),
+    // story access (diagnostics)
+    get QORDER(){ return (typeof QORDER!=="undefined")?QORDER:null; },
+    get CASE(){ return window.CASE_REF||null; },
+    qStart: (id)=>(typeof qStart==="function"?qStart(id):null),
+    qComplete: (id)=>(typeof qComplete==="function"?qComplete(id):null),
+    afterCaseComplete: (id)=>(typeof afterCaseComplete==="function"?afterCaseComplete(id):null),
+    // state
+    get contract(){ return (typeof contract!=="undefined")?contract:null; },
+    get route(){ return (typeof route!=="undefined")?route:null; },
+    get crew(){ return (typeof crew!=="undefined")?crew:null; },
+    get fame(){ return (typeof fame!=="undefined")?fame:null; },
+    resetProgress: ()=>(typeof resetProgress==="function"?resetProgress():null),
+  };
 
   // ================= LOOP =================
   let last=performance.now();
