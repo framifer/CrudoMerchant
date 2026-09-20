@@ -281,7 +281,19 @@ che spiega ogni modalità e meccanica: comandi, missioni, comprare, vendere, rot
 contratti, stagioni e catene, cantiere, battaglia navale, duello, ciurma/taverna, fama/taglie, pesca,
 registro/mappa, Imprese. Pagine `{h,lines}` localizzate it/en. Testi calibrati per non sforare il box.
 
-### 6.5 Registro del Capitano (ex "DIARIO") — `drawJournal`
+### 6.5 Freccia-guida sopra la testa (`questTargetPoint` / `drawQuestMarksOverlay`)
+Una **freccia gialla su disco scuro appare appena sopra la testa di Crudo** e punta sempre verso il
+prossimo obiettivo, per non lasciare mai il giocatore senza indicazioni. Coperta da `questTargetPoint()`:
+- **Ordini del Capitano** (tut base): punta all'NPC/insegna/mare del passo corrente (gli step "sbarca"
+  e "cammina" non hanno luogo, quindi lì non c'è freccia — è corretto).
+- **Missioni della storia** (case attive): punta al pickup dell'indizio o all'NPC di consegna.
+- **Imprese del Capitano** (serie 2): punta al luogo dell'impresa in sospeso — insegna Mercante
+  (sell/prices/route/invest/contract), Taverna (recruit), Cantiere (upgrade), il Banditore (bounty) o
+  il mare (naval). Se l'insegna non è nell'area corrente, la freccia guida verso Porto Franco.
+La freccia gira anche mentre sei in barca (per l'impresa navale). È disegnata in `drawQuestMarksOverlay`,
+sempre sopra night/fog per restare leggibile. Verificata dai test di regressione.
+
+### 6.6 Registro del Capitano (ex "DIARIO") — `drawJournal`
 A 3 schede (sinistra/destra per cambiare):
 - **MISSIONI**: lista UNICA (storia + secondarie), senza distinzione rosso/giallo. Attive prima, poi
   completate ([>]=attiva, [x]=completata). A = dettaglio, su/giù = scorri.
