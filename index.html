@@ -39,6 +39,34 @@
   .pill:active { transform:translateY(1px); box-shadow:0 1px 0 #16161e; }
   .plabel { position:absolute; color:#5b6b8a; font-size:8px; top:16px; letter-spacing:1px; pointer-events:none; }
   #startsel div { position:relative; text-align:center; }
+
+  /* ===== LANDSCAPE FULLSCREEN (solo telefono in orizzontale) ===== */
+  #fs-root { display:none; }
+  #fs-root canvas { image-rendering:pixelated; image-rendering:crisp-edges; }
+  /* Attivo SOLO in orizzontale e su schermi bassi (telefono): il desktop (landscape ma alto) resta Game Boy. */
+  @media (orientation: landscape) and (max-height: 600px) {
+    #device { display:none !important; }
+    #fs-root { display:block; position:fixed; inset:0; width:100vw; height:100vh; background:#000; z-index:100; }
+    /* il canvas riempie lo schermo mantenendo le proporzioni interne (192:168) via JS di scaling */
+    #fs-canvas { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:#101820; }
+    /* overlay controlli trasparenti: solo bordi a vista */
+    #fs-top { position:absolute; top:6px; left:50%; transform:translateX(-50%); display:flex; gap:14px; z-index:110; }
+    .fs-pill { font-family:monospace; font-size:10px; letter-spacing:1px; color:rgba(255,255,255,0.55);
+      background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.35); border-radius:10px; padding:4px 10px; }
+    .fs-pill:active { background:rgba(255,255,255,0.20); }
+    #fs-dpad { position:absolute; left:14px; bottom:14px; width:150px; height:150px; z-index:110; }
+    .fs-d { position:absolute; width:50px; height:50px; background:rgba(255,255,255,0.05);
+      border:2px solid rgba(255,255,255,0.40); color:rgba(255,255,255,0.55); font-size:18px;
+      display:flex; align-items:center; justify-content:center; border-radius:10px; }
+    .fs-d:active, .fs-d.pressed { background:rgba(255,255,255,0.22); }
+    #fs-up { left:50px; top:0; } #fs-down { left:50px; top:100px; }
+    #fs-left { left:0; top:50px; } #fs-right { left:100px; top:50px; }
+    #fs-ab { position:absolute; right:14px; bottom:14px; width:170px; height:120px; z-index:110; }
+    .fs-r { position:absolute; width:66px; height:66px; border-radius:50%; background:rgba(80,150,200,0.10);
+      border:2px solid rgba(160,210,255,0.55); color:rgba(220,240,255,0.7); font-size:22px; font-weight:bold; }
+    .fs-r:active, .fs-r.pressed { background:rgba(120,190,240,0.30); }
+    #fs-a { right:0; top:0; } #fs-b { right:76px; top:48px; }
+  }
 </style>
 </head>
 <body>
@@ -66,6 +94,29 @@
       <div><button class="pill" data-key="select"></button><span class="plabel">SELECT</span></div>
       <div><button class="pill" data-key="start"></button><span class="plabel">START</span></div>
     </div>
+  </div>
+</div>
+
+<!-- ===== LANDSCAPE FULLSCREEN OVERLAY (attivo solo in orizzontale su telefono; vedi @media) ===== -->
+<!-- Riusa gli stessi data-key dei bottoni Game Boy: l'input passa dallo stesso setKey, nessuna logica nuova. -->
+<div id="fs-root" aria-hidden="true">
+  <canvas id="fs-canvas"></canvas>
+  <!-- START / SELECT piccoli in alto -->
+  <div id="fs-top">
+    <button class="fs-pill" data-key="select">SELECT</button>
+    <button class="fs-pill" data-key="start">START</button>
+  </div>
+  <!-- D-pad a sinistra -->
+  <div id="fs-dpad">
+    <button class="fs-d" id="fs-up" data-key="up">&#9650;</button>
+    <button class="fs-d" id="fs-left" data-key="left">&#9664;</button>
+    <button class="fs-d" id="fs-right" data-key="right">&#9654;</button>
+    <button class="fs-d" id="fs-down" data-key="down">&#9660;</button>
+  </div>
+  <!-- A / B a destra -->
+  <div id="fs-ab">
+    <button class="fs-r" id="fs-b" data-key="b">B</button>
+    <button class="fs-r" id="fs-a" data-key="a">A</button>
   </div>
 </div>
 
@@ -8400,6 +8451,47 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"co
   let last=performance.now();
   function loop(now){ let dt=(now-last)/1000; last=now; if(dt>0.1) dt=0.1; SFX.setTempoScale(1.0); update(dt); draw(); requestAnimationFrame(loop); }
   requestAnimationFrame(loop);
+})();
+</script>
+
+<!-- ===== LANDSCAPE FULLSCREEN MIRROR (indipendente dal gioco; copia il canvas su schermo intero) ===== -->
+<script>
+(function(){
+  "use strict";
+  var GW=192, GH=168;                                  // risoluzione interna del gioco
+  var game=document.getElementById("game");
+  var fsRoot=document.getElementById("fs-root");
+  var fsCanvas=document.getElementById("fs-canvas");
+  if(!game||!fsRoot||!fsCanvas) return;
+  var fsCtx=fsCanvas.getContext("2d");
+  fsCtx.imageSmoothingEnabled=false;
+  // La modalita' fullscreen e' attiva solo quando il CSS mostra #fs-root (media query orientamento).
+  function fsActive(){ try { return typeof getComputedStyle==="function" && getComputedStyle(fsRoot).display !== "none"; } catch(e){ return false; } }
+  // Dimensiona il canvas fullscreen: riempie lo schermo mantenendo le proporzioni 192:168 (pixel perfect).
+  function resizeFs(){
+    if(!fsActive()) return;
+    var vw=fsRoot.clientWidth, vh=fsRoot.clientHeight;
+    var scale=Math.max(1, Math.floor(Math.min(vw/GW, vh/GH)));   // scaling intero -> pixel nitidi
+    // se lo scaling intero non riempie abbastanza, usa scaling frazionario per non lasciare troppo bordo
+    var sFrac=Math.min(vw/GW, vh/GH);
+    var use = (sFrac - scale > 0.15) ? sFrac : scale;
+    fsCanvas.width=GW; fsCanvas.height=GH;               // buffer interno resta 192x168
+    fsCanvas.style.width=(GW*use)+"px";
+    fsCanvas.style.height=(GH*use)+"px";
+    fsCtx.imageSmoothingEnabled=false;
+  }
+  // Copia ogni frame del gioco sul canvas fullscreen (solo quando attivo).
+  function frame(){
+    if(fsActive()){
+      try { fsCtx.imageSmoothingEnabled=false; fsCtx.clearRect(0,0,GW,GH); fsCtx.drawImage(game,0,0,GW,GH); } catch(e){}
+    }
+    requestAnimationFrame(frame);
+  }
+  window.addEventListener("resize", resizeFs);
+  window.addEventListener("orientationchange", function(){ setTimeout(resizeFs, 120); });
+  // primo dimensionamento + avvio del mirror
+  resizeFs();
+  requestAnimationFrame(frame);
 })();
 </script>
 </body>
