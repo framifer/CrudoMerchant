@@ -6959,6 +6959,15 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"co
   function npcWorldById(id){ const list=currentNpcs(); const n=list.find(x=>x&&x.id===id); return n?{px:n.px,py:n.py}:null; }
   function questTargetPoint(){
     if(insideKey) return null;
+    // 0) QUEST INTRO (avvio storia): freccia verso Hawkins (available) o Moll (active).
+    if(typeof QUESTS!=="undefined" && QUESTS.intro && QUESTS.intro.status!=="done"){
+      const q=QUESTS.intro;
+      const tgtId = (q.status==="active") ? (typeof INTRO!=="undefined"?INTRO.endNpc:"moll")
+                                          : (typeof INTRO!=="undefined"?INTRO.startNpc:"hawkins");
+      const w=npcWorldById(tgtId); if(w) return w;
+      const P=window.STORY_POS && window.STORY_POS.npc && window.STORY_POS.npc[tgtId];
+      if(P){ if(P[0]===areaKey) return {px:P[1]*TILE, py:P[2]*TILE}; return areaEdgePoint(P[0]); }
+    }
     // 1) TUTORIAL
     if(typeof tutActive==="function" && tutActive()){
       const tg=(typeof tutTargetNpc==="function")?tutTargetNpc():null;
