@@ -7692,6 +7692,31 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"co
       if(area==="town") npcs.push(npc);
       else { (AREA_NPCS[area]=AREA_NPCS[area]||[]).push(npc); }
     });
+    // 3b) SAFETY NET: some NPCs are referenced by the story (quest start/complete or the INTRO) and have
+    // a position in STORY_POS, but are NOT listed in new_npcs (e.g. Moll, the intro's end NPC). Without
+    // this they would never be spawned and the quest that sends you to them would be uncompletable.
+    (function ensureReferencedNpcs(){
+      const need = new Set();
+      sorted.forEach(q=>{ if(q.start_npc) need.add(q.start_npc); if(q.complete_npc) need.add(q.complete_npc); });
+      // INTRO npcs (const INTRO is declared later in the file; use literals to avoid the temporal dead zone)
+      need.add("hawkins"); need.add("moll");
+      const exists = (id)=> npcs.some(n=>n&&n.id===id) || Object.keys(AREA_NPCS).some(k=>(AREA_NPCS[k]||[]).some(n=>n&&n.id===id));
+      need.forEach(id=>{
+        if(!id || exists(id)) return;
+        const pos = P && P.npc && P.npc[id];
+        if(!pos) return;
+        const [area,tx,ty]=pos;
+        // ensure a display name exists (fallback: capitalized id) so the dialog header isn't a raw key
+        if(t("cs_name_"+id)==="cs_name_"+id){ STR.it["cs_name_"+id]=id.charAt(0).toUpperCase()+id.slice(1); STR.en["cs_name_"+id]=STR.it["cs_name_"+id]; }
+        const npc = { id:id, tx:tx, ty:ty, dir:"down",
+          color:"#7a3a5a", colorDk:"#54283e", kind:"yw", hairCol:"#3a2a1a", pants:"#54283e",
+          nameKey:"cs_name_"+id, caseNpc:true,
+          lines:()=>{ const cl=caseLines(id); return cl || t("passerby_l"); }, onTalk:()=>caseOnTalk(id) };
+        npc.px=npc.tx*TILE; npc.py=npc.ty*TILE;
+        if(area==="town") npcs.push(npc);
+        else { (AREA_NPCS[area]=AREA_NPCS[area]||[]).push(npc); }
+      });
+    })();
     if(typeof snapNpcsOffWater==="function") snapNpcsOffWater();   // Crudo Merchant (point 4): keep story npcs off water/cliff too
 
     // 4) attach a case hook to EXISTING npcs involved in the story (without breaking casual lines)
