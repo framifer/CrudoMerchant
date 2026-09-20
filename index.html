@@ -6975,6 +6975,32 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"co
       const act=map[s]; if(act && AREA_SIGNS[areaKey]){ const sg=AREA_SIGNS[areaKey].find(z=>z.act===act); if(sg) return {px:sg.tx*TILE, py:sg.ty*TILE}; }
       return null;
     }
+    // 1b) IMPRESE DEL CAPITANO (serie 2): guida verso il luogo dove si compie l'impresa in sospeso,
+    // ma solo se non c'e' una missione di storia attiva (che ha priorita', gestita piu' sotto).
+    if(typeof tut2Active==="function" && tut2Active() && !firstActiveQuest()){
+      const s=(typeof tut2Cur==="function")?tut2Cur():null;
+      if(s){
+        // impresa -> tipo di luogo: insegna (merchant/tavern/shipyard), NPC (crier) o il mare (naval)
+        const SIGN_FOR={ sell:"merchant", prices:"merchant", route:"merchant", invest:"merchant", contract:"merchant", recruit:"tavern", upgrade:"shipyard" };
+        if(s==="naval"){
+          // verso il mare: se sei gia' in Mare Aperto niente freccia; altrimenti punta a sud (verso il mare)
+          if(areaKey==="opensea") return null;
+          return { px:(cur.w/2)*TILE, py:(cur.h-2)*TILE };
+        }
+        if(s==="bounty"){
+          const w=npcWorldById("crier"); if(w) return w;
+          if(areaKey!=="town") return areaEdgePoint("town");   // il Banditore e' a Porto Franco
+          return null;
+        }
+        const act=SIGN_FOR[s];
+        if(act){
+          if(AREA_SIGNS[areaKey]){ const sg=AREA_SIGNS[areaKey].find(z=>z.act===act); if(sg) return {px:sg.tx*TILE, py:sg.ty*TILE}; }
+          // insegna non presente qui -> guida verso Porto Franco (hub con tutte le funzioni)
+          if(areaKey!=="town") return areaEdgePoint("town");
+        }
+        return null;
+      }
+    }
     // 2) MISSIONE case attiva
     const q=firstActiveQuest();
     if(q && q.type==="case" && window.CASE_REF){
@@ -8317,6 +8343,8 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"co
     get crew(){ return (typeof crew!=="undefined")?crew:null; },
     get fame(){ return (typeof fame!=="undefined")?fame:null; },
     resetProgress: ()=>(typeof resetProgress==="function"?resetProgress():null),
+    questTargetPoint: ()=>(typeof questTargetPoint==="function"?questTargetPoint():null),
+    tutTargetNpc: ()=>(typeof tutTargetNpc==="function"?tutTargetNpc():null),
   };
 
   // ================= LOOP =================
