@@ -49,23 +49,26 @@
     #fs-root { display:block; position:fixed; inset:0; width:100vw; height:100vh; background:#000; z-index:100; }
     /* il canvas riempie lo schermo mantenendo le proporzioni interne (192:168) via JS di scaling */
     #fs-canvas { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:#101820; }
-    /* overlay controlli trasparenti: solo bordi a vista */
-    #fs-top { position:absolute; top:6px; left:50%; transform:translateX(-50%); display:flex; gap:14px; z-index:110; }
-    .fs-pill { font-family:monospace; font-size:10px; letter-spacing:1px; color:rgba(255,255,255,0.55);
-      background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.35); border-radius:10px; padding:4px 10px; }
-    .fs-pill:active { background:rgba(255,255,255,0.20); }
-    #fs-dpad { position:absolute; left:14px; bottom:14px; width:150px; height:150px; z-index:110; }
+    /* pillole SELECT/START: sopra i rispettivi gruppi di controlli */
+    .fs-pill { position:absolute; font-family:monospace; font-size:10px; letter-spacing:1px; color:rgba(255,255,255,0.6);
+      background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.35); border-radius:10px; padding:5px 10px; z-index:111; }
+    .fs-pill:active, .fs-pill.pressed { background:rgba(255,255,255,0.22); }
+    /* D-pad a sinistra (con SELECT sopra) */
+    #fs-dpad { position:absolute; left:14px; bottom:14px; width:150px; height:186px; z-index:110; }
+    #fs-select { left:34px; top:0; }
     .fs-d { position:absolute; width:50px; height:50px; background:rgba(255,255,255,0.05);
       border:2px solid rgba(255,255,255,0.40); color:rgba(255,255,255,0.55); font-size:18px;
       display:flex; align-items:center; justify-content:center; border-radius:10px; }
     .fs-d:active, .fs-d.pressed { background:rgba(255,255,255,0.22); }
-    #fs-up { left:50px; top:0; } #fs-down { left:50px; top:100px; }
-    #fs-left { left:0; top:50px; } #fs-right { left:100px; top:50px; }
-    #fs-ab { position:absolute; right:14px; bottom:14px; width:170px; height:120px; z-index:110; }
+    #fs-up { left:50px; top:36px; } #fs-down { left:50px; top:136px; }
+    #fs-left { left:0; top:86px; } #fs-right { left:100px; top:86px; }
+    /* A / B a destra (con START sopra); spostati piu' a sinistra per non finire sotto i tasti di sistema */
+    #fs-ab { position:absolute; right:70px; bottom:14px; width:150px; height:156px; z-index:110; }
+    #fs-start { right:34px; top:0; }
     .fs-r { position:absolute; width:66px; height:66px; border-radius:50%; background:rgba(80,150,200,0.10);
       border:2px solid rgba(160,210,255,0.55); color:rgba(220,240,255,0.7); font-size:22px; font-weight:bold; }
     .fs-r:active, .fs-r.pressed { background:rgba(120,190,240,0.30); }
-    #fs-a { right:0; top:0; } #fs-b { right:76px; top:48px; }
+    #fs-a { right:0; top:36px; } #fs-b { right:76px; top:84px; }
   }
 </style>
 </head>
@@ -101,20 +104,17 @@
 <!-- Riusa gli stessi data-key dei bottoni Game Boy: l'input passa dallo stesso setKey, nessuna logica nuova. -->
 <div id="fs-root" aria-hidden="true">
   <canvas id="fs-canvas"></canvas>
-  <!-- START / SELECT piccoli in alto -->
-  <div id="fs-top">
-    <button class="fs-pill" data-key="select">SELECT</button>
-    <button class="fs-pill" data-key="start">START</button>
-  </div>
-  <!-- D-pad a sinistra -->
+  <!-- D-pad a sinistra, con SELECT sopra -->
   <div id="fs-dpad">
+    <button class="fs-pill" id="fs-select" data-key="select">SELECT</button>
     <button class="fs-d" id="fs-up" data-key="up">&#9650;</button>
     <button class="fs-d" id="fs-left" data-key="left">&#9664;</button>
     <button class="fs-d" id="fs-right" data-key="right">&#9654;</button>
     <button class="fs-d" id="fs-down" data-key="down">&#9660;</button>
   </div>
-  <!-- A / B a destra -->
+  <!-- A / B a destra, con START sopra -->
   <div id="fs-ab">
+    <button class="fs-pill" id="fs-start" data-key="start">START</button>
     <button class="fs-r" id="fs-b" data-key="b">B</button>
     <button class="fs-r" id="fs-a" data-key="a">A</button>
   </div>
