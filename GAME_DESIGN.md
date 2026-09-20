@@ -194,12 +194,17 @@ Obiettivo: economia viva con **progressi potenzialmente infiniti**. Tutte le fun
 - **Taverna / Locanda** (`openTavern`): menu con **Recluta ciurma** (`recruitCrew`) e **Gioca ai dadi**
   (`openDice`). Dadi: punti 10/25/50 dobloni, scommetti ALTO(11-18)/BASSO(3-10)/PARI/DISPARI, tiri 3
   dadi, payout **1.9×** (margine del banco ~5%, verificato su 20k giocate). Persistente coi dobloni reali.
-- **Side-quest micro (RIMOSSE in Crudo Merchant)**: le 6 quest scritte a mano (cat/shell/parcel/kids/
-  oldfriend/photos) erano residui del vecchio tema e sono state disattivate — `npcHasQuest` ritorna
-  sempre false, `microQuestActiveNpc` null, `unlockCasualQuests` no-op, e non compaiono nel Registro
-  né come marcatori "!"/punti gialli. Le variabili/collezionabili restano dichiarati ma inerti
-  (le quest restano `locked`), quindi niente errori. La quest `intro` (avvio storia) resta attiva.
+- **Side-quest micro (RIMOSSE FISICAMENTE in Crudo Merchant)**: le 6 quest scritte a mano (cat/shell/
+  parcel/kids/oldfriend/photos) e i loro NPC (nonna, pino, fornaio, nico, mamma, boy, girl, teo, capo)
+  erano residui del vecchio gioco "cittadina/investigativo" e sono state **rimosse dal codice** (sessione
+  2026-09-20): definizioni QUESTS, oggetti collezionabili (cat/shell/ball/keyring/photos/bike), variabili
+  (`questState`/`shellQuest`), funzioni (`canStartMicro`, `MICRO_ORDER`, `currentMicroSlot`, `microDone`,
+  `drawShell/drawBall/drawKeyring/drawPhoto/drawBikeObj`), lo **scooter/cavallo** (side-quest delivery/chase,
+  `scooterUnlocked`, beat foot-chase→reward), la **photo-stakeout** orfana (`photoCam`/`startPhotoCam`),
+  e ~110 chiavi i18n morte (da it+en, parità mantenuta). Gli NPC "filler" del porto (vito, lena, gina,
+  bruno, marinaio) sono stati **ritematizzati** a tema mercante/pirata. `npcHasQuest` resta un no-op.
 - **SQ slot engine**: pool vuoto (nessuna side-quest a rotazione al momento; `window.SIDEQUESTS` vuoto).
+  Kind rimasti: recon, morale, confront, tail, fight, courier (scooter rimosso).
 - **Ciclo giorno/notte**: `clock`, `DAY_LEN=180s` per giorno, `dayCount`. `nightFactor()` per il tinting.
 - **Sbarco universale**: in barca, premendo A vicino a qualsiasi spiaggia/molo/isola si sbarca
   (logica message-driven in `interact`, hint `drawBoatLandHint`).
@@ -229,7 +234,27 @@ si chiama "tutorial": è vestita da prime missioni, testi "ORDINE n/9"):
 Copre così tutte le funzioni maggiori: barca/sbarco, movimento, mercante, compra/vendi, cantiere,
 navigazione, registro, ciurma/taverna, avvio storia. Pannello-guida `drawTutorial` (stringhe `tut_*`),
 marcatori "!" via `tutTargetNpc`, stato `tut{step,done}` persistito. NUOVA PARTITA riavvia gli Ordini;
-CONTINUA (vecchio save) no.
+CONTINUA (vecchio save) no. Nota: il testo dell'ordine corrente appare nel box HUD in alto a destra
+via `activeQuestText()` (la vecchia `drawTutorial` a schermo pieno è stata rimossa perché inutilizzata).
+
+### 6.06 "Imprese del Capitano" (seconda serie di guide, meccaniche avanzate) — `tut2`
+Appena gli Ordini iniziali finiscono (`tut.done`), il loop (`tut2Maybe`) avvia automaticamente una
+SECONDA serie: le **9 "Imprese del Capitano"**, che insegnano le meccaniche avanzate di commercio e del
+gioco piratesco. A differenza degli Ordini (lineari), le Imprese sono una **checklist NON lineare**: si
+completano nell'ordine che il giocatore preferisce mentre gioca la storia.
+`TUT2_STEPS = sell, prices, route, invest, contract, recruit, upgrade, bounty, naval`.
+- **sell** → vendi una merce al banco — `tut2OnSell` (in `updateTrade`).
+- **prices** → apri la scheda PREZZI del Registro — `tut2OnPrices` (cambio scheda `jTab===2`).
+- **route** → avvia una rotta commerciale — `tut2OnRoute` (in `startRoute`).
+- **invest** → investi in un porto — `tut2OnInvest` (in `openInvest`).
+- **contract** → accetta un contratto — `tut2OnContract` (accettazione offerta in `openContracts`).
+- **recruit** → recluta un marinaio — `tut2OnRecruit` (in `recruitCrew`).
+- **upgrade** → potenzia la nave — `tut2OnUpgrade` (upgrade scafo/cannoni/prua in openShipyard).
+- **bounty** → accetta una taglia — `tut2OnBounty` (in `openBounties`).
+- **naval** → vinci una battaglia navale — `tut2OnNaval` (in `navalWin`).
+L'impresa in sospeso corrente appare nel box HUD in alto a destra (via `activeQuestText`, solo quando NON
+c'è una missione di storia attiva, che ha priorità). Stato `tut2{started,done,done_map}` persistito nel
+save; azzerato da NUOVA PARTITA. Stringhe `tut2_*` (it/en). Banner di avvio, progresso (#/9) e chiusura.
 
 ### 6.1 Registro del Capitano (ex "DIARIO") — `drawJournal`Il vecchio diario è stato evoluto in **Registro del Capitano**, a 3 schede (sinistra/destra per cambiare):
 - **MISSIONI**: lista UNICA (storia + secondarie insieme), **senza distinzione rosso/giallo**. Attive
