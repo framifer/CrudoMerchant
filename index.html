@@ -8467,13 +8467,18 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"co
   fsCtx.imageSmoothingEnabled=false;
   // La modalita' fullscreen e' attiva solo quando il CSS mostra #fs-root (media query orientamento).
   function fsActive(){ try { return typeof getComputedStyle==="function" && getComputedStyle(fsRoot).display !== "none"; } catch(e){ return false; } }
-  // Dimensiona il canvas fullscreen: riempie lo schermo mantenendo le proporzioni 192:168 (pixel perfect).
+  // Dimensiona il canvas fullscreen: riempie lo schermo mantenendo le proporzioni 192:168 (pixel perfect),
+  // MA lasciando ai lati lo spazio per i controlli (d-pad a sx, A/B a dx) cosi' il gioco non ci finisce sotto.
   function resizeFs(){
     if(!fsActive()) return;
     var vw=fsRoot.clientWidth, vh=fsRoot.clientHeight;
-    var scale=Math.max(1, Math.floor(Math.min(vw/GW, vh/GH)));   // scaling intero -> pixel nitidi
-    // se lo scaling intero non riempie abbastanza, usa scaling frazionario per non lasciare troppo bordo
-    var sFrac=Math.min(vw/GW, vh/GH);
+    // zona riservata ai controlli su ciascun lato. Il gruppo A/B arriva a ~220px dal bordo (right 70 +
+    // larghezza 150), quindi riserviamo ~230px per lato cosi' il gioco non ci finisce mai sotto. Su
+    // schermi molto stretti si riduce un minimo per non strozzare il gioco.
+    var side=Math.min(230, Math.max(150, vw*0.18));
+    var availW=Math.max(GW, vw - side*2);                 // larghezza centrale utilizzabile dal gioco
+    var scale=Math.max(1, Math.floor(Math.min(availW/GW, vh/GH)));   // scaling intero -> pixel nitidi
+    var sFrac=Math.min(availW/GW, vh/GH);
     var use = (sFrac - scale > 0.15) ? sFrac : scale;
     fsCanvas.width=GW; fsCanvas.height=GH;               // buffer interno resta 192x168
     fsCanvas.style.width=(GW*use)+"px";
