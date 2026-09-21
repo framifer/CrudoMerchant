@@ -9,10 +9,10 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Crudo Merchant">
-<link rel="manifest" href="/manifest.webmanifest">
-<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512.png">
-<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <title>Crudo Merchant</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -8511,7 +8511,7 @@ window.SIDEQUESTS={"recon":[],"morale":[],"confront":[],"tail":[],"fight":[],"co
   // PWA: registra il service worker per il funzionamento offline / installabilita'
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js').catch(function (err) {
+      navigator.serviceWorker.register('sw.js').catch(function (err) {
         console.warn('Service worker registration failed:', err);
       });
     });
