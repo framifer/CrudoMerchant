@@ -2,15 +2,15 @@
    Strategia: cache-first per gli asset dell'app, con fallback a index.html
    per la navigazione quando si e' offline. */
 
-const CACHE_NAME = 'crudo-merchant-v2';
+const CACHE_NAME = 'crudo-merchant-v4';
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.webmanifest',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png',
-  '/icons/icon-192-maskable.png',
-  '/icons/icon-512-maskable.png'
+  './',
+  './index.html',
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png',
+  './icon-192-maskable.png',
+  './icon-512-maskable.png'
 ];
 
 // Installazione: pre-cache degli asset principali
@@ -51,7 +51,7 @@ self.addEventListener('fetch', (event) => {
         .catch(() => {
           // Offline: per le navigazioni, restituisci index.html
           if (request.mode === 'navigate') {
-            return caches.match('/index.html');
+            return caches.match('./index.html');
           }
           return cached;
         });
